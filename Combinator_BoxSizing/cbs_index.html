@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS-Refresher</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/cbs_styles.css">
+</head>
+<body>
+    <header>
+        <div>
+            <p><span class="badge">CSS Refresher</span></p>
+        </div>
+        <h1>Combinator &#38; Box-Sizing</h1>
+    </header>
+
+    <div>
+        <p id="home-btn" class="badge"><a href="../index.html">Home</a></p>
+    </div>
+
+    <main>
+
+        <!-- CSS Combinators -->
+        <section>
+            <div class="section-title">
+                <h2>CSS Combinators</h2>
+                <p class="define">
+                    A combinator is something that defines the relationship between two or more selectors.
+                </p>
+            </div>
+
+            <!-- Decendant Combinator -->
+            <article class="content">
+                <div class="article-title">
+                    <h3>1. Descendant Combinator : <span class="symbol">&nbsp;&nbsp;</span> <span class="symbol-name">(space)</span></h3>
+                    <p class="define">The descendant combinator matches all elements that are descendants (children, grandchildren, etc.) of a specified element.</p>
+                </div>
+                
+                <div class="example">
+                    <p class="example-title">
+                        CSS
+                    </p>
+                    <div class="example-code">
+                        <p>/* Targets every &lt;p&gt; inside .card */</p>
+                        <pre>
+<span class="selector">.card p </span>{
+    <span class="prop">color:</span> <span class="val">red;</span>
+    <span class="prop">font-weight:</span> <span class="val">bold;</span>
+}
+                        </pre>
+                        
+
+                    </div>
+                </div>
+
+                <div class="example">
+                    <p class="example-title">
+                        HTML
+                    </p>
+                    <div class="example-code">                        
+                        </pre><p><span class="element">&lt;div</span> <span class="cl">class</span>=<span class="cl-val">"card"</span> <span class="element">&gt;</span></p>
+                        <p>&emsp;<span class="element">&lt;p&gt;</span>Styled  ✓<span class="element">&lt;/p&gt;</span>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="cmt">&lt;!-- direct child --&gt;</span></p>
+                        <p>&emsp;<span class="element">&lt;div&gt;</span></p>
+                        <p>&emsp;&emsp;<span class="element">&lt;p&gt;</span>Also styled ✓<span class="element">&lt;/p&gt;</span>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="cmt">&lt;!-- grandchild --&gt;</span></p>
+                        <p>&emsp;<span class="element">&lt;/div&gt;</span></p>
+                        <p><span class="element">&lt;/div&gt;</span></p>
+                        <span class="element">&lt;p&gt;</span>Not styled ✗<span class="element">&lt;/p&gt;</span>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="cmt">&lt;!-- sibling .card --&gt;</span>
+                        </pre>
+                    </div>
+                </div>
+
+                <div class="example output">
+                    <p class="example-title">
+                        OUTPUT
+                    </p>
+                    <div class="example-code">                        
+                        <p style="color: red; font-weight: bold;">Styled  ✓</p>
+                        <p style="color: red; font-weight: bold;">Also styled ✓</p>
+                        <p>Not styled ✗</p>
+                    </div>
+                </div>
+            </article>
+            
+            <!-- Child Combinator -->
+            <article class="content">
+                <div class="article-title">
+                    <h3>1. Child Combinator : <span class="symbol">&gt;</span> <span class="symbol-name">(greater-than)</span></h3>
+                    <p class="define">The child combinator selects all elements that are direct children of a specified element.</p>
+                </div>
+                
+                <div class="example">
+                    <p class="example-title">
+                        CSS
+                    </p>
+                    <div class="example-code">
+                        <p>/* Targets Only &lt;p&gt; elements directly inside .card */</p>
+                        <pre>
+<span class="selector">.card &gt; p</span> {
+    <span class="prop">color:</span> <span class="val">blue;</span>
+    <span class="prop">font-weight:</span> <span class="val">bold;</span>
+}
+                        </pre>
+                        
+
+                    </div>
+                </div>
+
+                <div class="example">
+                    <p class="example-title">
+                        HTML
+                    </p>
+                    <div class="example-code">                        
+                        </pre><p><span class="element">&lt;div</span> <span class="cl">class</span>=<span class="cl-val">"card"</span> <span class="element">&gt;</span></p>
+                        <p>&emsp;<span class="element">&lt;p&gt;</span>Styled  ✓<span class="element">&lt;/p&gt;</span>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="cmt">&lt;!-- direct child --&gt;</span></p>
+                        <p>&emsp;<span class="element">&lt;div&gt;</span></p>
+                        
+                        <p>&emsp;&emsp;<span class="element">&lt;p&gt;</span>Not styled ✗<span class="element">&lt;/p&gt;</span>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="cmt">&lt;!-- grandchild --&gt;</span></p>
+                        <p>&emsp;<span class="element">&lt;/div&gt;</span></p>
+                        <p><span class="element">&lt;/div&gt;</span></p>
+                        <span class="element">&lt;p&gt;</span>Not styled ✗<span class="element">&lt;/p&gt;</span>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="cmt">&lt;!-- sibling .card --&gt;</span>
+                        </pre>
+                    </div>
+                </div>
+
+                <div class="example output">
+                    <p class="example-title">
+                        OUTPUT
+                    </p>
+                    <div class="example-code">                        
+                        <p style="color: blue; font-weight: bold;">Styled  ✓</p>
+                        <p>Not styled ✗</p>
+                        <p>Not styled ✗</p>
+                    </div>
+                </div>
+            </article>
+
+
+            <!-- Next Sibling -->
+            <article class="content">
+                <div class="article-title">
+                    <h3>1. Next Sibling : <span class="symbol">&#43;</span> <span class="symbol-name">(plus)</span></h3>
+                    <p class="define">The next sibling combinator is used to select an element that is directly after a specific element.</p>
+                </div>
+                
+                <div class="example">
+                    <p class="example-title">
+                        CSS
+                    </p>
+                    <div class="example-code">
+                        <p>/* Targets &lt;p&gt; only if it is the immediate next sibling of .card /</p>
+                        
+                        <pre>
+<span class="selector">.card &gt; p</span> {
+    <span class="prop">color:</span> <span class="val">green;</span>
+    <span class="prop">font-weight:</span> <span class="val">bold;</span>
+}
+                        </pre>
+                        
+
+                    </div>
+                </div>
+
+                <div class="example">
+                    <p class="example-title">
+                        HTML
+                    </p>
+                    <div class="example-code">                        
+                        </pre><p><span class="element">&lt;div</span> <span class="cl">class</span>=<span class="cl-val">"card"</span> <span class="element">&gt;</span></p>
+                        <p>&emsp;<span class="element">&lt;p&gt;</span>Not styled ✗<span class="element">&lt;/p&gt;</span>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="cmt">&lt;!-- direct child --&gt;</span></p>
+                        <p>&emsp;<span class="element">&lt;div&gt;</span></p>
+                        
+                        <p>&emsp;&emsp;<span class="element">&lt;p&gt;</span>Not styled ✗<span class="element">&lt;/p&gt;</span>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="cmt">&lt;!-- grandchild --&gt;</span></p>
+                        <p>&emsp;<span class="element">&lt;/div&gt;</span></p>
+                        <p><span class="element">&lt;/div&gt;</span></p>
+                        <p><span class="element">&lt;p&gt;</span>Styled  ✓<span class="element">&lt;/p&gt;</span>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="cmt">&lt;!-- immediate sibling .card --&gt;</span></p>
+                        <p><span class="element">&lt;p&gt;</span>Not styled ✗<span class="element">&lt;/p&gt;</span>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="cmt">&lt;!-- not immediate sibling .card --&gt;</span></p>
+                        </pre>
+                    </div>
+                </div>
+
+                <div class="example output">
+                    <p class="example-title">
+                        OUTPUT
+                    </p>
+                    <div class="example-code">                        
+                        <p>Not styled ✗</p>
+                        <p>Not styled ✗</p>
+                        <p style="color: green; font-weight: bold;">Styled  ✓</p>
+                        <p>Not styled ✗</p>
+                    </div>
+                </div>
+            </article>
+
+
+            <!-- Subsequent Sibling -->
+            <article class="content">
+                <div class="article-title">
+                    <h3>1. Subsequent-sibling Combinator : <span class="symbol">&#126;</span> <span class="symbol-name">(tilde)</span></h3>
+                    <p class="define">The subsequent-sibling combinator selects all elements that are next siblings of a specified element.</p>
+                </div>
+                
+                <div class="example">
+                    <p class="example-title">
+                        CSS
+                    </p>
+                    <div class="example-code">
+                        <p>/* Targets all &lt;p&gt; after .card with same parent /</p>
+                        
+                        <pre>
+<span class="selector">.card &#126; p</span> {
+    <span class="prop">color:</span> <span class="val">green;</span>
+    <span class="prop">font-weight:</span> <span class="val">bold;</span>
+}
+                        </pre>
+                        
+
+                    </div>
+                </div>
+
+                <div class="example">
+                    <p class="example-title">
+                        HTML
+                    </p>
+                    <div class="example-code">                        
+                        </pre><p><span class="element">&lt;div</span> <span class="cl">class</span>=<span class="cl-val">"card"</span> <span class="element">&gt;</span></p>
+                        <p>&emsp;<span class="element">&lt;p&gt;</span>Not styled ✗<span class="element">&lt;/p&gt;</span>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="cmt">&lt;!-- direct child --&gt;</span></p>
+                        <p>&emsp;<span class="element">&lt;div&gt;</span></p>
+                        
+                        <p>&emsp;&emsp;<span class="element">&lt;p&gt;</span>Not styled ✗<span class="element">&lt;/p&gt;</span>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="cmt">&lt;!-- grandchild --&gt;</span></p>
+                        <p>&emsp;<span class="element">&lt;/div&gt;</span></p>
+                        <p><span class="element">&lt;/div&gt;</span></p>
+                        <p><span class="element">&lt;p&gt;</span>Styled  ✓<span class="element">&lt;/p&gt;</span>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="cmt">&lt;!-- immediate sibling .card --&gt;</span></p>
+                        <p><span class="element">&lt;p&gt;</span>Styled  ✓<span class="element">&lt;/p&gt;</span>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="cmt">&lt;!-- not immediate sibling .card --&gt;</span></p>
+                        </pre>
+                    </div>
+                </div>
+
+                <div class="example output">
+                    <p class="example-title">
+                        OUTPUT
+                    </p>
+                    <div class="example-code">                        
+                        <p>Not styled ✗</p>
+                        <p>Not styled ✗</p>
+                        <p style="color: green; font-weight: bold;">Styled  ✓</p>
+                        <p style="color: green; font-weight: bold;">Styled  ✓</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- Box Sizing -->
+         <section>
+            <div class="section-title">
+                <h2>Box Sizing</h2>
+                <p class="define">
+                    The box-sizing CSS property sets how the total width and height of an element is calculated.
+                </p>
+            </div>
+
+            <!-- Box Model -->
+            <article class="content">
+                <div class="article-title">
+                    <h3>CSS Box Model</h3>
+                    <p class="define">Everything in CSS has a box around it and every box consists of four parts: <span class="code">content, padding, borders and margins.</span></p>
+                </div>
+
+                <div class="example">
+                    <p class="example-title">
+                        Box Model
+                    </p>
+                    <div class="example-code">
+                        <div style="width: fit-content; margin: auto;">
+                            <div style="background-color: rgb(251, 182, 54); width: 300px; height: 200px; padding: 5px ;z-index: 0;">
+                                <p>margin</p>
+                                <div style="background-color: rgb(130, 211, 86); width: 250px; padding: 5px; height: 150px; margin: 15px; z-index: 10">
+                                    <p>border</p>
+                                    <div style="background-color: rgb(244, 223, 65); width: 200px; padding: 5px; height: 100px; margin: 15px; z-index: 20">
+                                        <p>padding</p>
+                                        <div style="background-color: rgb(247, 245, 245); width: 150px; padding: 5px; height: 50px; margin: 15px; z-index: 30">
+                                            <p style="width: fit-content; margin: auto;">content</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </article>
+
+
+            <!-- Box Sizing: Content Box -->
+            <article class="content">
+                <div class="article-title">
+                    <h3>box-sizing: content-box</h3>
+                    <p class="define">This is the initial and default value as specified by the CSS standard. The <span class="code">width</span> and <span class="code">height</span> properties include the content, but does not include the <span class="code">padding, border, or margin</span>.</span></p>
+                </div>
+
+                <div class="example">
+                    <p class="example-title">
+                        CSS
+                    </p>
+                    <div class="example-code">
+                        <pre>
+<span class="selector">.box</span> {
+    <span class="prop">box-sizing:</span> <span class="val">content-box;</span>&emsp;&emsp;<span class="cmt">/* browser default */</span>
+    <span class="prop">width:</span> <span class="val">200px;</span>
+    <span class="prop">padding:</span> <span class="val">10px;</span>
+    <span class="prop">margin:</span> <span class="val">15px;</span>
+    <span class="prop">border:</span> <span class="val">2px solid black;</span>
+}
+                        </pre>
+                        
+
+                    </div>
+                </div>
+
+                <div class="example">
+                    <p class="example-title">
+                        content-box
+                    </p>
+                    <div class="example-code">
+                        <div style="width: fit-content; margin: auto;">
+                            <div style="background-color: rgb(251, 182, 54); width: 300px; height: 200px; padding: 5px ;z-index: 0;">
+                                <p>margin (15+15 = 30px)</p>
+                                <div style="background-color: rgb(130, 211, 86); width: 250px; padding: 5px; height: 150px; margin: 15px; z-index: 10">
+                                    <p>border (2+2 = 4px)</p>
+                                    <div style="background-color: rgb(244, 223, 65); width: 200px; padding: 5px; height: 100px; margin: 15px; z-index: 20">
+                                        <p>padding (10+10 = 20px)</p>
+                                        <div style="background-color: rgb(247, 245, 245); width: 150px; padding: 5px; height: 50px; margin: 15px; z-index: 30">
+                                            <p style="width: fit-content; margin: auto;">content (200px)</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </article>
+
+
+            <!-- Box Sizing: Border Box -->
+            <article class="content">
+                <div class="article-title">
+                    <h3>box-sizing: border-box</h3>
+                    <p class="define">The <span class="code">width</span> and <span class="code">height</span> properties include the <span class="code">content, padding, and border</span>, but do not include the <span class="code">margin</span>.</p>
+                </div>
+
+                <div class="example">
+                    <p class="example-title">
+                        CSS
+                    </p>
+                    <div class="example-code">
+                        <pre>
+<span class="selector">.box</span> {
+    <span class="prop">box-sizing:</span> <span class="val">border-box;</span></span>
+    <span class="prop">width:</span> <span class="val">200px;</span>
+    <span class="prop">padding:</span> <span class="val">10px;</span>
+    <span class="prop">margin:</span> <span class="val">15px;</span>
+    <span class="prop">border:</span> <span class="val">2px solid black;</span>
+}
+                        </pre>
+                        
+
+                    </div>
+                </div>
+                
+                <div class="example">
+                    <p class="example-title">
+                        content-box
+                    </p>
+                    <div class="example-code">
+                        <div style="width: fit-content; margin: auto;">
+                            <div style="background-color: rgb(251, 182, 54); width: 300px; height: 200px; padding: 5px ;z-index: 0;">
+                                <p>margin (15+15 = 30px)</p>
+                                <div style="background-color: rgb(130, 211, 86); width: 250px; padding: 5px; height: 150px; margin: 15px; z-index: 10">
+                                    <p>border (200px)</p>
+                                    <div style="background-color: rgb(244, 223, 65); width: 200px; padding: 5px; height: 100px; margin: 15px; z-index: 20">
+                                        <p>padding (10+10 = 20px)</p>
+                                        <div style="background-color: rgb(247, 245, 245); width: 150px; padding: 5px; height: 50px; margin: 15px; z-index: 30">
+                                            <p style="width: fit-content; margin: auto;">content (200-10-10-2-2 = 176px)</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </article>
+         </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Prashant Sharma For educational use only.</p>
+        <nav class="footer-links">
+            <span>References:</span>
+            <a href="https://developer.mozilla.org" target="_blank" rel="noopener">MDN Web Docs</a>
+            <a href="https://www.w3schools.com" target="_blank" rel="noopener">W3Schools</a>
+        </nav>
+    </footer>
+</body>
+</html>
