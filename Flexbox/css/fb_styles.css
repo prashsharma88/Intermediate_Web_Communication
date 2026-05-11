@@ -1,0 +1,190 @@
+:root {
+    --txt-color: #424242;
+    --border-color: #ECDFCC;
+    --border-radius: 10px;
+    --light-txt: #F5F5F5;
+}
+
+p#home-btn {
+    background-color: #202940;
+    color: var(--light-txt);
+    padding: 5px;
+    border-radius: 10px;
+    position: absolute;
+    width: fit-content;
+    top: 40px;
+    right: 50px;
+}
+
+p#home-btn a {
+    color: var(--light-txt);
+    text-decoration: none;
+}
+
+.lead {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.flexitem {
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.flexcontainer {
+    min-height: 300px;
+    border: 2px solid yellowgreen;
+    border-radius: 10px;
+}
+
+img#exercise-result {
+    width: 100%;
+    height: 300px;
+}
+
+/*
+For the enitre webpage, set 
+    font-family "Playwrite DE Grund",cursive
+    background color: '#B7B7B7'
+    text color to #424242
+    vertical padding of 10px
+    horizontal padding of 50px
+*/
+body {
+    font-family: "Playwrite DE Grund",cursive;
+    background-color: #B7B7B7;
+    color: var(--txt-color);
+    padding: 10px 50px;
+}
+
+/*
+Target h3 and b tags to set font color to #068FFF and add text-decoration of underline
+*/
+h3, b {
+    color: #068FFF;
+    text-decoration: underline;
+}
+
+/*
+Add a top border of 2px width to the footer. Use #ECDFCC as color of border
+Set the font color of all the text in footer to #424242, font size of 0.7rem and align all the text to the center of the screen.
+For unordered list inside footer, set list-style to none.
+*/
+
+footer {
+    border-top: 2px solid #ECDFCC;
+    color: var(--txt-color);
+    font-size: 0.7rem;
+    text-align: center;
+}
+
+footer ul {
+    list-style: none;
+}
+
+/*
+Target section tag to add a background color of #F5F5F5, padding of 10px, vertical margin of 10px and a border radius of 10px
+*/
+section {
+    background-color: #F5F5F5;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: var(--border-radius);
+}
+
+/*
+Target "definition" id and set font color to #DC5F00, font size of 1.1rem.
+*/
+#definition {
+    color: #DC5F00;
+    font-size: 1.1rem;
+}
+/*
+Target basicTerms class to set display to inline-block, height of 200px, padding of 10px,
+ border of 1px, border color to #FECDA6, border radius of 10px, background color to #FECDA6
+*/
+.basicTerms {
+    display: inline-block;
+    height: 200px;
+    padding: 10px;
+    border: 1px solid #FECDA6;
+    border-radius: var(--border-radius);
+    background-color: #FECDA6;
+}
+
+/*
+Change the height of basicTerm class to 300px when user hover over it.
+*/
+.basicTerms:hover {
+    height: 300px;
+}
+
+/*
+Target caption class to set font size to 0.6rem, 
+add underline to the text and align text to the center.
+*/
+.caption {
+    font-size: 0.6rem;
+    text-decoration: underline;
+    text-align: center;
+}
+
+/*
+Target code-example class to set width to fit-content, 
+padding of 15px, background color to #424242, 
+text color to #ECDFCC and 10px border radius
+*/
+.code-example {
+    width: fit-content;
+    padding: 15px;
+    background-color: #424242;
+    color: #ECDFCC;
+    border-radius: var(--border-radius);
+}
+
+/*
+Target comment class to set font color to gray
+*/
+.comment {
+    color: gray;
+}
+
+/*
+Target playground id to set background color to #AFC8AD 
+border radius to 10px width of 100% and min-height to 300px
+*/
+#playground {
+    background-color: #AFC8AD;
+    border-radius: var(--border-radius);
+    width: 100%;
+    min-height: 300px;
+}
+
+/*
+Target flex-container id to set a border of 2px and border 
+color to #F5F5F7, border radius to 5px 
+*/
+#flex-container {
+    border: 2px solid #F5F5F7;
+    border-radius: 5px;
+    min-height: 200px;
+}
+
+/*
+target flex-item class to set width and 
+height to 50px, border radius of 5px, 
+background color of #F5F5F7 and a margin of 5px 
+*/
+.flex-item {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    background-color: #F5F5F7;
+    margin: 5px;
+}
+
+
