@@ -25,7 +25,7 @@ You only need to do this **once**. Cloning creates a local copy of this reposito
 
 **Using the Terminal:**
 ```bash
-git clone <repository-url>
+git clone https://github.com/prashsharma88/Intermediate_Web_Communication.git
 ```
 
 ---
