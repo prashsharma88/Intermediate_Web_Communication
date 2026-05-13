@@ -187,4 +187,75 @@ background color of #F5F5F7 and a margin of 5px
     margin: 5px;
 }
 
+.take-it-further-div {
 
+    text-align: center;
+}
+
+.take-it-further-btn a {
+    text-decoration: none;
+    padding: 10px;
+    background-color: #202940;
+    color: var(--light-txt);
+    border-radius: 10px;
+}
+
+
+
+#flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* flex-wrap: wrap; */
+    /* align-content: center; */
+}
+
+.grow {
+    flex-grow: 2;
+}
+
+.grow-3 {
+    flex-grow: 3;
+}
+
+.basis-2 {
+    flex-basis: 2rem;
+    background-color: orange;
+}
+
+.shrink-3 {
+    flex-shrink: 3;
+    background-color: aqua;
+}
+
+.align-self-end {
+    align-self: flex-end;
+    background-color: red;
+}
+
+
+/* Exercise */
+
+.flexcontainer {
+    display: flex;
+    align-items: center;
+}
+
+.flexitem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#two, #four {
+    flex-grow: 2;
+}
+
+#three {
+    align-self: flex-end;
+}
+
+#one {
+    order: 1;
+}
