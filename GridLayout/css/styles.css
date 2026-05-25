@@ -1,0 +1,221 @@
+
+p#home-btn {
+    background-color: #202940;
+    color: #F5F5F5;
+    padding: 5px;
+    border-radius: 10px;
+    position: absolute;
+    width: fit-content;
+    top: 40px;
+    right: 50px;
+}
+
+p#home-btn a {
+    color: #F5F5F5;
+    text-decoration: none;
+}
+
+/* 
+Set the width of webpage to 80% of viewport and align the content to the center of screen. 
+Set the background color to "whitesmoke", font-family to "Chakra Petch" and "sans-serif" as backup font-family. 
+*/
+body {
+    width: 80%;
+    margin: 0 auto;
+    font-family: "Chakra Petch", sans-serif;
+    background-color: whitesmoke;
+}
+
+/* 
+Convert the header element into a flex container. Using flexbox properties move heading and text to the center of screen (horizontal-center).
+Set the background color to white, border-radius to 20px, vertical margin of 10px and padding of 10px in all direction. 
+*/
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    border-radius: 20px;
+    margin: 10px 0;
+    padding: 10px;
+    align-items: center;
+}
+
+
+/* 
+Convert the footer element into a flex container. Using flexbox properties, move everything to the center of screen (horizontal-center).
+Set font-size to 0.7rem and add a top border of 2px with "yellogreen" color.
+*/
+footer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    border-top: 2px solid yellowgreen;
+}
+
+
+/* 
+Using Child-Combinator (>), target ul element inside footer and set list-style to none and a padding of 0.
+*/
+footer > ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* 
+ Using Descendant-Combinator, target anchor element inside footer to remove all text-decoration and set font color to black.
+*/
+footer a {
+    text-decoration: none;
+    color: black;
+}
+
+/*
+Target section element, set background color to white, vertical margin of 10px, border radius of 20px and padding of 20px in all direction.
+*/
+section {
+    background-color: white;
+    margin: 10px 0;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+
+/*
+Target "highlight" class, set background color to "lightgrey", vertical padding of 3px and horizontal padding of 5px, border radius of 2px.
+*/
+.highlight {
+    background-color: lightgrey;
+    padding: 3px 5px;
+    border-radius: 2px;
+}
+
+
+/*
+Target elements with class="example", set background color to "#4A4947", font color to "white", padding of 10px in all direction, 
+border radius of 10px and set width should be equal to the width of content.
+*/
+.example {
+    background-color: #4A4947;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    width: fit-content;
+}
+
+/*
+Target elements with class="comment", set font color to "lightgrey" and font size to 0.9rem.
+*/
+.comment {
+    color:lightgray;
+    font-size: 0.9rem;
+}
+
+/*
+Target elements with class="str", set font color to "yellowgreen"
+*/
+.str {
+    color: yellowgreen;
+}
+
+/*
+Target img element to set width to 200px.
+*/
+img {
+    width: 200px;
+}
+
+/*
+Target elements with id="playground" and set min height to 500px.
+*/
+#playground {
+    min-height: 500px;
+}
+
+/* 
+Target elements with class="item", add width and height of 50px, border-radius of 10px and a background color of gray.
+*/
+.item {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: gray;
+}
+
+/*
+Target element with id="container", add a 10px padding, border of 1px solid black, and border-radius of 20px.
+*/
+#container {
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+/*
+Convert div with id="definitions-container" into a flexbox container and add a gap of 5px.
+*/
+div#definitions-container {
+    display: flex;
+    gap: 5px;
+}
+
+/*
+Target elements with class="definitions", add black border of 1px width, border radius of 10px, padding of 10px horizontal-margin of 5px.
+*/
+.definitions {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 0 5px;
+}
+
+
+/*
+Check the "Important Terminology" part of your webpage (see in live server).
+There are 2 boxes, they both have class="definitions".
+Notice that their width is not same.
+Can you fix this behaviour using flexbox properties so that they get equal width on screen?
+Hint: They are inside a flexbox container (id="definitions-container"), this makes them a flex-item.
+*/
+.definitions {
+    flex-basis: 50%;
+}
+
+
+/*
+Target elements with class="property" and set the bottom border to 2px dashed gray
+ */
+
+
+/*
+Remove the bottom border from element with class="property" if it is the last element of its type among the group of siblings.
+ */
+
+
+/*
+Target h2 elements, make the text the align of the center (horizontal center) of the screen and add underline to the text. 
+ */
+
+
+ /* DEMO */
+ #container {
+    display: grid;
+    grid-template-columns: 80px 80px 80px 80px;
+    grid-template-rows: 5rem 5rem 5rem;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+ }
+
+ #five {
+  background-color: red;
+  width: 100%;
+  height: 100%;
+  grid-column-start: 1;
+  grid-column-end: span 2;
+  grid-row-start: 1;
+  grid-row-end: span 3;
+ }

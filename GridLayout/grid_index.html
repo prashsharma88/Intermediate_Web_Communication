@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <!-- <link rel="stylesheet" href="../GridLayout_FiinalStyles.css" > -->
+    <title>Grid Layout</title>
+</head>
+<body>
+    <header>
+        <h1>Grid Layout</h1>
+        <p id="Intro">
+            CSS Grid Layout (aka “Grid” or “CSS Grid”), is a two-dimensional grid-based layout system
+        </p>
+    </header>
+
+    <div>
+        <p id="home-btn" class="badge"><a href="../index.html">Home</a></p>
+    </div>
+
+    <section id="terminology_section">
+        <h2>Important Terminology</h2>
+        <div id="definitions-container">
+            <div class="definitions">
+                <ul>
+                    <li>
+                        <h3>Grid Container</h3>
+                        <p>
+                            The element on which <span class="highlight">display: grid</span> is applied. It’s the direct parent of all the grid items. 
+                        </p>
+    
+                        
+                        <p class="example">
+                            &lt;div style={display: grid}&gt; <br>
+                            &emsp;<span class="comment">// Grid Items...</span><br>
+                            &lt;/div&gt; <br>
+                        </p>
+                        
+                        
+                    </li>
+    
+                    <li>
+                        <h3>Grid Lines</h3>
+                        <p>
+                            The dividing lines that make up the structure of the grid. They can be either vertical (“column grid lines”) or horizontal (“row grid lines”) and reside on either side of a row or column. Here the yellow line is an example of a column grid line.
+                        </p>
+                        
+                        <img src="images/terms-grid-line.svg" alt="image showing grid line">
+                    </li>
+    
+                    <li>
+                        <h3>Grid Track</h3>
+                        <p>
+                            The space between two adjacent grid lines. You can think of them as the columns or rows of the grid. Here’s the grid track between the second and third-row grid lines.
+                        </p>
+    
+                        <img src="images/terms-grid-track.svg" alt="image showing grid track">
+                    </li>
+    
+                    <li>
+                        <h3>Grid Area</h3>
+                        <p>
+                            The total space surrounded by four grid lines. A grid area may be composed of any number of grid cells. Here’s the grid area between row grid lines 1 and 3, and column grid lines 1 and 3.
+                        </p>
+    
+                        <img src="images/terms-grid-area.svg" alt="image showing grid area">
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="definitions">
+                <ul>
+                    <li>
+                        <h3>Grid Item</h3>
+                        <p>
+                            The children (i.e. direct descendants) of the grid container.
+                        </p>
+    
+                        <p class="example">
+                            &lt;div style={display: grid}&gt; <br>
+                            &emsp;&lt;div&gt;<span class="comment">//Grid Item 1</span>&lt;/div&gt;<br>
+                            &emsp;&lt;div&gt;<span class="comment">//Grid Item 2</span>&lt;/div&gt;<br>
+                            &emsp;&lt;div&gt;<span class="comment">//Grid Item 3</span>&lt;/div&gt;<br>
+                            &emsp;&lt;div&gt;<span class="comment">//Grid Item 4</span>&lt;/div&gt;<br>
+                            &lt;/div&gt; <br>
+                        </p>
+                    </li>
+    
+                    <li>
+                        <h3>Grid Cell</h3>
+                        <p>
+                            The space between two adjacent row and two adjacent column grid lines. It’s a single “unit” of the grid. Here’s the grid cell between row grid lines 1 and 2, and column grid lines 2 and 3.
+                        </p>
+    
+                        <img src="images/terms-grid-cell.svg" alt="image showing grid cell">
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+    </section>
+
+
+    <section>
+        <h2>Grid Container Properties</h2>
+
+        <div class="property">
+            <h3>display:</h3>
+            <p>
+                Defines the element as a grid container and establishes a new grid formatting context for its contents.
+            </p>
+            <p class="example">
+                .container { <br>
+                  &emsp;  display: grid | inline-grid; <br>
+                  } <br>
+            </p>
+        </div>
+
+        <div class="property">
+            <h3>
+                grid-template-columns AND grid-template-rows
+            </h3>
+
+            <p>
+                Defines the columns and rows of the grid with a space-separated list of values. The values represent the track size, and the space between them represents the grid line.
+            </p>
+
+            <p class="example">
+                .container { <br>
+                    &emsp;grid-template-columns: 40px 50px auto 50px 40px; <br>
+                    &emsp;grid-template-rows: repeat(3, 150px); <br>
+                } <br>
+            </p>
+        </div>
+
+        <div class="property">
+            <h3>
+                grid-template-areas
+            </h3>
+
+            <p>
+                Defines a grid template by referencing the names of the grid areas which are specified with the grid-area property. Repeating the name of a grid area causes the content to span those cells. A period signifies an empty cell. The syntax itself provides a visualization of the structure of the grid.
+            </p>
+
+            <p class="example">
+                .container { <br>
+                  &emsp;display: grid;<br>
+                  &emsp; grid-template-columns: 50px 50px 50px 50px; <br>
+                  &emsp; grid-template-rows: auto; <br>
+                  &emsp; grid-template-areas: <br>
+                  &emsp; &emsp; <span class="str">"header header header header"</span> <br>
+                  &emsp; &emsp; <span class="str"> "main main . sidebar"</span> <br>
+                  &emsp; &emsp; <span class="str"> "footer footer footer footer";</span> <br>
+                } <br>
+                <br>
+                .item-a { <br>
+                  &emsp; grid-area: header;  <br>
+                } <br>
+                <br>
+                .item-b {<br>
+                   &emsp; grid-area: main; <br>
+                } <br>
+                <br>
+                .item-c { <br>
+                    &emsp; grid-area: sidebar; <br>
+                } <br>
+                <br>
+                .item-d { <br>
+                    &emsp; grid-area: footer; <br>
+                } <br>
+            </p>
+            <img src="images/grid-template-areas.svg" alt="Demo image of grid template area property">
+        </div>
+
+        <div class="property">
+            <h3>justify-items AND align-items</h3>
+            <p>
+                <b>justify-items:</b> aligns grid items along the row inside the grid cell. </br>
+                <b>align-items:</b> aligns the grid items along the column inside the grid cell.
+            </p>
+
+            <p class="example">
+                .container { <br>
+                   &emsp; justify-items: start | end | center | stretch; <br>
+                  } <br>
+
+                .container { <br>
+                  &emsp;  align-items: start | end | center | stretch; <br>
+                } <br>
+            </p>
+        </div>
+
+        <div class="property">
+            <h3>justify-content AND align-content</h3>
+            <p>
+                If the total size of your grid is less than the size of its grid container, then you can set the alignment of grid within the grid container.
+            </p>
+            <p>
+                <b>justify-content:</b> aligns the grid along the row of the grid container. </br>
+                <b>align-content:</b> align the grid along the column of the grid container.
+            </p>
+
+            <p class="example">
+                .container { <br>
+                   &emsp; justify-content: start | end | center | stretch | space-around | space-between | space-evenly; <br>
+                  } <br>
+
+                .container { <br>
+                  &emsp;  align-content: start | end | center | stretch | space-around | space-between | space-evenly; <br>
+                } <br>
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Grid Item Properties</h2>
+
+        <div class="property">
+            <h3>grid-column-start AND grid-column-end</h3>
+            <p>
+                Determines the grid item's location within the grid by referring to specific grid's vertical lines. If there are 'N' columns, then vertical lines will go from 1 to 'N+1' in left to right direction. </br>
+                <b>grid-column</b> is the short hand for <i>grid-column-start + grid-column-end</i>
+            </p>
+
+            <p class="example">
+                .item { <br>
+                   &emsp; grid-column-start: &lt;number&gt; <br>
+                   &emsp; grid-column-end: &lt;number&gt; </br>
+                  } <br>
+
+                .item { <br>
+                    &emsp; grid-column: &lt;start-line&gt; / &lt;end-line&gt; <br>
+                } <br>
+            </p>
+        </div>
+
+        <div class="property">
+            <h3>grid-row-start AND grid-row-end</h3>
+            <p>
+                Determines the grid item's location within the grid by referring to specific grid's horizontal lines. If there are 'N' rows, then horizontal lines will go from 1 to 'N+1' in top to bottom direction. </br>
+                <b>grid-row</b> is the short hand for <i>grid-row-start + grid-row-end</i>
+            </p>
+
+            <p class="example">
+                .item { <br>
+                   &emsp; grid-row-start: &lt;number&gt; <br>
+                   &emsp; grid-row-end: &lt;number&gt; </br>
+                  } <br>
+
+                .item { <br>
+                    &emsp; grid-row: &lt;start-line&gt; / &lt;end-line&gt; <br>
+                } <br>
+            </p>
+        </div>
+
+        <div class="property">
+            <h3>grid-area</h3>
+            <p>
+                Gives an item a name so that it can be referenced by a template created with the <i>grid-template-areas</i>
+            </p>
+
+            <p class="example">
+                .item { <br>
+                    &emsp; grid-area: &lt;name&gt; <br>
+                } <br>
+            </p>
+        </div>
+
+        <div class="property">
+            <h3>justify-self AND align-self</h3>
+            <p>
+                <b>justify-self:</b> aligns a grid item inside a cell along the row. <br>
+                <b>align-self:</b> aligns a grid item inside a cell along the column. <br>
+            </p>
+
+            <p class="example">
+                .item { <br>
+                    &emsp; justify-self: start | end | center | stretch; <br>
+                    &emsp; align-self: start | end | center | stretch; <br>
+                } <br>
+            </p>
+        </div>
+    </section>
+
+    <section id="playground">
+        <h2>Playground</h2>
+        <div id="container">
+            <div class="item" id="one"></div>
+            <div class="item" id="two"></div>
+            <div class="item" id="three"></div>
+            <div class="item" id="four"></div>
+            <div class="item" id="five"></div>
+            <div class="item" id="six"></div>
+            <div class="item" id=seven"></div>
+            <div class="item" id="eight"></div>
+            <div class="item" id="nine"></div>
+        </div>
+    </section>
+
+    <footer>
+        <p>
+            The content and code examples are take from below websites:
+        </p>
+        <ul>
+            <li>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout">MDN</a>
+            </li>
+            <li>
+                <a href="https://css-tricks.com/snippets/css/complete-guide-grid/">CSS Tricks</a>
+            </li>
+        </ul>
+    </footer>
+</body>
+</html>
