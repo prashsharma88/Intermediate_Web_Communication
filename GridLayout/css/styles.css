@@ -188,16 +188,46 @@ Hint: They are inside a flexbox container (id="definitions-container"), this mak
 /*
 Target elements with class="property" and set the bottom border to 2px dashed gray
  */
-
+.property {
+    border-bottom: 2px dashed gray;
+}
 
 /*
 Remove the bottom border from element with class="property" if it is the last element of its type among the group of siblings.
  */
 
+ .property:last-of-type {
+    border-bottom: none;
+ }
+
 
 /*
 Target h2 elements, make the text the align of the center (horizontal center) of the screen and add underline to the text. 
  */
+ h2 {
+    text-align: center;
+    text-decoration: underline;
+ }
+
+
+.take-it-further-div {
+    background-color: transparent;
+    text-align: center;
+}
+
+.take-it-further-btn a {
+    text-decoration: none;
+    padding: 10px;
+    background-color: #202940;
+    color: white;
+    border-radius: 10px;
+    border: 1px solid transparent;
+}
+.take-it-further-btn a:hover {
+    background-color: transparent;
+    border-color: #202940;
+    color: #202940;
+}
 
 
  /* DEMO */

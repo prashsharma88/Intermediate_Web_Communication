@@ -1,0 +1,55 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 90%;
+  margin: 0 auto;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    margin: 40px;
+}
+
+p {
+    text-align: center;
+}
+
+
+.calculator-layout {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 1rem;
+}
+
+.calculator-layout > div {
+    background-color: rgb(76, 77, 76);
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 1.5rem;
+}
+
+.col-span-4 {
+    grid-column: span 4;
+}
+
+.add-row-span-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-row: 1 / span 2;
+    grid-column: 4 / -1;
+}
+
+.equal-row-span-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-row: 3 / span 2;
+    grid-column: 4 / -1;
+}

@@ -198,6 +198,13 @@ background color of #F5F5F7 and a margin of 5px
     background-color: #202940;
     color: var(--light-txt);
     border-radius: 10px;
+    border: 1px solid transparent;
+}
+
+.take-it-further-btn a:hover {
+    background-color: transparent;
+    border-color: #202940;
+    color: #202940;
 }
 
 
