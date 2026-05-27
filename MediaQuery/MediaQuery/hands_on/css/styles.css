@@ -1,0 +1,42 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 90%;
+  margin: 0 auto;
+  background: rgb(247, 237, 237);
+}
+
+/* img {
+  float: right; 
+} */
+
+section {
+  margin: 20px 0;
+  background-color: white;
+  border-radius: 20px;
+  padding: 30px;
+}
+
+.img-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+/*
+Device width 600px to 1024 px: 
+set background color to red
+font-size to 0.6rem
+font-family to some "sans-serif" family
+move the image to bottom of the containing section
+ */
+
+/*
+Device width more than 1024px:
+set background color to green
+font-size of 1.3rem
+font-family to 'Segoe UI'
+ */

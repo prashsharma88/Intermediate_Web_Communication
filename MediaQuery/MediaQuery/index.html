@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css" >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <title>Media Query</title>
+</head>
+<body>
+    <header>
+        <h1 id="title">
+            Media Query
+        </h1>
+        <p id="definition">
+            The <b>CSS Media Query</b> gives you a way to apply CSS only when the 
+            browser and device environment matches a rule that you specify, 
+            for example <code>"viewport is wider than 480 pixels"</code>.
+        </p>
+    </header>
+
+    <main>
+        <section id="syntax">
+            <h2>Syntax:</h2>
+            <p>
+                A simple media query looks like :
+            </p>
+            <p class="code-example">
+                <code>@media media-type and (media-feature-rule) { 
+                    <br> 
+                    <span class="comment">/*CSS code go here*/</span>
+                    <br>
+                }</code>
+            </p>
+
+            <p>
+                It consists of:
+            </p>
+            <ul>
+                <li>A media type, which tells the browser what kind of media this code is for (e.g. print, or screen).</li>
+                <li>A media expression, which is a rule, or test that must be passed for the contained CSS to be applied.</li>
+                <li>A set of CSS code that will be applied if the test passes and the media type is correct.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Media Type:</h2>
+            
+            <p>
+                Possible media type are:
+            </p>
+            <ul>
+                <li>all</li>
+                <li>print</li>
+                <li>screen</li>
+            </ul>
+
+            <h4>Example:</h4>
+            <p class="code-example">
+                <code class="block">@media print{
+                    <br>
+                    &emsp; body {
+                        <br>
+                        &emsp;&emsp; font-size: 10px;
+                        <br>
+                        &emsp; }
+                    <br>
+                }</code>
+            </p>
+            <p>
+                Above media query will change font-size of the body only while printing the page.
+            </p>
+        </section>
+
+        <section>
+            <h2>Media Feature Rule:</h2>
+            <p>After specifying the media type you can target the media features</p>
+
+            <h3>Width & Height</h3>
+            <p>
+                The most common feature used to create responsive design is the viewport <i>width</i>.
+                We can apply CSS rules if the viewport with is above or below a certain width or an 
+                exact width using <code class="inline">min-width</code>, <code class="inline">max-width</code>, 
+                <code class="inline">width</code> media features.
+            </p>
+
+            <p class="code-example">
+                <code>
+                    @media screen and (width: 600px) {<br>
+                    &emsp; body {<br>
+                    &emsp;&emsp; color: red;<br>
+                    &emsp; }<br>
+                    }<br>
+                </code>
+            </p>
+
+            <p>Above rule will apply only when the viewport with is 600px and media type is screen.</p>
+
+            <p class="code-example">
+                <code>
+                    @media screen and (max-width: 599px){ <br>
+                        &emsp; body{ <br>
+                        &emsp;&emsp; color: red;<br>
+                        &emsp; }<br>
+                        }<br>
+                </code>
+            </p>
+            <p>Above rule will apply when viewport is 599px or smaller. </p>
+
+            <p class="code-example">
+                <code>
+                    @media screen and (min-width: 700px){ <br>
+                        &emsp; body{ <br>
+                        &emsp;&emsp; color: bisque;<br>
+                        &emsp; }<br>
+                        }<br>
+                </code>
+            </p>
+            <p>Above rule will apply when viewport is 700px or larger. </p>
+
+            <p class="note">
+                In practise <code class="inline">width</code> and <code class="inline">height</code>
+                are not used frequently.
+            </p>
+
+
+            <h3>Orientation</h3>
+
+            <p>
+                Orientation media feature allow us to test for <b>portrait</b>
+                or <b>landscape</b> mode.
+            </p>
+
+            <p class="code-example">
+                <code>
+                    @media screen and (orientation: landscape){ <br>
+                        &emsp; body{ <br>
+                        &emsp;&emsp; color: red;<br>
+                        &emsp; }<br>
+                        }<br>
+                </code>
+            </p>
+            <p>
+                Above rule will apply when device orientation is landscape. Standard desktop view has landscape orientation.
+            </p>
+
+            <h3>Using range syntax</h3>
+
+            <p>
+                One common case is to check if the viewport width is between two values:
+            </p>
+
+            <p class="code-example">
+                <code>@media (min-width: 30em) and (max-width: 50em) { <br> 
+                    <span class="comment">/*CSS rules go here*/</span> <br>
+                }</code>
+            </p>
+            <p>OR </p>
+
+            <p class="code-example">
+                <code>@media (30em <= width <= 50em) { <br> 
+                    <span class="comment">/*CSS rules go here*/</span> <br>
+                }</code>
+            </p>
+        </section>
+
+        <section>
+            <h2>Breakpoints:</h2>
+            <p>
+                There are tons of screens and devices with different heights and widths, 
+                so it is hard to create an exact breakpoint for each device. 
+                To keep things simple you could target five common groups:
+            </p>
+
+            <p class="code-example">
+                <code>
+                    <span class="comment">/* Extra small devices (phones, 600px and down) */</span><br>
+                    @media only screen and (max-width: 600px) {...}<br>
+                    <br>
+                    <span class="comment">/* Small devices (portrait tablets and large phones, 600px and up) */</span><br>
+                    @media only screen and (min-width: 600px) {...}<br>
+                    <br>
+                    <span class="comment">/* Medium devices (landscape tablets, 768px and up) */</span><br>
+                    @media only screen and (min-width: 768px) {...}<br>
+                    <br>
+                    <span class="comment">/* Large devices (laptops/desktops, 992px and up) */</span><br>
+                    @media only screen and (min-width: 992px) {...}<br>
+                    <br>
+                    <span class="comment">/* Extra large devices (large laptops and desktops, 1200px and up) */</span><br>
+                    @media only screen and (min-width: 1200px) {...}<br>
+                </code>
+            </p>
+        </section>
+    </main>
+    
+
+    <footer>
+        <p>The content and code examples are take from below websited:</p>
+        <ul>
+            <li>
+                <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Media_queries" target="_blank" rel="noopener">MDN</a>
+            </li>
+            <li>
+                <a href="https://www.w3schools.com/howto/howto_css_media_query_breakpoints.asp" target="_blank" rel="noopener">w3schools</a>
+            </li>
+        </ul>
+    </footer>
+</body>
+</html>

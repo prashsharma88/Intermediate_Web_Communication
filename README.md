@@ -110,8 +110,9 @@ The table below shows all the topics covered in class, the date they were taught
 | 3 | Combinator & Box Sizing | 11th May | `Combinator_BoxSizing` |
 | 4 | Flexbox | 11–13th May | `Flexbox` |
 | 5 | Flexbox - Navigation bar| 20th May | `Flexbox\TakeItFurther` |
-| 6 | Grid Layout | | 25th May | `GridLayout |
+| 6 | Grid Layout | 25th May | `GridLayout |
 | 7 | Calculator Using Grid | 25th May | `GridLayout\TakeItFurther` |
+| 8 | Media Query | 27th May | `MediaQuery` |
 
 > 📝 **Note:** This table is updated as new topics are covered in class. Check back after each class for updates!
 
