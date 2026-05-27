@@ -213,6 +213,7 @@ Target h2 elements, make the text the align of the center (horizontal center) of
 .take-it-further-div {
     background-color: transparent;
     text-align: center;
+    margin: 40px 0
 }
 
 .take-it-further-btn a {
@@ -227,6 +228,7 @@ Target h2 elements, make the text the align of the center (horizontal center) of
     background-color: transparent;
     border-color: #202940;
     color: #202940;
+    transition: 0.7s;
 }
 
 
