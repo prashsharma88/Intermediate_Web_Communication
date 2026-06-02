@@ -5,6 +5,8 @@ Welcome! 👋 This repository contains all the **code examples and exercises** c
 
 The repository is updated **after every class**, so you can always come back here to review what was covered and compare it with your own code.
 
+The content of this repo is hosted on IDD server: [Intermediate Web Communication Content](https://interactivedesign.ca/~psharma/IWC/)
+
 ---
 
 ## 📌 How to Use This Repository
