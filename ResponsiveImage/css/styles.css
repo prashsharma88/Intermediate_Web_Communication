@@ -1,0 +1,280 @@
+*, *::after, *::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+p#home-btn {
+    background-color: #202940;
+    color: #F5F5F5;
+    padding: 5px;
+    border-radius: 10px;
+    position: absolute;
+    width: fit-content;
+    top: 40px;
+    right: 50px;
+    z-index: 11;
+    float: right;
+}
+
+p#home-btn a {
+    color: #F5F5F5;
+    text-decoration: none;
+}
+
+html {
+    font-family: "Titillium Web", sans-serif;
+    font-size: 20px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+img {
+    display: block;
+}
+
+header, footer {
+    display: grid;
+    place-content: center;
+    justify-content: center;
+    align-content: center;
+}
+
+header, footer {
+    position: sticky;
+    background-color: #3b7597d7;
+    color: whitesmoke;
+    z-index: 10;
+}
+
+header {
+    top: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+header > p {
+    font-weight: 600;
+    font-size: 1.3rem;
+    color: rgb(249, 242, 242);
+    font-style: italic;
+}
+
+footer {
+    bottom: 0;
+    text-align: center;
+    padding: 5px;
+    background-color: #3b7597fe;
+    font-size: 0.7rem;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer a {
+    text-decoration: none;
+    color: whitesmoke;
+    border-bottom: 1px solid transparent;
+}
+
+footer a:hover {
+    color: rgb(230, 123, 118);
+    border-color: rgb(230, 123, 118);
+    transition: 0.8s;
+}
+
+main {
+    flex-grow: 1;
+    max-inline-size: 1500px;
+    margin: 0 auto;
+    /* background-color: rgb(247, 251, 190); */
+    inline-size: 80%;
+    padding: 30px 50px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+section {
+    margin: 10px 0;
+    /* background-color: rgb(251, 241, 220); */
+    padding: 20px 10px;
+    border-radius: 20px;
+    background: linear-gradient(to right, #f7a2a2, #fce7a3fc);
+}
+
+h2 {
+    text-align: center;
+}
+
+ul.unordered-list > li {
+    margin-inline-start: 40px;
+}
+
+.item-description {
+    display: block;
+    margin-inline-start: 30px;
+}
+
+.code-example {
+    margin: 20px 10px;
+    background-color: rgb(215, 213, 213);
+    border: 1px solid rgb(121, 120, 120);
+    width: fit-content;
+    padding: 15px 30px;
+    border-radius: 20px;
+    font-family: "Source Code Pro", monospace;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+.code-comment {
+    color: rgb(101, 101, 101);
+    font-style: italic;
+}
+
+code {
+    background-color: rgb(215, 213, 213);
+    color: rgb(91, 90, 90);
+    padding: 2px 5px;
+    font-weight: 600;
+    border: 1px solid rgb(121, 120, 120);
+    border-radius: 5px;
+}
+
+.sample-image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    margin: 10px 0;
+    border: 2px solid rgb(1, 1, 68);
+}
+
+.sample-image-container-small {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    margin: 10px 0;
+    width: 200px;
+    height: 200px;
+    border: 2px solid rgb(1, 1, 68);
+}
+
+.responsive-image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    margin: 10px auto;
+    border: 2px solid rgb(1, 1, 68);
+    /* max-width: 800px; */
+}
+
+.sample-image-container::before , 
+.sample-image-container-small::before,
+.responsive-image-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.229);
+    /* z-index: 2; */
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.sample-image {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 100%
+}
+
+.sample-image-small {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: scale-down;
+}
+
+.responsive-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.take-it-further-container {
+    display: flex;
+    justify-content: center;
+    margin: 10px
+}
+
+.take-it-further-btn > a{
+    width: fit-content;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.take-it-further-btn > a:hover {
+    background-color: black;
+    transition: 0.7s;
+    cursor: pointer;
+    color: white;
+}
+
+
+/*
+Write media query to make the webpage look good on tablet (769px - 1024px) and mobile ( <=768px) 
+ */
+
+@media screen and (width <= 768px) {
+    html {
+        font-size: 12px;
+    }
+    header > p {
+        display: none;
+    }
+
+    header p#home-btn {
+        right: 5px;
+        top: 50%;
+    }
+
+    main {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+    
+}
+
+@media screen and (width <= 1200px) {
+
+     header > p {
+        display: none;
+    }
+
+    main {
+        width: 90%;
+        padding: 10px;
+    }
+    
+}

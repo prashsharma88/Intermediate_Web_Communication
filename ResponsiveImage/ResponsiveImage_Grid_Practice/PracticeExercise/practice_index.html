@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Practice Responsive Images</title>
+</head>
+<body>
+    <header>
+        <h1>Practice Responsive Images</h1>
+    </header>
+
+    <main>
+        <h2>Image gallery</h2>
+
+        <!-- Follow below instructions: -->
+        <!-- update the <img> element to use srcset to provide small, medium, large version of images -->
+        <!-- Make sure that the images are fit inside the containing element -->
+        <!-- Make sure that the aspect ratio of the image is maintained -->
+        <!-- 
+        Grid layout: 
+        Small Screen (68px or less): all images should be displayed in a single column
+        Medium Screen (768px - 1200px): all images should be displayed in 2 columns
+        Large Screen (1200px or more): create 3 columns in grid, with image of mountain placed in 3rd column streching over 2 rows, and image of red-panda placed in 2nd row streching over column 1 and 2 
+        -->
+        <div class="grid-container">
+            <div class="img-container one">
+                <img class="sample-img" src="images/auto-rickshaw-small.webp" alt="auto rickshaw">
+            </div>
+            <div class="img-container two">
+                <img class="sample-img" src="images/controller-small.webp" alt="controller">
+            </div>
+            <div class="img-container three">
+                <img class="sample-img" src="images/red-panda-small.webp" alt="red panda">
+            </div>
+            <div class="img-container four">
+                <img class="sample-img" src="images/mountains-small.webp" alt="mountaines">
+            </div>
+        </div>
+         
+    </main>
+
+    <footer>
+        <h2>Footer</h2>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <title>Responsive Images</title>
+</head>
+<body>
+    <header>
+        <h1>Responsive Images</h1>
+        <p>Sending a 4K image to a 4-inch screen is like mailing a textbook when a sticky note will do.</p>
+        <div>
+            <p id="home-btn" class="badge"><a href="../index.html">Home</a></p>
+        </div>
+    </header>
+    
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>
+                The text on a web page wraps in case of overflow but this is not the case with images.
+            </p>
+            <p>
+                If an image is wider than the available screen, it will overflow and the user is forced to scroll to see it.
+            </p>
+        </section>
+        <section>
+            <h2>Why?</h2>
+            <div>
+                <p>
+                    "You build a webpage with a large hero image — looks great on a 27" monitor. But on a phone, the browser downloads that same 4MB image, 
+                    squishes it to 400px wide, and your visitor burned through their data plan just to see a tiny photo. Meanwhile, on a retina screen, 
+                    your image looks blurry because it does not have proper resolution."
+                </p>
+                <p>
+                    Three problems that can be solved by responsive images:
+                </p>
+                <ul class="unordered-list">
+                    <li>
+                        <strong>Flexibility:</strong> image fit its container at any screen size
+                    </li>
+                    <li>
+                        <strong>Resolution switching:</strong> right image file for the right screen size/density
+                    </li>
+                    <li>
+                        <strong>Art direction:</strong> different image crop or composition for different screens
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Flexibility</h2>
+            <p>- Below image is way bigger than its containing element.</p>
+            <p>- We can use some CSS properties to make sure that the image fits inside its containing element</p>
+            <p>- To make sure that the image fits properly in its containing element we can use following css rule.</p>
+            <p class="code-example">
+                <span class="code-comment">/* Copy below CSS code and paste in the CSS file */</span> <br>
+                <br>
+                .sample-image { <br>
+                    &emsp;&emsp;display: block; <br>
+                    &emsp;&emsp;width: auto; <br>
+                    &emsp;&emsp;height: auto; <br>
+                    &emsp;&emsp;max-width: 100% <br>
+                }
+            </p>
+
+            <div class="sample-image-container">
+                <img class="sample-image" src="images/cars.webp" alt="image of old cars">
+            </div>
+
+            <p>- There are other scenarios where container size does not match the content's natural size.</p>
+            <p>- For example, profile cards, product card - needs consistent image sizes regardless of original image dimension</p>
+            <p>- To make the image fit in the container we can use <code>object-fit</code> property.</p>
+            <p>- Values that can be assigned to <code>object-fit</code></p>
+            <ul class="unordered-list">
+                <li><strong>contain:</strong><span class="item-description">The entire image is made to fit in the box while maintaining the aspect ratio. If the aspect ratio of box does not match with aspect ratio image then image will be "letterboxed" or "pillerboxed".</span></li>
+                <li><strong>cover:</strong><span class="item-description">Image will be scaled to fill the box while maintaining aspect ratio. If image is bigger than box then it will be clipped.</span></li>
+                <li><strong>fill:</strong><span class="item-description">Image will be scaled to fill the box, if the aspect ration of box does not match with aspect ratio of image then image will be stretched to fit. Aspect ratio of image is not maintained</span></li>
+                <li><strong>none:</strong><span class="item-description">Image will be used in its original form.</span></li>
+                <li><strong>scale-down:</strong><spam class="item-description">Image will be sized as if <code>none</code> or <code>contain</code> were specified, whichever would result in a smaller size.</spam></li>
+            </ul>
+            <p class="code-example">
+                <span class="code-comment">/* Copy below CSS code and paste in the CSS file */</span> <br>
+                <span class="code-comment">/* Try different values of object-fit */</span> <br>
+                <span class="code-comment">/* object-fit: contain | cover | fill | none | scale-down  */</span> <br>
+                <br>
+                .sample-image-small { <br>
+                    &emsp;&emsp;display: block; <br>
+                    &emsp;&emsp;width: 100%; <br>
+                    &emsp;&emsp;height: 100%; <br>
+                    &emsp;&emsp;object-fit: fill <br>
+                }
+            </p>
+            <div class="sample-image-container-small">
+                <img src="images/cars.webp" alt="image of a puppy" class="sample-image-small">
+            </div>
+        </section>
+
+        <section>
+            <h2>Resolution Switching</code></h2>
+            <p>- <strong>How does browser loads an image?</strong></p>
+            <p class="item-description">When a browser parses your HTML, it starts downloading images before it has fully processed your CSS or JavaScript. At that moment, it doesn't know how wide your layout will actually be — it only knows the screen width. So we give it hints directly in the HTML.</p>
+            <p>- We use <code>srcset</code> and <code>size</code> to give <strong>hints to the browser</strong>, not commands, about the resource required by the webpage.</p>
+            <p>- <code>srcset</code> is an attribute of <code>&lt;img&gt;</code> element that is used to provide different possible sources of image for the browser to use.</p>
+            <p class="code-example">
+                &lt;img <br>
+                &emsp;&emsp;src="images/red-panda.webp" <br>
+                &emsp;&emsp;srcset="images/red-panda-small.webp 768w, <br>
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;images/red-panda-medium.webp 1024w, <br>
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;images/red-panda-large.webp 1600w" <br>
+                &emsp;&emsp;size="(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 900px" <br>
+                &emsp;&emsp;alt="Image of an auto-rickshaw" <br>
+                &gt;
+            </p>
+
+            <div class="grid-container">
+               <div class="responsive-image-container">
+                    <img class="responsive-image" 
+                    src="images/red-panda.webp" 
+                    srcset="images/red-panda-small.webp 768w,
+                            images/red-panda-medium.webp 1024w,
+                            images/red-panda-large.webp 1600w" 
+                    size="(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 900px"
+                    alt="Image of a red panda">
+                </div>
+
+                <div class="responsive-image-container">
+                    <img class="responsive-image" 
+                    src="images/auto-rickshaw.webp" 
+                    srcset="images/auto-rickshaw-small.webp 768w,
+                            images/auto-rickshaw-medium.webp 1024w,
+                            images/auto-rickshaw-large.webp 1600w" 
+                    size="(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 900px"
+                    alt="Image of an auto-rickshaw">
+                </div>
+
+                <div class="responsive-image-container">
+                    <img class="responsive-image" 
+                    src="images/controller.webp" 
+                    srcset="images/controller-small.webp 768w,
+                            images/controller-medium.webp 1024w,
+                            images/controller-large.webp 1600w" 
+                    size="(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 900px"
+                    alt="Image of a controller">
+                </div>
+
+                <div class="responsive-image-container">
+                    <img class="responsive-image" 
+                    src="images/mountains.webp" 
+                    srcset="images/mountains-small.webp 768w,
+                            images/mountains-medium.webp 1024w,
+                            images/mountains-large.webp 1600w" 
+                    size="(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 900px"
+                    alt="Image of mountains">
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Art Direction</h2>
+            <p>- By using <code>&lt;img&gt;</code> with <code>srcset</code> we can provide different versions of an image which browser can choose from.</p>
+            <p>- But the final decision of which image to download is done by browser, based on various factors. There is always some uncertainity in this behavior.</p>
+            <p>- To fix this problem we can use <code>&lt;picture&gt;</code> element.</p>
+            <p class="code-example">
+                &lt;picture&gt; <br>
+                &emsp;&emsp;&lt;source media="(max-width: 768px)" srcset="images/picture-sample-small.webp" /&gt; <br>
+                &emsp;&emsp;&lt;source media="(max-width: 1200px)" srcset="images/picture-sample-medium.webp" /&gt; <br>
+                &emsp;&emsp;&lt;img src="images/picture-sample-large.webp" alt="sample image" /&gt; <br>
+                &lt;/picture&gt;
+            </p>
+
+            <div class="responsive-image-container">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="images/auto-rickshaw-small.webp" />
+                    <source media="(max-width: 1200px)" srcset="images/controller-medium.webp" />
+                    <img class="responsive-image" src="images/picture-sample-large.webp" alt="sample image" />
+                </picture>
+            </div>
+        </section>
+
+
+        <div class="take-it-further-container">
+            <p class="take-it-further-btn">
+                <a href="ResponsiveImage_Grid_Practice/PracticeExercise/practice_index.html">Exercise</a>
+            </p>
+        </div>
+    </main>
+    <footer>
+        <p>
+            The content and code examples are take from below website:
+            <ul>
+                <li>
+                    <a href="https://web.dev/learn/design/responsive-images" target="_blank" rel="noopener">web.dev</a>
+                </li>
+                <li>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img" target="_blank" rel="noopener">MDN</a>
+                </li>
+            </ul>
+        </p>
+    </footer>
+</body>
+</html>
