@@ -113,6 +113,8 @@ The table below shows all the topics covered in class, the date they were taught
 | 6 | Grid Layout | 25th May | `GridLayout |
 | 7 | Calculator Using Grid | 25th May | `GridLayout\TakeItFurther` |
 | 8 | Media Query | 27th May | `MediaQuery` |
+| 9 | Responsive Image | 1st June | `ResponsiveImage` |
+| 10 | Responsive Image Exercise | 1st June | `ResponsiveImage\ResponsiveImage_Grid_Practice` |
 
 > 📝 **Note:** This table is updated as new topics are covered in class. Check back after each class for updates!
 
