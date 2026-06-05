@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Position Property</title>
+</head>
+<body>
+    <header>
+        <h1>Position Property</h1>
+    </header>
+
+    <div>
+        <p id="home-btn" class="badge"><a href="../../index.html">Home</a></p>
+    </div>
+
+    <main>
+        <section>
+            <h2>Playground</h2>
+            <div class="playground">
+                <div class="item one"><p>one</p></div>
+                <div class="item two"><p>two</p></div>
+                <div class="item three"><p>three</p></div>
+                <div class="item four"><p>four</p></div>
+            </div>
+        </section>
+
+
+        <section>
+            <p class="lead">
+                - The <code>position</code> property sets how an element is positioned in a document.
+            </p>
+            <p class="lead">
+                - By using <code>top</code>, <code>right</code>, <code>bottom</code> and <code>left</code> properties we can determine the final location of positioned element
+            </p>
+            <p class="lead">
+                - By positioning an element we override the normal document flow.
+            </p>
+            <p class="lead">
+                - This property can have one of the following values:
+            </p>
+            <ul class="value-list">
+                <li class="value-list-item">
+                    <strong>static</strong>: This is the default value, element is placed according to normal document flow.
+                </li>
+                <li class="value-list-item">
+                    <strong>relative</strong>: Element is positioned according to the normal flow of the document, and then offset <i>relative</i> to <i>itself</i> based on <code>top</code>,<code>right</code>,<code>bottom</code> and <code>left</code>.
+                </li>
+                <li class="value-list-item">
+                    <strong>fixed</strong>: Element is removed from the normal document flow, and no space is created for the element in the page layout. Then element is positioned relative to the viewport. Its final position is determined by the value of <code>top</code>,<code>right</code>,<code>bottom</code> and <code>left</code>.
+                </li>
+                <li class="value-list-item">
+                    <strong>absolute</strong>: Element is removed from the normal document flow, and no space is created for the element in the page layout. Then element is positioned relative to its closest positioned ancestor (an ancestor with position value other than <code>static</code>). Its final position is determined by the value of <code>top</code>,<code>right</code>,<code>bottom</code> and <code>left</code>.
+                </li>
+                <li class="value-list-item">
+                    <strong>sticky</strong>: Element behave like <code>relative</code> until a specific scroll threshold is reached, after which it behaves like <code>fixed</code> - but only within its parent container.
+                </li>
+                
+            </ul>
+        </section>
+
+        <section>
+            <h2>
+                Try it yourself !
+            </h2>
+
+            <p class="lead">
+                In Playground area there are 4 block, text written inside the blocks is the class name assigned to that block.
+            </p>
+            <p class="lead">
+                You can write CSS code using these class names.
+            </p>
+
+            <div>
+                <h3>Relative</h3>
+                <p class="lead">
+                    - To block <code>.one</code> set <code>position: relative;</code>. <i>Observe that there is no change in its position.</i>
+                </p>
+                <p class="lead">
+                    - Now add <code>top: 20px;</code> and <code>left: 20px;</code>. <i>Observed that its moved 20px down and right from its original position.</i>
+                </p>
+            </div>
+
+            <div>
+                <h3>Fixed</h3>
+                <p class="lead">
+                    - To block <code>.two</code> set <code>position: fixed;</code>. <i>Observe that it is fixed on your screen. Try scrolling.</i>
+                </p>
+                <p class="lead">
+                    - Now add <code>top: 10px;</code> and <code>right: 30px;</code>. <i>Observe that the block is moved to the top right corner of the screen.</i>
+                </p>
+            </div>
+
+            <div>
+                <h3>Absolute</h3>
+                <p class="lead">
+                    - To block <code>.three</code> set <code>position: absolute;</code>. <i>Observe that it is placed inside the playground container.</i>
+                </p>
+                <p class="lead">
+                    - Now add <code>top: 10px;</code> and <code>right: 30px;</code>. <i>Observe that the block is moved to the top right corner of the playground container.</i>
+                </p>
+                <p class="lead">
+                    - In the CSS file, find the css code for <code>.playground</code> and comment the <code>position: relative;</code>. <i>Observe that now the reference point for block <code>.three</code> has changed and it is perfectly aligned with the block <code>.two</code></i>
+                </p>
+                <p class="lead">
+                    - <strong>NOTE:</strong> Absolute position take the nearest positioned ancestor as a reference point. If there is no nearest positioned ancestor, viewport is used.
+                </p>
+                <p class="lead">
+                    - Since <code>absolute</code> positioning requires an anchor (reference element), most of the time we use <code>relative</code> positioning on one of its ancestor.
+                </p>
+            </div>
+
+            <div>
+                <h3>Sticky</h3>
+                <p class="lead">
+                    - To block <code>.four</code> set <code>position: sticky</code>.
+                </p>
+                <p class="lead">
+                    - Now set <code>top: 10px;</code> and scroll to the top of screen.
+                </p>
+                <p class="lead">
+                    - Start scrolling down, <i>observe that initially block <code>.four</code> will scroll normally with the page. But it will stick at <strong>10px</strong> from top.</i>
+                </p>
+                <p class="lead">
+                    - If you keep scrolling then it will go out of the screen with its parent element.
+                </p>
+                <p class="lead">
+                    - Element with <code>sticky</code> positioning will stick at the defined position but is also restricted by its parent element.
+                </p>
+            </div>
+        </section>
+
+        <div class="expand">
+
+        </div>
+
+        <div class="take-it-further-div">
+            <p class="take-it-further-btn"><a href="../NavMenu-dropdown/dropdown-nav.html">Take It Futher - Dropdown Navigatio</a></p>
+        </div>
+    </main>
+    <footer>
+        <p>
+            The content and code examples are taken from below websites:
+        </p>
+        <ul>
+            <li>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/position">MDN</a>
+            </li>
+            <li>
+                <a href="https://www.w3schools.com/css/css_position.asp">w3schools</a>
+            </li>
+        </ul>
+    </footer>
+</body>
+</html>

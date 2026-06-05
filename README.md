@@ -117,6 +117,7 @@ The table below shows all the topics covered in class, the date they were taught
 | 8 | Media Query | 27th May | `MediaQuery` |
 | 9 | Responsive Image | 1st June | `ResponsiveImage` |
 | 10 | Responsive Image Exercise | 1st June | `ResponsiveImage\ResponsiveImage_Grid_Practice` |
+| 11 | Position Property | 3rt June | `Position_NavigationMenu\PositionProperty` |
 
 > 📝 **Note:** This table is updated as new topics are covered in class. Check back after each class for updates!
 
