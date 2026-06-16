@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Forms</title>
+</head>
+<body>
+    <header>
+        <h1>HTML Forms</h1>
+        <p>One tag. Infinite possibilities. Meet the <span class="highlight">form</span></p>
+    </header>
+    <div>
+        <p id="home-btn" class="badge"><a href="../../index.html">Home</a></p>
+    </div>
+    <main>
+        <section id="introduction">
+            <p>An HTML form is a section of a webpage that collects input from the user and sends it to a server for processing.</p>
+            <p>Forms are one of the primary ways users interact with web applications — logging in, signing up, searching, placing orders, and submitting feedback all rely on forms.</p>
+        </section>
+
+        <section id="why">
+            <h2>Why Forms Matter</h3>
+            <p>
+                Html forms enable you to:
+                <ul>
+                    <li>Collect user data such as text, numbers, dates and files</li>
+                    <li>Allow user to make selections from predefined options</li>
+                    <li>Submit data to a server for processing or storage</li>
+                    <li>Validate user input before it reaches the server</li>
+                </ul>
+            </p>
+        </section>
+
+        <section id="form-elements">
+            <h2>HTML Elements for Form:</h3>
+
+            <!-- FORM ELEMENT -->
+            <article>
+                <h3 class="title">1. The <code>&lt;form&gt;</code> element</h3>
+                <p class="define">The <code>&lt;form&gt;</code> element is the container for all form controls. It defines where and how data is sent when the form is submitted.</p>
+                <p class="code-example">
+                    &lt;form action="/submit" method="POST"&gt; <br>
+                        &emsp;<span class="comment">&lt; ! - - Form element go here - - &gt;</span> <br>
+                    &lt;/form&gt; <br>
+                </p>
+                <div class="attribute-container">
+                    <p><strong>Attributes:</strong></p>
+                    <p><code>action</code> : The URL where form data is sent on submission</p>
+                    <p><code>method</code> : HTTP method used to send data, <code>GET</code> append data to URL, <code>POST</code> sends data in the request body</p>
+                </div>
+            </article>
+
+            <!-- INPUT ELEMENT -->
+            <article>
+                <h3 class="title">2. The <code>&lt;input&gt;</code> element</h3>
+                <p class="define">The most versatile form element. Its behaviour is entirely controlled by the <code>type</code> attibute. It is a <strong>self-closing</strong> element.</p>
+                <p class="code-example">
+                    &lt;input <br>
+                    &emsp; type="text" <br>
+                    &emsp; name="username" <br>
+                    &emsp; id="username" <br>
+                    &emsp; placeholder="Enter your name" <br>
+                    &gt; <br>
+                </p>
+                <div class="attribute-container">
+                    <p><strong>Attributes:</strong></p>
+                    <p><code>type</code> : Defines what kind of input it is (text, number, email, password, date, hidden, button)</p>
+                    <p><code>name</code> : The key used when form data is submitted — required for data to be sent</p>
+                    <p><code>id</code> : Used to link the input to its <code>&lt;label&gt;</code></p>
+                    <p><code>value</code> : Sets a default value</p>
+                    <p><code>placeholder</code> : Hint text shown inside the input when empty</p>
+                    <p><code>required</code> : Makes the field mandatory before submission</p>
+                    <p><code>disabled</code> : Disables the field — user cannot interact with it</p>
+                    <p><code>readonly</code> : User can see the value but cannot change it</p>
+            </article>
+
+            <!-- LABEL ELEMENT -->
+            <article>
+                <h3 class="title">3. The <code>&lt;label&gt;"</code> element</h3>
+                <p class="define">Labels describe what an input is for. They are critical for <strong>accessibility</strong> — screen readers read the label aloud when a user focuses on the input.</p>
+                <p class="code-example">
+                    &ltlabel for="username"&gt;Username:&lt;/label&gt; <br>
+                    &ltinput type="text" id="username" name="username"&gt; <br>
+                    <br>
+                    <br>
+                    <span class="comment">&lt; ! - - Wrapping Style - no for/id needed - - &gt;</span>
+                    <br>
+                    &lt;label&gt; <br>
+                    &emsp;Username: <br>
+                    &emsp;&lt;input type="text" name="username"&gt; <br>
+                    &lt;/label&gt;
+                </p>
+                <!-- <div class="attribute-container">
+                    <p><strong>Attributes:</strong></p>
+                    <p><code></code> : </p>
+                </div> -->
+            </article>
+
+            <!-- TEXTAREA -->
+            <article>
+                <h3 class="title">4. The <code>&lt;textarea&gt;</code> element</h3>
+                <p class="define">A multi-line text input. Unline <code>&lt;input&gt;</code>, it has an opening and closing tag. Default size is controlled by <code>rows</code> and <code>cols</code> attibutes.</p>
+                <p class="code-example">
+                    &ltlabel for="message"&gt;Message:&lt;/label&gt; <br>
+                    &lt;textarea id="message" name="message" rows="5" cols="40" placeholder="Write your message"&gt; <br>
+                    &lt;/textarea&gt;
+                </p>
+                <div class="attribute-container">
+                    <p><strong>Attributes:</strong></p>
+                    <p><code>rows</code> : Set the visible number of lines</p>
+                    <p><code>cols</code> : Set the visible width in characters</p>
+                    <p><code>placeholder</code> : Hint text shown when empty</p>
+                    <p><code>maxlength</code> : Maximum number of characters allowed</p>
+                    <p><code>resize</code> : Controlled via CSS - <code>resize: none</code> prevents user resizing</p>
+                </div>
+            </article>
+
+            <!-- SELECT -->
+            <article>
+                <h3 class="title">5. The <code>&lt;select&gt;</code> element</h3>
+                <p class="define">Creates a dropdown list. Options are defined with <code>&lt;option&gt;</code> elements inside it. Related options can be grouped using <code>&lt;optgroup&gt;</code>.</p>
+                <p class="code-example">
+                    &lt;label for="province"&gt;Provience:&lt;/label&gt; <br>
+                    &lt;select id="province" name="province"&gt; <br>
+                    &emsp;&lt;option value=""&gt;-- Select a province --&lt;/option&gt; <br>
+                    &emsp;&lt;optgroup label="Western Canada"&gt; <br>
+                    &emsp;&emsp;&lt;option value="AB"&gt;Alberta&lt;/option&gt; <br>
+                    &emsp;&emsp;&lt;option value="BC"&gt;British Columbia&lt;/option&gt; <br>
+                    &emsp;&lt;optgroup label="Central Canada"&gt; <br>
+                    &emsp;&emsp;&lt;option value="ON"&gt;Ontario&lt;/option&gt; <br>
+                    &emsp;&emsp;&lt;option value="QC"&gt;Quebec&lt;/option&gt; <br>
+                    &lt;/select&gt;
+                </p>
+                <div class="attribute-container">
+                    <p><strong>Attributes:</strong></p>
+                    <p><code>multiple</code> : Allows selecting more than one option</p>
+                    <p><code>size</code> : Number of visible options at once</p>
+                    <p><code>selected</code> : Pre-selects an <code>&lt;option&gt;</code> by default</p>
+                    <p><code>disable</code> : Disable an individual <code>&lt;option&gt;</code> - useful for placeholder options</p>
+                </div>
+            </article>
+
+            <!-- BUTTON -->
+            <article>
+                <h3 class="title">6. The <code>&lt;button&gt;</code> element</h3>
+                <p class="define">More flexible than <code>&lt;input type="button"&gt;</code> because it can contain HTML — icons, images, or styled text.</p>
+                <p class="code-example">
+                    <span class="comment">&lt; ! - - Submits the form - - &gt;</span> <br>
+                    &lt;button type="submit"&gt;Submit&lt;/button&gt; <br>
+                    <br>
+                    <br>
+                    <span class="comment">&lt; ! - - Resets the form - - &gt;</span> <br>
+                    &lt;button type="reset"&gt;Reset&lt;/button&gt; <br>
+                    <br>
+                    <br>
+                    <span class="comment">&lt; ! - - No default behaviour — used with JavaScript - - &gt;</span> <br>
+                    &lt;button type="button"&gt;Preview&lt;/button&gt; <br>
+                </p>
+            </article>
+
+            <!-- FIELDSET -->
+            <article>
+                <h3 class="title">7. The <code>&lt;fieldset&gt;</code> and <code>&lt;legend&gt;</code> elements</h3>
+                <p class="define"><code>&lt;fieldset&gt;</code> groups related form controls together. <code>&lt;legend&gt;</code> provides a caption for the group.</p>
+                <p class="code-example">
+                    &lt;fieldset&gt; <br>
+                    &emsp;&lt;legend&gt;Personal Information&lt;/legend&gt; <br>
+                    &emsp;&lt;label for="fname"&gt;First Name:&lt;/label&gt; <br>
+                    &emsp;&lt;input type="text" id="fname" name="fname"&gt; <br>
+                    <br>
+                    &emsp;&lt;label for="lname"&gt;Last Name:&lt;/label&gt; <br>
+                    &emsp;&lt;input type="text" id="lname" name="lname"&gt; <br>
+                    &lt;/fieldset&gt; <br>
+                </p>
+            </article>
+        </section>
+
+        <section>
+            <h2>Try adding different form elements here</h2>
+            <div class="playground">
+                <!-- Add elements here -->
+                 <select id="province" name="province">
+                 <option value="">-- Select a province --</option>
+                 <optgroup label="Western Canada">
+                 <option value="AB">Alberta</option>
+                 <option value="BC">British Columbia</option>
+                 <optgroup label="Central Canada">
+                 <option value="ON">Ontario</option>
+                 <option value="QC">Quebec</option>
+                 </select>
+
+            </div>
+            
+        </section>
+    </main>
+    <footer>
+        <p>The content and code examples are taken from the below websites:</p>
+        <ul>
+            <li>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form" target="_blank" rel="noopener">MDN — HTML Form Element</a>
+            </li>
+            <li>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input" target="_blank" rel="noopener">MDN — HTML Input Element</a>
+            </li>
+            <li>
+                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms" target="_blank" rel="noopener">MDN — Web Forms Guide</a>
+            </li>
+        </ul>
+    </footer>
+</body>
+</html>

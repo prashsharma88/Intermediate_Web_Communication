@@ -25,19 +25,64 @@
         Large Screen (1200px or more): create 3 columns in grid, with image of mountain placed in 3rd column streching over 2 rows, and image of red-panda placed in 2nd row streching over column 1 and 2 
         -->
         <div class="grid-container">
-            <div class="img-container one">
-                <img class="sample-img" src="images/auto-rickshaw-small.webp" alt="auto rickshaw">
-            </div>
-            <div class="img-container two">
-                <img class="sample-img" src="images/controller-small.webp" alt="controller">
-            </div>
-            <div class="img-container three">
-                <img class="sample-img" src="images/red-panda-small.webp" alt="red panda">
-            </div>
-            <div class="img-container four">
-                <img class="sample-img" src="images/mountains-small.webp" alt="mountaines">
-            </div>
-        </div>
+
+    <div class="img-container one">
+        <img
+            class="sample-img"
+            src="images/auto-rickshaw-small.webp"
+            srcset="images/auto-rickshaw-small.webp   768w,
+                    images/auto-rickshaw-medium.webp  1024w,
+                    images/auto-rickshaw-large.webp   1200w"
+            sizes="(width <= 768px)  100vw,
+                   (width <= 1200px) 50vw,
+                   33vw"
+            alt="auto rickshaw"
+        >
+    </div>
+
+    <div class="img-container two">
+        <img
+            class="sample-img"
+            src="images/controller-small.webp"
+            srcset="images/controller-small.webp   768w,
+                    images/controller-medium.webp  1024w,
+                    images/controller-large.webp   1200w"
+            sizes="(width <= 768px)  100vw,
+                   (width <= 1200px) 50vw,
+                   33vw"
+            alt="controller"
+        >
+    </div>
+
+    <div class="img-container three">
+        <img
+            class="sample-img"
+            src="images/red-panda-small.webp"
+            srcset="images/red-panda-small.webp   768w,
+                    images/red-panda-medium.webp  1024w,
+                    images/red-panda-large.webp   1200w"
+            sizes="(width <= 768px)  100vw,
+                   (width <= 1200px) 50vw,
+                   66vw"
+            alt="red panda"
+        >
+    </div>
+
+    <div class="img-container four">
+        <img
+            class="sample-img"
+            src="images/mountains-small.webp"
+            srcset="images/mountains-small.webp   768w,
+                    images/mountains-medium.webp  1024w,
+                    images/mountains-large.webp   1200w"
+            sizes="(width <= 768px)  100vw,
+                   (width <= 1200px) 50vw,
+                   33vw"
+            alt="mountains"
+        >
+    </div>
+
+</div>
          
     </main>
 
