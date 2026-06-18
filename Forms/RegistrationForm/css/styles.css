@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+:root {
+    --txt-color: rgba(236, 235, 235, 0.876);
+    --legend-txt-color: #fb3d3d;
+}
+
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background: linear-gradient(to right, #fb3d3d, #ffa435);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding: 0 20px;
+}
+
+h1 {
+    text-align: center;
+    margin: 10px 0;
+}
+
+
+fieldset {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    gap: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid var(--txt-color);
+}
+
+legend {
+    padding: 5px 10px;
+    background-color: var(--txt-color);
+    border-radius: 10px;
+    color: var(--legend-txt-color);
+    text-align: center;
+}
+
+.label {
+    justify-self: end;
+    color: var(--txt-color);
+}
+
+input[class="field"] {
+    justify-self: start;
+}
+
+.group_container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.group_item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+
+textarea {
+    resize: none;
+}
+
+input, textarea, select {
+    padding: 5px;
+    border: 2px solid transparent;
+    border-bottom: 2px solid var(--txt-color);
+    background-color: transparent;
+    outline: none;
+    color: var(--txt-color);
+
+}
+
+*:focus-visible {
+    border: 2px solid var(--txt-color);
+    outline: none;
+    border-radius: 10px;
+}
+
+input[type="submit"] {
+    padding: 5px 10px;
+    margin: 20px auto;
+    display: block;
+    border-radius: 10px;
+    background-color: transparent;
+    border: 1px solid var(--txt-color);
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--txt-color);
+}
+
+option {
+    color: var(--legend-txt-color)
+}
+
+.last_section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.referral_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>RegistrationForm</title>
+</head>
+<body>
+    <header>
+        <h1>Registration Form 📝</h1>
+    </header>
+    <main>
+        <form action="https://formsubmit.co/your@email.com" method="post">
+
+            <!-- ========== Personal Information ==========
+                Add a fieldset with a legend "Personal Information".
+                Add the following fields inside it:
+                1. Full Name    : label(for="fname", class="label")
+                                  input(type="text", class="field", id="fname", name="fname", maxlength="150", required)
+                2. Email        : label(for="email", class="label")
+                                  input(type="email", class="field", id="email", name="email", maxlength="150", required)
+                3. Phone        : label(for="phone", class="label")
+                                  input(type="tel", class="field", id="phone", name="phone")
+                                  NOTE: use type="tel" not type="number" for phone fields
+                4. Date of Birth: label(for="dob", class="label")
+                                  input(type="date", class="field", id="dob", name="dob", min="1960-01-01", max="2008-01-01", required)
+            -->
+
+            <fieldset>
+              <legend>Personal Information</legend>
+              <label class="label" for="fname">Full Name: </label>
+              <input type="text" id="fname" name="fname" maxlength="150" required class="field">
+              
+              <label class="label" for="email">Email: </label>
+              <input type="email" name="email" id="email" class="field" maxlength="150" required>
+
+              <label for="phone" class="label">Phone: </label>
+              <input type="tel" name="phone" id="phone" class="field">
+              
+              <label for="dob" class="label">Date Of Birth: </label>
+              <input type="date" class="field" id="dob" min="1960-01-01" max="2008-01-01" required>
+            </fieldset>
+
+
+            <!-- ========== Event Preferences ==========
+                Add a fieldset with a legend "Event Preferences".
+                Add the following fields inside it:
+                1. Event Date         : label(for="event_date", class="label")
+                                        input(type="date", class="field", id="event_date", name="event_date", required)
+
+                2. Session Preference : p(class="label", text="Session Preference: ")
+                                        followed by a div(id="session_pref", class="group_container field")
+                                        Inside that div add 3 group_items, each a div(class="group_item") containing:
+                                          - Morning   : label(for="morning_session", class="label")
+                                                        input(type="radio", class="field", name="session_pref", id="morning_session", value="Morning")
+                                          - Afternoon : label(for="afternoon_session", class="label")
+                                                        input(type="radio", class="field", name="session_pref", id="afternoon_session", value="Afternoon")
+                                          - Evening   : label(for="evening_session", class="label")
+                                                        input(type="radio", class="field", name="session_pref", id="evening_session", value="Evening")
+                                        NOTE: all 3 radio inputs must share name="session_pref"
+
+                3. No. of Attendees   : label(for="attendees_count", class="label")
+                                        input(type="number", class="field", id="attendees_count", name="attendees_count", min="1", max="10")
+
+                4. Ticket Type        : p(class="label", text="Ticket Type: ")
+                                        followed by a div(id="ticket_type", class="group_container field")
+                                        Inside that div add 3 group_items, each a div(class="group_item") containing:
+                                          - General : label(for="ticket_type_general", class="label")
+                                                      input(type="radio", class="field", name="ticket_type", id="ticket_type_general", value="General")
+                                          - VIP     : label(for="ticket_type_vip", class="label")
+                                                      input(type="radio", class="field", name="ticket_type", id="ticket_type_vip", value="Vip")
+                                          - Student : label(for="ticket_type_student", class="label")
+                                                      input(type="radio", class="field", name="ticket_type", id="ticket_type_student", value="Student")
+                                        NOTE: all 3 radio inputs must share name="ticket_type"
+            -->
+
+            <fieldset>
+              <legend>Event Information</legend>
+              <label for="event_date" class="label">Event Date: </label>
+              <input type="date" class="field" id="event_date" required name="event_date">
+
+              <p class="label">Session Preference: </p>
+              <div class="group_container" id="session_pref">
+                <div class="group_item">
+                  <label for="morning_session" class="label">Morning </label>
+                  <input type="radio" name="session_pref" id="morning_session" class="field" value="morning">
+                </div>
+
+                <div class="group_item">
+                <label for="afternoon_session" class="label">Afternoon </label>
+                <input type="radio" id="afternoon_session" class="field" name="session_pref" value="afternoon">
+                </div>
+
+                <div class="group_item">
+                  <label for="evening_session" class="label">Evening: </label>
+                  <input type="radio" class="field" id="evening_session" name="session_pref" value="evening">
+                </div>
+              </div>
+
+              <label for="attendees_count" class="label">Number of attendees: </label>
+              <input type="number" class="field" id="attendees_count" name="attendees_count" min="1" max="10">
+            </fieldset>
+
+
+            <!-- ========== Additional Information ==========
+                Add a fieldset with a legend "Additional Information".
+                Add the following fields inside it:
+                1. Dietary Restrictions : p(class="label", text="Dietary Restrictions: ")
+                                          followed by a div(id="dietary", class="field group_container")
+                                          Inside that div add 4 group_items, each a div(class="group_item") containing:
+                                            - Vegetarian : label(for="veg", class="label")
+                                                           input(type="checkbox", class="field", name="veg", id="veg", checked)
+                                            - Vegan      : label(for="vegan", class="label")
+                                                           input(type="checkbox", class="field", name="vegan", id="vegan")
+                                            - Gluten-Free: label(for="gluten_free", class="label")
+                                                           input(type="checkbox", class="field", name="gluten_free", id="gluten_free")
+                                            - Nut Allergy: label(for="nut_allergy", class="label")
+                                                           input(type="checkbox", class="field", name="nut_allergy", id="nut_allergy")
+                                          NOTE: unlike radio buttons, each checkbox has its own unique name attribute
+
+                2. Special Request      : label(for="special_req", class="label")
+                                          textarea(class="field", id="special_req", name="special_req", rows="5", cols="30", maxlength="100")
+                                          NOTE: use lowercase <textarea> and remember to close it with </textarea>
+            -->
+
+
+            <fieldset>
+              <legend>Additional Information</legend>
+
+              <p class="label">Dietary Restrictions: </p>
+              <div id="dietary" class="field group_container">
+
+              <div class="group_item">
+                <label for="veg" class="label">Vegetarian </label>
+                <input type="checkbox" id="veg" name="veg" class="field" checked>
+              </div>
+
+              <div class="group_item">
+                  <label for="vegan" class="label">Vegan </label>
+                  <input type="checkbox" id="vegan" class="field" name="vegan">
+                </div>
+
+                <div class="group_item">
+                  <label for="gluten_free" class="label">Gluten-Free </label>
+                  <input type="checkbox" id="gluten_free" class="field" name="gluten_free">
+                </div>
+
+                <div class="group_item">
+                  <label for="nut_allergy" class="label">Nut Allergy </label>
+                  <input type="checkbox" id="nut_allergy" class="field" name="nut_allergy">
+                </div>
+              </div>
+
+              </div>
+              <label for="special_req" class="label">Special Request: </label>
+              <textarea name="special_req" id="special_req" rows="5" cols="30" maxlength="150" class="field" placeholder="asdf"></textarea>
+
+
+            </fieldset>
+
+            <!-- ========== Account ==========
+                Add a fieldset with a legend "Account".
+                Add the following fields inside it:
+                1. Username         : label(for="username", class="label")
+                                      input(type="text", class="field", id="username", name="username", required)
+                2. Password         : label(for="password", class="label")
+                                      input(type="password", class="field", id="password", name="password", required)
+                3. Confirm Password : label(for="confirm_password", class="label")
+                                      input(type="password", class="field", id="confirm_password", name="confirm_password", required)
+            -->
+
+            <fieldset>
+              <legend>Account</legend>
+
+              <label for="username" class="label">Username: </label>
+              <input type="text" id="username" name="username" class="field" required>
+
+              <label for="password" class="label">Password: </label>
+              <input type="password" id="password" name="password" class="field" required>
+
+              <label for="confirm_password" class="label">Confirm Password: </label>
+              <input type="password" id="confirm_password" name="confirm_password" class="field" required>
+            </fieldset>
+
+            <!-- ========== Last Section ==========
+                The wrapper divs below are already provided.
+                Add the required elements inside each one.
+            -->
+            <div class="last_section">
+
+                <div class="referral_container">
+                    <!-- How did you hear about us:
+                         label(for="referral-source", class="label", text="How did you hear about us: ")
+                         select(class="field", id="referral-source", name="referral-source")
+                         with options: "" (-- Select One --), "social" (Social Media),
+                         "friend" (Friend), "email" (Email), "web" (Web Search), "other" (Other)
+                    -->
+                    <label for="referral-source" class="label">How did you hear about us: </label>
+                    <select name="referral-source" id="referral-source" class="field">
+                      <option value="">-- Select One --</option>
+                      <option value="social">Social Media</option>
+                      <option value="friend">Friend</option>
+                      <option value="email">Email</option>
+                      <option value="web">Web Search</option>
+                      <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="profile_container">
+                    <!-- Profile Image:
+                         label(for="profile", class="label", text="Profile Image (png, jpeg): ")
+                         input(type="file", class="field", id="profile", name="profile", accept="image/png, image/jpg, image/jpeg")
+                    -->
+                <label for="profile" class="label">Profile Image (png, jpeg): </label>
+                    <input type="file" class="field" id="profile" name="profile" accept="image/png, image/jpeg">
+                </div>
+
+                <div class="terms_condition">
+                    <!-- Terms & Conditions:
+                         label(for="terms", class="label", text="Terms & Conditions: ")
+                         input(type="checkbox", class="field", id="terms", name="terms", required)
+                    -->
+                </div>
+
+                <!-- Submit Button:
+                     input(type="submit")
+                     NOTE: No class or id needed — styles.css targets it via input[type="submit"]
+                -->
+
+                <input type="submit">
+
+            </div>
+
+        </form>
+    </main>
+</body>
+</html>

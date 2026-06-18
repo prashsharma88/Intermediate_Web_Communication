@@ -119,3 +119,24 @@ footer a {
     min-height: 300px;
     padding: 20px;
 }
+
+.take-it-further-container {
+    display: flex;
+    justify-content: center;
+    margin: 10px
+}
+
+.take-it-further-btn > a{
+    width: fit-content;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.take-it-further-btn > a:hover {
+    background-color: black;
+    transition: 0.7s;
+    cursor: pointer;
+    color: white;
+}
