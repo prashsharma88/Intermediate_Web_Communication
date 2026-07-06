@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Introduction to JavaScript</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <div class="header-badge">Intermediate Web Development</div>
+    <h1>Introduction to <span>JavaScript</span></h1>
+    <p>Adding interactivity to your webpages — no programming degree required.</p>
+</header>
+
+<div>
+        <p id="home-btn" class="badge"><a href="../../index.html">Home</a></p>
+</div>
+
+<main>
+
+    <!-- TOC -->
+    <nav class="toc">
+        <h2>Contents</h2>
+        <ol>
+            <li><a href="#what-is-js">What is JavaScript and what can it do?</a></li>
+            <li><a href="#linking">Linking JavaScript to your HTML</a></li>
+            <li><a href="#selecting">Selecting elements — querySelector</a></li>
+            <li><a href="#events">Listening for events</a></li>
+            <li><a href="#changing">Changing content and styles</a></li>
+            <li><a href="#classes">Adding and removing CSS classes</a></li>
+            <li><a href="#input">Reading user input</a></li>
+            <li><a href="#multiple">Working with multiple elements — querySelectorAll</a></li>
+            <li><a href="#cheatsheet">Quick reference cheatsheet</a></li>
+            <li><a href="#exercises">Exercises</a></li>
+        </ol>
+    </nav>
+
+
+    <!-- ══════════════════════════════
+         1. WHAT IS JS
+    ══════════════════════════════ -->
+    <div id="what-is-js">
+        <div class="section-eyebrow">Section 01</div>
+        <div class="section-title">What is JavaScript?</div>
+        <p class="section-intro">HTML structures the page. CSS styles it. JavaScript makes it respond to the user.</p>
+    </div>
+
+    <div class="concept-card">
+        <div class="concept-card-header">
+            <div class="concept-icon">JS</div>
+            <div>
+                <h3>JavaScript's role on a webpage</h3>
+                <div class="sub">the third layer of the web</div>
+            </div>
+        </div>
+        <div class="concept-card-body">
+            <p>JavaScript lets your webpage <strong>react</strong> to what the user does — clicking a button, typing in a field, hovering over an element, submitting a form. Without JavaScript, a webpage is static — it looks the same no matter what the user does.</p>
+            <p>As a web designer, you don't need to build apps or write complex logic. What you need is to be able to:</p>
+
+            <div class="code-block">
+                <div class="code-block-header"><span>What we'll focus on</span></div>
+                <pre><span class="cmt">// 1. Select an element on the page</span>
+<span class="cmt">// 2. Listen for something the user does (a click, a keypress, etc.)</span>
+<span class="cmt">// 3. Change something on the page in response</span></pre>
+            </div>
+
+            <p>That three-step pattern covers the vast majority of interactive features you'll need to build as a web designer — toggles, tabs, modals, dropdowns, form feedback, and more.</p>
+        </div>
+    </div>
+
+    <hr class="divider" id="linking">
+
+
+    <!-- ══════════════════════════════
+         2. LINKING JS
+    ══════════════════════════════ -->
+    <div>
+        <div class="section-eyebrow">Section 02</div>
+        <div class="section-title">Linking JavaScript to your HTML</div>
+        <p class="section-intro">Just like CSS, JavaScript lives in its own file and gets linked to your HTML.</p>
+    </div>
+
+    <div class="concept-card">
+        <div class="concept-card-header">
+            <div class="concept-icon">&lt;/&gt;</div>
+            <div>
+                <h3>The <code>&lt;script&gt;</code> tag</h3>
+                <div class="sub">always place it at the bottom of &lt;body&gt;</div>
+            </div>
+        </div>
+        <div class="concept-card-body">
+            <p>You link a JavaScript file using a <code>&lt;script&gt;</code> tag with a <code>src</code> attribute — similar to how you link a CSS file with <code>&lt;link&gt;</code>.</p>
+
+            <div class="code-block">
+                <div class="code-block-header"><span>HTML — file structure</span></div>
+                <pre>my-project/
+├── index.html
+├── css/
+│   └── styles.css
+└── <span class="val">js/
+    └── script.js</span></pre>
+            </div>
+
+            <div class="code-block">
+                <div class="code-block-header"><span>HTML — linking the file</span></div>
+                <pre><span class="tag">&lt;body&gt;</span>
+
+    <span class="cmt">&lt;!-- All your HTML content goes here --&gt;</span>
+
+    <span class="cmt">&lt;!-- Script tag goes at the BOTTOM, just before &lt;/body&gt; --&gt;</span>
+    <span class="tag">&lt;script</span> <span class="atr">src</span>=<span class="str">"js/script.js"</span><span class="tag">&gt;&lt;/script&gt;</span>
+<span class="tag">&lt;/body&gt;</span></pre>
+            </div>
+
+            <div class="warn">⚠️ Place the <code>&lt;script&gt;</code> tag at the <strong>bottom of the body</strong>, not in the <code>&lt;head&gt;</code>. JavaScript needs your HTML elements to exist before it can select them. If the script runs before the HTML is loaded, it won't find anything.</div>
+        </div>
+    </div>
+
+    <hr class="divider" id="selecting">
+
+
+    <!-- ══════════════════════════════
+         3. SELECTING ELEMENTS
+    ══════════════════════════════ -->
+    <div>
+        <div class="section-eyebrow">Section 03</div>
+        <div class="section-title">Selecting Elements</div>
+        <p class="section-intro">Before you can change anything, you need to tell JavaScript which element to work with.</p>
+    </div>
+
+    <div class="concept-card">
+        <div class="concept-card-header">
+            <div class="concept-icon">( )</div>
+            <div>
+                <h3>querySelector</h3>
+                <div class="sub">select one element using a CSS selector</div>
+            </div>
+        </div>
+        <div class="concept-card-body">
+            <p><code>document.querySelector()</code> finds the <strong>first element</strong> on the page that matches a CSS selector. You already know CSS selectors — you use them every day. The same syntax works here.</p>
+
+            <div class="code-block">
+                <div class="code-block-header"><span>JavaScript — script.js</span></div>
+                <pre><span class="cmt">// Select by ID — same as CSS #id</span>
+<span class="kw">var</span> btn = document.<span class="mth">querySelector</span>(<span class="str">'#my-button'</span>);
+
+<span class="cmt">// Select by class — same as CSS .class</span>
+<span class="kw">var</span> card = document.<span class="mth">querySelector</span>(<span class="str">'.card'</span>);
+
+<span class="cmt">// Select by element type</span>
+<span class="kw">var</span> heading = document.<span class="mth">querySelector</span>(<span class="str">'h1'</span>);
+
+<span class="cmt">// Select using a nested selector — same as CSS</span>
+<span class="kw">var</span> navLink = document.<span class="mth">querySelector</span>(<span class="str">'nav a'</span>);</pre>
+            </div>
+
+            <div class="tip">💡 <code>var</code> is how you store a selected element in a variable so you can use it later. Think of it as giving the element a nickname. The name you choose (btn, card, heading) is up to you.</div>
+        </div>
+    </div>
+
+    <hr class="divider" id="events">
+
+
+    <!-- ══════════════════════════════
+         4. EVENTS
+    ══════════════════════════════ -->
+    <div>
+        <div class="section-eyebrow">Section 04</div>
+        <div class="section-title">Listening for Events</div>
+        <p class="section-intro">An event is anything the user does — click, type, hover, scroll. You tell JavaScript what to do when that event happens.</p>
+    </div>
+
+    <div class="concept-card">
+        <div class="concept-card-header">
+            <div class="concept-icon">👂</div>
+            <div>
+                <h3>addEventListener</h3>
+                <div class="sub">watch for a user action, then run code</div>
+            </div>
+        </div>
+        <div class="concept-card-body">
+            <p><code>addEventListener</code> takes two things: the <strong>event name</strong> (what to listen for) and a <strong>function</strong> (what to do when it happens). The function runs every time the event fires.</p>
+
+            <div class="code-block">
+                <div class="code-block-header"><span>JavaScript — the pattern</span></div>
+                <pre><span class="cmt">// Step 1 — select the element</span>
+<span class="kw">var</span> btn = document.<span class="mth">querySelector</span>(<span class="str">'#my-button'</span>);
+
+<span class="cmt">// Step 2 — listen for an event</span>
+btn.<span class="mth">addEventListener</span>(<span class="str">'click'</span>, <span class="kw">function</span>() {
+
+    <span class="cmt">// Step 3 — this code runs when the button is clicked</span>
+    console.<span class="mth">log</span>(<span class="str">'Button was clicked!'</span>);
+
+});</pre>
+            </div>
+
+            <p>Common event names you'll use as a web designer:</p>
+
+            <table>
+                <thead>
+                    <tr><th>Event</th><th>When it fires</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>'click'</td><td>User clicks the element</td></tr>
+                    <tr><td>'mouseover'</td><td>User hovers over the element</td></tr>
+                    <tr><td>'mouseout'</td><td>User moves away from the element</td></tr>
+                    <tr><td>'input'</td><td>User types into an input or textarea</td></tr>
+                    <tr><td>'change'</td><td>User changes a select, checkbox, or radio button</td></tr>
+                    <tr><td>'submit'</td><td>User submits a form</td></tr>
+                    <tr><td>'keydown'</td><td>User presses a key</td></tr>
+                </tbody>
+            </table>
+
+            <div class="demo-label">▶ Try it — click the button</div>
+            <div class="live-demo">
+                <button class="demo-btn" id="demo-click-btn">Click Me</button>
+                <div class="demo-output" id="demo-click-output">Waiting for a click...</div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="divider" id="changing">
+
+
+    <!-- ══════════════════════════════
+         5. CHANGING CONTENT & STYLES
+    ══════════════════════════════ -->
+    <div>
+        <div class="section-eyebrow">Section 05</div>
+        <div class="section-title">Changing Content and Styles</div>
+        <p class="section-intro">Once you've selected an element and listened for an event, here's how you actually change things on the page.</p>
+    </div>
+
+    <div class="concept-card">
+        <div class="concept-card-header">
+            <div class="concept-icon">✏️</div>
+            <div>
+                <h3>Changing text — textContent</h3>
+                <div class="sub">update what's written inside an element</div>
+            </div>
+        </div>
+        <div class="concept-card-body">
+            <p><code>textContent</code> gets or sets the text inside an element. Assign a new value to it to change what the user sees.</p>
+
+            <div class="code-block">
+                <div class="code-block-header"><span>JavaScript</span></div>
+                <pre><span class="kw">var</span> heading = document.<span class="mth">querySelector</span>(<span class="str">'h1'</span>);
+<span class="kw">var</span> btn     = document.<span class="mth">querySelector</span>(<span class="str">'#change-btn'</span>);
+
+btn.<span class="mth">addEventListener</span>(<span class="str">'click'</span>, <span class="kw">function</span>() {
+    heading.textContent = <span class="str">'You clicked the button!'</span>;
+});</pre>
+            </div>
+
+            <div class="demo-label">▶ Try it</div>
+            <div class="live-demo" style="display:flex; align-items:center; gap:1rem; flex-wrap:wrap;">
+                <p id="demo-text-target" style="font-size:1.1rem; font-weight:700; color:var(--accent);">Original text</p>
+                <button class="demo-btn" id="demo-text-btn">Change Text</button>
+                <button class="demo-btn secondary" id="demo-text-reset">Reset</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="concept-card">
+        <div class="concept-card-header">
+            <div class="concept-icon">🎨</div>
+            <div>
+                <h3>Changing styles — style property</h3>
+                <div class="sub">apply inline CSS directly from JavaScript</div>
+            </div>
+        </div>
+        <div class="concept-card-body">
+            <p>You can change any CSS property directly using <code>element.style.propertyName</code>. CSS property names with hyphens become camelCase in JavaScript — for example, <code>background-color</code> becomes <code>backgroundColor</code>.</p>
+
+            <div class="code-block">
+                <div class="code-block-header"><span>JavaScript</span></div>
+                <pre><span class="kw">var</span> box = document.<span class="mth">querySelector</span>(<span class="str">'.box'</span>);
+<span class="kw">var</span> btn = document.<span class="mth">querySelector</span>(<span class="str">'#style-btn'</span>);
+
+btn.<span class="mth">addEventListener</span>(<span class="str">'click'</span>, <span class="kw">function</span>() {
+    box.style.backgroundColor = <span class="str">'#ff6b6b'</span>;
+    box.style.transform        = <span class="str">'rotate(15deg)'</span>;
+    box.style.borderRadius     = <span class="str">'50%'</span>;
+});</pre>
+            </div>
+
+            <div class="tip">💡 Directly setting styles like this works but isn't always the best approach — it's better practice to toggle CSS classes instead (see Section 06). Use <code>element.style</code> when you need a dynamic value, like a colour chosen by the user.</div>
+
+            <div class="demo-label">▶ Try it</div>
+            <div class="live-demo" style="display:flex; align-items:center; gap:1rem; flex-wrap:wrap;">
+                <div class="demo-box" id="demo-style-box">Box</div>
+                <div>
+                    <button class="demo-btn" id="demo-style-btn">Transform</button>
+                    <button class="demo-btn secondary" id="demo-style-reset">Reset</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="divider" id="classes">
+
+
+    <!-- ══════════════════════════════
+         6. ADDING / REMOVING CLASSES
+    ══════════════════════════════ -->
+    <div>
+        <div class="section-eyebrow">Section 06</div>
+        <div class="section-title">Adding and Removing CSS Classes</div>
+        <p class="section-intro">The cleanest way to change how something looks with JavaScript is to add or remove a CSS class you've already written.</p>
+    </div>
+
+    <div class="concept-card">
+        <div class="concept-card-header">
+            <div class="concept-icon">CL</div>
+            <div>
+                <h3>classList — add, remove, toggle</h3>
+                <div class="sub">control CSS classes from JavaScript</div>
+            </div>
+        </div>
+        <div class="concept-card-body">
+            <p>This is the preferred way to change appearance with JavaScript. You write your "active" or "open" state in CSS, and JavaScript just switches the class on and off. This keeps your styling in CSS where it belongs.</p>
+
+            <div class="code-block">
+                <div class="code-block-header"><span>CSS — styles.css</span></div>
+                <pre><span class="cmt">/* The default state */</span>
+<span class="fn">.menu</span> {
+    display: none;
+}
+
+<span class="cmt">/* The open state — JavaScript adds this class */</span>
+<span class="fn">.menu.is-open</span> {
+    display: block;
+}</pre>
+            </div>
+
+            <div class="code-block">
+                <div class="code-block-header"><span>JavaScript — script.js</span></div>
+                <pre><span class="kw">var</span> btn  = document.<span class="mth">querySelector</span>(<span class="str">'#menu-btn'</span>);
+<span class="kw">var</span> menu = document.<span class="mth">querySelector</span>(<span class="str">'.menu'</span>);
+
+btn.<span class="mth">addEventListener</span>(<span class="str">'click'</span>, <span class="kw">function</span>() {
+
+    menu.classList.<span class="mth">toggle</span>(<span class="str">'is-open'</span>);
+    <span class="cmt">// toggle adds the class if it's missing, removes it if it's there</span>
+
+});</pre>
+            </div>
+
+            <table>
+                <thead>
+                    <tr><th>Method</th><th>What it does</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>classList.add('name')</td><td>Adds the class to the element</td></tr>
+                    <tr><td>classList.remove('name')</td><td>Removes the class from the element</td></tr>
+                    <tr><td>classList.toggle('name')</td><td>Adds if missing, removes if present</td></tr>
+                    <tr><td>classList.contains('name')</td><td>Returns true/false — checks if the class exists</td></tr>
+                </tbody>
+            </table>
+
+            <div class="demo-label">▶ Try it — toggle the class</div>
+            <div class="live-demo">
+                <button class="demo-btn" id="demo-class-btn">Toggle Class</button>
+                <div id="demo-class-box" style="margin-top:0.75rem; padding:0.75rem 1rem; border-radius:8px; background:var(--surface2); border:1px solid var(--border); font-size:0.88rem; color:var(--muted); transition: all 0.3s;">
+                    I change when a class is toggled on me.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="divider" id="input">
+
+
+    <!-- ══════════════════════════════
+         7. READING USER INPUT
+    ══════════════════════════════ -->
+    <div>
+        <div class="section-eyebrow">Section 07</div>
+        <div class="section-title">Reading User Input</div>
+        <p class="section-intro">JavaScript can read whatever the user has typed into an input field in real time.</p>
+    </div>
+
+    <div class="concept-card">
+        <div class="concept-card-header">
+            <div class="concept-icon">⌨️</div>
+            <div>
+                <h3>The value property</h3>
+                <div class="sub">read what's inside an input, select, or textarea</div>
+            </div>
+        </div>
+        <div class="concept-card-body">
+            <p>Every input element has a <code>value</code> property that holds whatever the user has typed or selected. Combine it with the <code>'input'</code> event to react as the user types.</p>
+
+            <div class="code-block">
+                <div class="code-block-header"><span>JavaScript</span></div>
+                <pre><span class="kw">var</span> nameInput   = document.<span class="mth">querySelector</span>(<span class="str">'#name'</span>);
+<span class="kw">var</span> displayArea = document.<span class="mth">querySelector</span>(<span class="str">'#display'</span>);
+
+nameInput.<span class="mth">addEventListener</span>(<span class="str">'input'</span>, <span class="kw">function</span>() {
+
+    <span class="cmt">// Read what the user typed</span>
+    <span class="kw">var</span> typedValue = nameInput.value;
+
+    <span class="cmt">// Show it somewhere on the page</span>
+    displayArea.textContent = <span class="str">'Hello, '</span> + typedValue;
+
+});</pre>
+            </div>
+
+            <div class="demo-label">▶ Try it — type in the box</div>
+            <div class="live-demo">
+                <input class="demo-input" type="text" id="demo-input-field" placeholder="Type your name...">
+                <div class="demo-output" id="demo-input-output">Hello, ...</div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="divider" id="multiple">
+
+
+    <!-- ══════════════════════════════
+         8. querySelectorAll
+    ══════════════════════════════ -->
+    <div>
+        <div class="section-eyebrow">Section 08</div>
+        <div class="section-title">Working with Multiple Elements</div>
+        <p class="section-intro">When you need to select more than one element at a time — like all the items in a nav or all the cards on a page.</p>
+    </div>
+
+    <div class="concept-card">
+        <div class="concept-card-header">
+            <div class="concept-icon">[ ]</div>
+            <div>
+                <h3>querySelectorAll</h3>
+                <div class="sub">select all matching elements at once</div>
+            </div>
+        </div>
+        <div class="concept-card-body">
+            <p><code>querySelectorAll</code> returns all matching elements. To do something to each one, you loop through them using <code>forEach</code>.</p>
+
+            <div class="code-block">
+                <div class="code-block-header"><span>JavaScript</span></div>
+                <pre><span class="cmt">// Select ALL elements with class="nav-link"</span>
+<span class="kw">var</span> navLinks = document.<span class="mth">querySelectorAll</span>(<span class="str">'.nav-link'</span>);
+
+<span class="cmt">// Loop through each one and add a click listener</span>
+navLinks.<span class="mth">forEach</span>(<span class="kw">function</span>(link) {
+
+    link.<span class="mth">addEventListener</span>(<span class="str">'click'</span>, <span class="kw">function</span>() {
+
+        <span class="cmt">// Remove 'active' from ALL links first</span>
+        navLinks.<span class="mth">forEach</span>(<span class="kw">function</span>(l) {
+            l.classList.<span class="mth">remove</span>(<span class="str">'active'</span>);
+        });
+
+        <span class="cmt">// Add 'active' only to the clicked one</span>
+        link.classList.<span class="mth">add</span>(<span class="str">'active'</span>);
+
+    });
+});</pre>
+            </div>
+
+            <div class="tip">💡 This "remove from all, add to clicked" pattern is one of the most common patterns in web design — it's how tabs, nav menus, and image galleries work.</div>
+
+            <div class="demo-label">▶ Try it — click a tab</div>
+            <div class="live-demo">
+                <div style="display:flex; gap:0.5rem; margin-bottom:0.75rem; flex-wrap:wrap;">
+                    <button class="demo-tab-btn demo-btn" data-tab="tab1">Design</button>
+                    <button class="demo-tab-btn demo-btn secondary" data-tab="tab2">Development</button>
+                    <button class="demo-tab-btn demo-btn secondary" data-tab="tab3">Animation</button>
+                </div>
+                <div class="demo-output" id="demo-tab-output">You selected: Design</div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="divider" id="cheatsheet">
+
+
+    <!-- ══════════════════════════════
+         9. CHEATSHEET
+    ══════════════════════════════ -->
+    <div>
+        <div class="section-eyebrow">Section 09</div>
+        <div class="section-title">Quick Reference Cheatsheet</div>
+        <p class="section-intro">Everything covered in this lesson in one place.</p>
+    </div>
+
+    <div class="concept-card">
+        <div class="concept-card-body" style="padding-top:1rem;">
+            <table>
+                <thead>
+                    <tr><th>Code</th><th>What it does</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>document.querySelector('#id')</td><td>Select one element by ID, class, or tag</td></tr>
+                    <tr><td>document.querySelectorAll('.class')</td><td>Select all matching elements</td></tr>
+                    <tr><td>element.addEventListener('click', fn)</td><td>Run code when user clicks the element</td></tr>
+                    <tr><td>element.textContent = 'new text'</td><td>Change the text inside an element</td></tr>
+                    <tr><td>element.style.color = 'red'</td><td>Apply an inline CSS style</td></tr>
+                    <tr><td>element.classList.add('name')</td><td>Add a CSS class to the element</td></tr>
+                    <tr><td>element.classList.remove('name')</td><td>Remove a CSS class from the element</td></tr>
+                    <tr><td>element.classList.toggle('name')</td><td>Add if missing, remove if present</td></tr>
+                    <tr><td>inputElement.value</td><td>Read the current value of an input field</td></tr>
+                    <tr><td>nodeList.forEach(function(el) {})</td><td>Loop through all selected elements</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <hr class="divider" id="exercises">
+
+
+    <!-- ══════════════════════════════
+         10. EXERCISES
+    ══════════════════════════════ -->
+    <div>
+        <div class="section-eyebrow">Section 10</div>
+        <div class="section-title">Exercises</div>
+        <p class="section-intro">Two hands-on tasks — ~10 minutes each.</p>
+    </div>
+
+    <div class="exercise-block">
+        <div class="exercise-num">Exercise 1 — ~10 minutes</div>
+        <h3>Dark Mode Toggle</h3>
+        <p>Build a button that switches a webpage between light and dark mode using only <code>classList.toggle</code>.</p>
+        <ul class="task-list">
+            <li><span class="task-n">1</span> Create an HTML page with a <code>&lt;body&gt;</code>, a heading, a paragraph, and a <code>&lt;button id="theme-btn"&gt;Toggle Dark Mode&lt;/button&gt;</code>.</li>
+            <li><span class="task-n">2</span> In CSS, style the default (light) state — white background, dark text. Then write a <code>body.dark</code> rule with a dark background and light text.</li>
+            <li><span class="task-n">3</span> In JavaScript, select the button and add a click listener. On click, toggle the class <code>"dark"</code> on the <code>body</code> element. Hint: <code>document.querySelector('body')</code>.</li>
+            <li><span class="task-n">4</span> Also change the button text to say "Toggle Light Mode" when dark mode is on. Hint: use <code>classList.contains()</code> to check which mode is active.</li>
+            <li><span class="task-n">5</span> <strong>Challenge:</strong> Add a smooth transition for the background and text colour change using CSS <code>transition</code>.</li>
+        </ul>
+    </div>
+
+    <div class="exercise-block">
+        <div class="exercise-num">Exercise 2 — ~10 minutes</div>
+        <h3>Live Character Counter</h3>
+        <p>Build a textarea that shows the user how many characters they have left as they type — like a Twitter/X character counter.</p>
+        <ul class="task-list">
+            <li><span class="task-n">1</span> Create an HTML page with a <code>&lt;textarea id="bio" maxlength="150"&gt;</code> and a <code>&lt;p id="counter"&gt;150 characters remaining&lt;/p&gt;</code>.</li>
+            <li><span class="task-n">2</span> In JavaScript, select both elements. Add an <code>'input'</code> event listener to the textarea.</li>
+            <li><span class="task-n">3</span> Inside the listener, read the textarea's <code>.value</code> and calculate how many characters remain: <code>150 - textarea.value.length</code>.</li>
+            <li><span class="task-n">4</span> Update the counter paragraph's <code>textContent</code> to show the remaining count.</li>
+            <li><span class="task-n">5</span> <strong>Challenge:</strong> When fewer than 20 characters remain, add a CSS class to the counter that turns it red to warn the user.</li>
+        </ul>
+    </div>
+
+</main>
+
+<footer>
+    <p>Content and examples based on: &nbsp;
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener">MDN Web Docs — JavaScript</a> &nbsp;|&nbsp;
+        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector" target="_blank" rel="noopener">MDN — querySelector</a>
+    </p>
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
