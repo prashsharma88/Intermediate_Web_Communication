@@ -1,0 +1,46 @@
+================================================
+ Exercise 1 — Like Button
+================================================
+
+INTRODUCTION:
+When the user clicks the Like button, it should
+toggle between a "liked" and "unliked" state —
+changing its appearance and label each time.
+
+"styles.css" file is already created and linked to the webpage.
+There is a CSS class "liked" which change the background color an element to rgb(255, 28, 65).
+
+
+TASK: 
+Create script file and link it to webpage
+-----------------
+When the button is clicked, toggle (add/remove) the "liked" class on the button AND change the button text.
+Initially the button has a blue background and "Like" text.
+When user click on button change the text to "Liked" and add "liked" class to the button element
+When user click again, change the text back to "Like" and remove the "liked" class from the button element
+
+HINT: 
+To add a class to an element use:
+<element>.classList.add("classname")
+
+Similarly, to remove any class from an element use:
+<element>.classList.remove("classname")
+
+To update the text of any text element (p, a, button, h1, h2...) use:
+<element>.textContent = "Updated Text"
+
+JS Steps:
+1. Select the button using querySelector ('#like-btn')
+2. Add a 'click' event listener on the button
+3. Inside the listener:
+   a. Check if button text is "Like"
+        - if YES -> change the button text to "Liked" and add class "liked" to the button.
+        - if NO -> change the button text to "Like" and remove class "liked" from the button.
+
+
+HINT — checking if button text is "Like":
+  if (<button_element>.textContent == "Like") {
+      // button text is equal to "Like"
+  } else {
+      // Button text is not equal to "Like"
+  }

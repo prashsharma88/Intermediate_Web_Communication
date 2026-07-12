@@ -1,0 +1,44 @@
+================================================
+ Exercise — Image Selector
+================================================
+
+INTRODUCTION:
+When the user clicks one of the three buttons, the image on the page should change to the corresponding image and its alt text should update accordingly.
+
+
+CSS — styles.css
+-----------------
+"styles.css" file already given to you.
+
+
+JS — script.js
+-----------------
+Task: Select each button and the image element.
+When a button is clicked, update the image src and alt attributes to match the button.
+
+Image details:
+  - Image 1: src = "https://picsum.photos/id/71/200/300"
+              alt = "Image of wooden swing"
+  - Image 2: src = "https://picsum.photos/id/74/200/300"
+              alt = "Image of sea"
+  - Image 3: src = "https://picsum.photos/id/67/200/300"
+              alt = "Image of forest"
+
+JS Steps:
+1. Select the image element using querySelector ('#img-viewer')
+2. Select each button:
+     const btn1 = document.querySelector('#img1');
+     const btn2 = document.querySelector('#img2');
+     const btn3 = document.querySelector('#img3');
+3. Add a 'click' event listener to each button
+4. Inside each listener, update the image:
+     img.src = "...";
+     img.alt = "...";
+
+HINT — changing src and alt:
+  const img = document.querySelector('#img-viewer');
+  img.src = "https://picsum.photos/id/74/200/300";
+  img.alt = "Image of sea";
+
+CHALLENGE:
+  Add an "active" class to the clicked button and remove it from the other two buttons to highlight which image is currently selected.

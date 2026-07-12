@@ -1,0 +1,27 @@
+================================================
+ Exercise 2 — Active Navigation Link
+================================================
+
+INTRODUCTION:
+When the user clicks a navigation link, it should become "active" — visually highlighted. 
+Only ONE link should be active at a time. 
+Clicking a different link moves the highlight to that one.
+The text on the page should also change according to the active link.
+
+
+CSS — styles.css
+-----------------
+CSS file is already linked to the webpage.
+"active" class is present in the CSS file, use this class to visually highlight a navigation link.
+
+JS — script.js
+-----------------
+Task: When a nav link is clicked, add the class "active" to the clicked link and remove it from all others.
+
+JS Steps:
+1. Select ALL nav links using their ids.
+2. Add click event listener to each nav link.
+4. Inside the listener:
+   a. Remove "active" class from all the nav links.
+   b. Add the class "active" to the current nav link
+   c. Update the text on main page to show the current active nav link.
