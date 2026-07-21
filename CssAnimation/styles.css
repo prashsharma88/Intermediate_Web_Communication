@@ -1,0 +1,639 @@
+/* ============================================
+   CSS Animations Lecture — styles.css
+   DO NOT MODIFY — Demo styles live here.
+   For practice exercises, create my_styles.css
+   and link it in index.html below this file.
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=DM+Sans:wght@400;500;700&display=swap');
+
+/* ── Tokens ── */
+:root {
+    --bg:       #0e0e12;
+    --surface:  #16161e;
+    --surface2: #1e1e28;
+    --border:   #2a2a38;
+    --accent:   #f5a623;
+    --green:    #7ee8a2;
+    --blue:     #79b8ff;
+    --red:      #ff6b6b;
+    --text:     #e2e2f0;
+    --muted:    #7a7a9a;
+    --code-bg:  #0a0a10;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    line-height: 1.7;
+}
+
+/* ── Header ── */
+header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 2.5rem 2rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(245,166,35,0.1) 0%, transparent 65%);
+}
+
+.badge {
+    display: inline-block;
+    background: rgba(245,166,35,0.15);
+    border: 1px solid rgba(245,166,35,0.4);
+    color: var(--accent);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 4px;
+    margin-bottom: 0.75rem;
+    position: relative;
+}
+
+header h1 {
+    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+    font-weight: 700;
+    position: relative;
+}
+
+header h1 span { color: var(--accent); }
+
+header p {
+    color: var(--muted);
+    margin-top: 0.4rem;
+    font-size: 0.92rem;
+    position: relative;
+}
+
+/* ── Home button ── */
+.home-btn {
+    display: inline-block;
+    margin: 1.25rem 2rem 0;
+    padding: 0.35rem 0.9rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.82rem;
+    transition: border-color 0.2s, color 0.2s;
+}
+
+.home-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* ── Layout ── */
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 4rem;
+}
+
+/* ── TOC ── */
+.toc {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.toc h2 {
+    font-size: 0.82rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 0.75rem;
+}
+
+.toc ol { padding-left: 1.2rem; }
+
+.toc li { padding: 0.2rem 0; font-size: 0.9rem; }
+
+.toc a { color: var(--blue); text-decoration: none; }
+.toc a:hover { text-decoration: underline; }
+
+/* ── Section labels ── */
+.eyebrow {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.3rem;
+}
+
+.section-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 3rem 0;
+}
+
+/* ── Content blocks ── */
+.content-block {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.4rem;
+    margin-bottom: 1.25rem;
+}
+
+.content-block h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: var(--accent);
+}
+
+.content-block p {
+    color: var(--muted);
+    font-size: 0.91rem;
+    margin-bottom: 0.75rem;
+}
+
+.content-block p:last-child { margin-bottom: 0; }
+
+.content-block ul {
+    padding-left: 1.2rem;
+    color: var(--muted);
+    font-size: 0.91rem;
+}
+
+.content-block li { padding: 0.2rem 0; }
+
+/* ── Code blocks ── */
+.code-block {
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 0.9rem 0;
+}
+
+.code-head {
+    padding: 5px 13px;
+    background: rgba(255,255,255,0.03);
+    border-bottom: 1px solid var(--border);
+    font-size: 0.68rem;
+    color: var(--muted);
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.5px;
+}
+
+.code-block pre {
+    padding: 1rem 1.2rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.81rem;
+    line-height: 1.85;
+    overflow-x: auto;
+    tab-size: 2;
+}
+
+/* syntax highlighting */
+.kw   { color: #c792ea; }
+.sel  { color: #82aaff; }
+.prop { color: #7fdbca; }
+.val  { color: #f78c6c; }
+.cmt  { color: #546e7a; font-style: italic; }
+
+/* inline code */
+code {
+    font-family: 'JetBrains Mono', monospace;
+    background: rgba(245,166,35,0.12);
+    color: var(--accent);
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-size: 0.84em;
+}
+
+/* ── Demo label ── */
+.demo-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--accent);
+    margin: 1.1rem 0 0.6rem;
+}
+
+/* ── Demo area ── */
+.demo-area {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* ════════════════════════════════
+   SECTION 1 — TRANSITION DEMOS
+════════════════════════════════ */
+
+.transition-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.25rem;
+    flex: 1;
+    min-width: 160px;
+    max-width: 220px;
+    cursor: pointer;
+    transition: background-color 0.3s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.transition-card:hover {
+    background-color: #2a2a45;
+    transform: translateY(-8px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.5);
+}
+
+.transition-card h4 {
+    font-size: 0.95rem;
+    margin-bottom: 0.4rem;
+    color: var(--accent);
+}
+
+.transition-card p {
+    font-size: 0.82rem;
+    color: var(--muted);
+}
+
+/* ── Timing function demo ── */
+.timing-demo {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.timing-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.timing-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--muted);
+    width: 100px;
+    flex-shrink: 0;
+}
+
+.timing-bar {
+    height: 10px;
+    width: 30px;
+    border-radius: 5px;
+    background: var(--accent);
+    transition-duration: 0.8s;
+    transition-property: width;
+}
+
+.timing-demo:hover .timing-bar { width: 80%; }
+
+.ease-bar        { transition-timing-function: ease; }
+.linear-bar      { transition-timing-function: linear; }
+.ease-in-bar     { transition-timing-function: ease-in; }
+.ease-out-bar    { transition-timing-function: ease-out; }
+.ease-in-out-bar { transition-timing-function: ease-in-out; }
+
+
+/* ════════════════════════════════
+   SECTION 2 — TRANSFORM DEMOS
+════════════════════════════════ */
+
+.transform-demo-area {
+    padding: 2rem 1.5rem;
+}
+
+.transform-demo-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.transform-box {
+    width: 70px;
+    height: 70px;
+    background: var(--accent);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+}
+
+.box-translate:hover { transform: translateY(-20px); }
+.box-scale:hover     { transform: scale(1.35); }
+.box-rotate:hover    { transform: rotate(45deg); }
+.box-combined:hover  { transform: translateY(-10px) scale(1.1) rotate(10deg); }
+
+.transform-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--muted);
+}
+
+/* ── transform-origin demo ── */
+.origin-demo-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.origin-box {
+    width: 70px;
+    height: 70px;
+    background: var(--blue);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+.origin-center      { transform-origin: center; }
+.origin-top-left    { transform-origin: top left; }
+.origin-bottom-right { transform-origin: bottom right; }
+
+.origin-center:hover,
+.origin-top-left:hover,
+.origin-bottom-right:hover {
+    transform: rotate(90deg);
+}
+
+
+/* ════════════════════════════════
+   SECTION 3 — KEYFRAME DEMOS
+════════════════════════════════ */
+
+/* Keyframe definitions */
+@keyframes fade-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes slide-in-left {
+    from { transform: translateX(-60px); opacity: 0; }
+    to   { transform: translateX(0);     opacity: 1; }
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-22px); }
+}
+
+@keyframes slide-in-no-fill {
+    from { transform: translateX(-80px); opacity: 0; }
+    to   { transform: translateX(0);     opacity: 1; }
+}
+
+/* Keyframe demo boxes */
+.keyframe-demo-area {
+    padding: 2rem 1.5rem;
+    align-items: flex-start;
+}
+
+.keyframe-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.kf-box {
+    width: 70px;
+    height: 70px;
+    background: var(--green);
+    border-radius: 8px;
+}
+
+/* Apply animations */
+.fade-in-demo  { animation: fade-in 1s ease forwards; }
+.slide-in-demo { animation: slide-in-left 0.8s ease-out forwards; }
+.spin-demo     { animation: spin 1.5s linear infinite; }
+.pulse-demo    { animation: pulse 1.2s ease-in-out infinite; }
+.bounce-demo   { animation: bounce 0.8s ease infinite; }
+
+/* Replay buttons */
+.replay-btn {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    padding: 0.25rem 0.6rem;
+    border-radius: 5px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+}
+
+.replay-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* ── fill-mode demo ── */
+.fillmode-row {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.demo-trigger-btn {
+    background: var(--accent);
+    color: #000;
+    border: none;
+    padding: 0.45rem 1rem;
+    border-radius: 6px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: opacity 0.2s;
+}
+
+.demo-trigger-btn:hover { opacity: 0.85; }
+
+.fillmode-box {
+    background: var(--red);
+    color: #fff;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* no fill-mode — snaps back */
+@keyframes demo-slide {
+    from { transform: translateX(0);     opacity: 1; }
+    to   { transform: translateX(120px); opacity: 0; }
+}
+
+.no-fill-animate {
+    animation: demo-slide 1s ease forwards;
+    animation-fill-mode: none;
+}
+
+/* with fill-mode: forwards — stays at final state */
+.with-fill-animate {
+    animation: demo-slide 1s ease forwards;
+    animation-fill-mode: forwards;
+}
+
+
+/* ════════════════════════════════
+   PRACTICE SECTION
+════════════════════════════════ */
+
+.practice-intro {
+    color: var(--muted);
+    font-size: 0.92rem;
+    margin-bottom: 1.5rem;
+    border-left: 3px solid var(--accent);
+    padding-left: 1rem;
+}
+
+.practice-tasks {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.task-block {
+    background: var(--surface);
+    border: 1px solid rgba(245,166,35,0.3);
+    border-radius: 10px;
+    padding: 1.4rem;
+}
+
+.task-num {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent);
+    margin-bottom: 0.4rem;
+}
+
+.task-block h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.task-block p {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.practice-area {
+    background: var(--surface2);
+    border: 1px dashed var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 120px;
+}
+
+/* Practice elements — students animate these in practice.css */
+.practice-btn {
+    background: var(--accent);
+    color: #000;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.practice-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    max-width: 320px;
+    width: 100%;
+}
+
+.practice-card h4 {
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.practice-card p {
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+
+/* ════════════════════════════════
+   FOOTER
+════════════════════════════════ */
+
+footer {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    padding: 1.25rem 2rem;
+    text-align: center;
+    font-size: 0.81rem;
+    color: var(--muted);
+}
+
+footer a {
+    color: var(--blue);
+    text-decoration: none;
+}
+
+footer a:hover { text-decoration: underline; }

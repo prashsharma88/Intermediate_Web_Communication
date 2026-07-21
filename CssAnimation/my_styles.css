@@ -1,0 +1,72 @@
+.practice-btn {
+    transition: background-color 0.3s ease, 
+    color 0.3s linear, 
+    transform .3s ease-out
+}
+
+.practice-btn:hover {
+    background-color: rgb(96, 96, 236);
+    color: white;
+    transform-origin: bottom right;
+    transform: translateY(-5px);
+}
+
+@keyframes slide-in-left-bounce {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    50% {
+        transform: rotate(180deg);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.left-bounce {
+    animation: slide-in-left-bounce 1s ease-in;
+}
+
+@keyframes slide-in-right-bounce {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+
+    50% {
+        transform: rotate(180deg);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.right-bounce {
+    animation: slide-in-right-bounce 1s ease-in;
+}
+
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fade-in 1s ease-in;
+}
+
+
+

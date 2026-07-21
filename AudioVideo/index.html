@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>AV Club</title>
+    
+</head>
+<body>
+
+    <header>
+        <h1>
+            Adding Audio and Video In Your Webpage
+        </h1>
+    </header>
+    <div>
+        <p id="home-btn" class="badge"><a href="../index.html">Home</a></p>
+    </div>
+    <main>
+        <section>
+            <h2>
+                HTML Elements
+            </h2>
+
+            <div class="sub-section">
+                <ul>
+                    <li>
+                        <h3><code class="title">&lt;audio&gt;</code>:</h3>
+                        <p>
+                            To embed sound content in documents. It may contain one or more audio sources, represented using the src attribute or the <code>&lt;source&gt;</code> element: the browser will choose the most suitable one. 
+                        </p>
+                    </li>
+                    <li>
+                        <h3><code class="title">&lt;video&gt;</code>:</h3>
+                        <p>
+                            Embeds a media player which supports video playback into the document. You can use <code>&lt;video&gt;</code> for audio content as well, but the <code>&lt;audio&gt;</code> element may provide a more appropriate user experience.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div class="sub-section">
+                <h3 class="lead">Common Attributes: </h3>
+                <code title="A Boolean attribute: if specified, the audio will automatically begin playing. AVIOD THIS">autoplay</code>, 
+                <code title="If this attribute is present, the browser will offer controls to allow the user to control audio playback, including volume, seeking, and pause/resume playback.">controls</code>, 
+                <code title="Indicates how the browser should load the audio: lazy, eager">loading</code>, 
+                <code title="A Boolean attribute: if specified, the audio player will automatically seek back to the start upon reaching the end of the audio.">loop</code>, 
+                <code title="A Boolean attribute that indicates the default audio mute setting contained in the audio">muted</code>
+                <code title="The URL of the audio to embed.">src</code>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="lead">Video Attributes: </h3>
+                <code title="The height of the video's display area">height</code>
+                <code title="The width of the video's display area">width</code>
+                <code title="Prevents the browser from suggesting a Picture-in-Picture context menu">disablepictureinpicture</code>
+            </div>
+            
+        </section>
+
+
+        <section>
+            <h3>Audio</h3>
+            <audio controls loop="true" src="media/audio/waiting_for_a_train.mp3"></audio>
+
+            <div>
+                <p class="question">
+                    How many hearts does an octopus have?
+                </p>
+                <ul>
+                    <li class="ans hide" id="ans1">A.&#41; 1</li>
+                    <li class="ans hide" id="ans2">B.&#41; 3</li>
+                    <li class="ans hide" id="ans3">C.&#41; 4</li>
+                    <li class="ans hide" id="ans4"">D.&#41; 8</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h3>Video</h3>
+            <video id="my-video" src="media/video/sample_video.mp4" width="720">
+
+            </video>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

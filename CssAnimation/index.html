@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="my_styles.css">
+    <title>CSS Animations</title>
+</head>
+<body>
+
+    <header>
+        <div class="badge">Intermediate Web Development</div>
+        <h1>CSS <span>Animations</span></h1>
+        <p>Transitions, Transforms, and Keyframes</p>
+    </header>
+
+    <a class="home-btn" href="../index.html">← Home</a>
+
+    <main>
+
+        <!-- =============================================
+             TABLE OF CONTENTS
+        ============================================= -->
+        <nav class="toc">
+            <h2>Contents</h2>
+            <ol>
+                <li><a href="#transitions">CSS Transitions</a></li>
+                <li><a href="#transforms">CSS Transforms</a></li>
+                <li><a href="#keyframes">CSS Keyframes</a></li>
+                <li><a href="#practice">Practice Exercise</a></li>
+            </ol>
+        </nav>
+
+
+        <!-- =============================================
+             SECTION 1 — TRANSITIONS
+        ============================================= -->
+        <section id="transitions">
+
+            <div class="eyebrow">Section 01</div>
+            <h2 class="section-title">CSS Transitions</h2>
+
+            <!-- Introduction -->
+            <div class="content-block">
+                <h3>Introduction</h3>
+                <p>
+                    A CSS transition smoothly animates a property from one value to another when a state changes —
+                    for example when a user hovers over a button or a class is added by JavaScript.
+                    Without a transition, property changes happen instantly. With a transition, the browser
+                    animates the change over a specified duration.
+                </p>
+                <p>
+                    A transition is defined by four things:
+                </p>
+                <ul>
+                    <li><strong>property</strong> — which CSS property to animate</li>
+                    <li><strong>duration</strong> — how long the animation takes</li>
+                    <li><strong>timing function</strong> — the speed curve (ease, linear, ease-in-out)</li>
+                    <li><strong>delay</strong> — how long to wait before starting</li>
+                </ul>
+
+                <div class="code-block">
+                    <div class="code-head">CSS — Transition Syntax</div>
+                    <pre><span class="cmt">/* Shorthand: property duration timing-function delay */</span>
+<span class="sel">.button</span> {
+    <span class="prop">transition</span>: <span class="val">background-color 0.3s ease 0s</span>;
+}
+
+<span class="cmt">/* Multiple properties */</span>
+<span class="sel">.button</span> {
+    <span class="prop">transition</span>: <span class="val">background-color 0.3s ease,
+                transform 0.2s ease-in-out</span>;
+}
+
+<span class="cmt">/* Transition all properties */</span>
+<span class="sel">.button</span> {
+    <span class="prop">transition</span>: <span class="val">all 0.3s ease</span>;
+}</pre>
+                </div>
+            </div>
+
+            <!-- Use Case -->
+            <div class="content-block">
+                <h3>Use Cases</h3>
+                <ul>
+                    <li>Button hover effects — colour, background, shadow changes</li>
+                    <li>Navigation link underline sliding in</li>
+                    <li>Card lifting on hover</li>
+                    <li>Modal and dropdown fade in/out when a class is toggled by JS</li>
+                    <li>Form input border colour changing on focus</li>
+                </ul>
+            </div>
+
+            <!-- Timing Functions -->
+            <div class="content-block">
+                <h3>Timing Functions</h3>
+                <p>The timing function controls the speed curve of the animation — how it accelerates and decelerates.</p>
+
+                <div class="code-block">
+                    <div class="code-head">CSS — Timing Functions</div>
+                    <pre><span class="sel">.element</span> {
+    <span class="prop">transition-timing-function</span>: <span class="val">ease</span>;        <span class="cmt">/* slow → fast → slow (default) */</span>
+    <span class="prop">transition-timing-function</span>: <span class="val">linear</span>;      <span class="cmt">/* constant speed */</span>
+    <span class="prop">transition-timing-function</span>: <span class="val">ease-in</span>;     <span class="cmt">/* starts slow, ends fast */</span>
+    <span class="prop">transition-timing-function</span>: <span class="val">ease-out</span>;    <span class="cmt">/* starts fast, ends slow */</span>
+    <span class="prop">transition-timing-function</span>: <span class="val">ease-in-out</span>; <span class="cmt">/* slow → fast → slow, more pronounced */</span>
+}</pre>
+                </div>
+            </div>
+
+            <!-- Code Example -->
+            <div class="content-block">
+                <h3>Code Example</h3>
+                <div class="code-block">
+                    <div class="code-head">CSS</div>
+                    <pre><span class="sel">.demo-card</span> {
+    <span class="prop">background-color</span>: <span class="val">#1e1e28</span>;
+    <span class="prop">padding</span>: <span class="val">1.5rem</span>;
+    <span class="prop">border-radius</span>: <span class="val">10px</span>;
+    <span class="prop">border</span>: <span class="val">1px solid #2a2a38</span>;
+    <span class="prop">transition</span>: <span class="val">background-color 0.3s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease</span>;
+}
+
+<span class="sel">.demo-card:hover</span> {
+    <span class="prop">background-color</span>: <span class="val">#2a2a45</span>;
+    <span class="prop">transform</span>: <span class="val">translateY(-6px)</span>;
+    <span class="prop">box-shadow</span>: <span class="val">0 12px 30px rgba(0,0,0,0.4)</span>;
+}</pre>
+                </div>
+
+                <div class="demo-label">▶ Live Demo — hover over the cards</div>
+                <div class="demo-area">
+                    <div class="transition-card">
+                        <h4>Card One</h4>
+                        <p>Hover over me to see the transition effect.</p>
+                    </div>
+                    <div class="transition-card">
+                        <h4>Card Two</h4>
+                        <p>Notice the smooth lift and background change.</p>
+                    </div>
+                    <div class="transition-card">
+                        <h4>Card Three</h4>
+                        <p>All three properties transition simultaneously.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timing function demo -->
+            <div class="content-block">
+                <div class="demo-label">▶ Live Demo — timing functions compared (hover each bar)</div>
+                <div class="timing-demo">
+                    <div class="timing-row">
+                        <span class="timing-label">ease</span>
+                        <div class="timing-bar ease-bar"></div>
+                    </div>
+                    <div class="timing-row">
+                        <span class="timing-label">linear</span>
+                        <div class="timing-bar linear-bar"></div>
+                    </div>
+                    <div class="timing-row">
+                        <span class="timing-label">ease-in</span>
+                        <div class="timing-bar ease-in-bar"></div>
+                    </div>
+                    <div class="timing-row">
+                        <span class="timing-label">ease-out</span>
+                        <div class="timing-bar ease-out-bar"></div>
+                    </div>
+                    <div class="timing-row">
+                        <span class="timing-label">ease-in-out</span>
+                        <div class="timing-bar ease-in-out-bar"></div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <hr class="divider">
+
+
+        <!-- =============================================
+             SECTION 2 — TRANSFORMS
+        ============================================= -->
+        <section id="transforms">
+
+            <div class="eyebrow">Section 02</div>
+            <h2 class="section-title">CSS Transforms</h2>
+
+            <!-- Introduction -->
+            <div class="content-block">
+                <h3>Introduction</h3>
+                <p>
+                    The <code>transform</code> property moves, scales, rotates, or skews an element visually —
+                    without affecting the layout of surrounding elements. The element still occupies its
+                    original space in the document, but it appears moved or reshaped on screen.
+                </p>
+                <p>
+                    Transforms are almost always used together with transitions or keyframe animations
+                    to create smooth movement. They are also the most performance-friendly way to animate
+                    elements because they are handled by the GPU, not the CPU.
+                </p>
+
+                <div class="code-block">
+                    <div class="code-head">CSS — Transform Functions</div>
+                    <pre><span class="sel">.element</span> {
+    <span class="prop">transform</span>: <span class="val">translateX(50px)</span>;      <span class="cmt">/* move right 50px */</span>
+    <span class="prop">transform</span>: <span class="val">translateY(-20px)</span>;     <span class="cmt">/* move up 20px */</span>
+    <span class="prop">transform</span>: <span class="val">translate(50px, -20px)</span>; <span class="cmt">/* move right AND up */</span>
+
+    <span class="prop">transform</span>: <span class="val">scale(1.2)</span>;            <span class="cmt">/* grow 20% larger */</span>
+    <span class="prop">transform</span>: <span class="val">scale(0.8)</span>;            <span class="cmt">/* shrink 20% smaller */</span>
+
+    <span class="prop">transform</span>: <span class="val">rotate(45deg)</span>;         <span class="cmt">/* rotate 45 degrees clockwise */</span>
+    <span class="prop">transform</span>: <span class="val">rotate(-45deg)</span>;        <span class="cmt">/* rotate anti-clockwise */</span>
+
+    <span class="prop">transform</span>: <span class="val">skewX(15deg)</span>;          <span class="cmt">/* skew horizontally */</span>
+}
+
+<span class="cmt">/* Combine multiple transforms in one declaration */</span>
+<span class="sel">.element:hover</span> {
+    <span class="prop">transform</span>: <span class="val">translateY(-8px) scale(1.05) rotate(2deg)</span>;
+}</pre>
+                </div>
+            </div>
+
+            <!-- Use Cases -->
+            <div class="content-block">
+                <h3>Use Cases</h3>
+                <ul>
+                    <li><code>translate</code> — sliding menus in from the side, moving elements without affecting layout</li>
+                    <li><code>scale</code> — growing image thumbnails on hover, zoom effects</li>
+                    <li><code>rotate</code> — spinning loaders, rotating hamburger menu icon into an X</li>
+                    <li><code>skew</code> — diagonal section dividers, stylised card layouts</li>
+                    <li>Combined — card lift effect (translateY + scale together)</li>
+                </ul>
+            </div>
+
+            <!-- Code Example -->
+            <div class="content-block">
+                <h3>Code Example</h3>
+                <div class="code-block">
+                    <div class="code-head">CSS</div>
+                    <pre><span class="sel">.transform-box</span> {
+    <span class="prop">width</span>: <span class="val">80px</span>;
+    <span class="prop">height</span>: <span class="val">80px</span>;
+    <span class="prop">background-color</span>: <span class="val">#f5a623</span>;
+    <span class="prop">border-radius</span>: <span class="val">8px</span>;
+    <span class="prop">transition</span>: <span class="val">transform 0.4s ease</span>;
+}
+
+<span class="cmt">/* Each box demonstrates a different transform */</span>
+<span class="sel">.box-translate:hover</span> { <span class="prop">transform</span>: <span class="val">translateY(-20px)</span>; }
+<span class="sel">.box-scale:hover</span>     { <span class="prop">transform</span>: <span class="val">scale(1.3)</span>; }
+<span class="sel">.box-rotate:hover</span>    { <span class="prop">transform</span>: <span class="val">rotate(45deg)</span>; }
+<span class="sel">.box-combined:hover</span>  { <span class="prop">transform</span>: <span class="val">translateY(-10px) scale(1.1) rotate(10deg)</span>; }</pre>
+                </div>
+
+                <div class="demo-label">▶ Live Demo — hover over each box</div>
+                <div class="demo-area transform-demo-area">
+                    <div class="transform-demo-item">
+                        <div class="transform-box box-translate"></div>
+                        <span class="transform-label">translate</span>
+                    </div>
+                    <div class="transform-demo-item">
+                        <div class="transform-box box-scale"></div>
+                        <span class="transform-label">scale</span>
+                    </div>
+                    <div class="transform-demo-item">
+                        <div class="transform-box box-rotate"></div>
+                        <span class="transform-label">rotate</span>
+                    </div>
+                    <div class="transform-demo-item">
+                        <div class="transform-box box-combined"></div>
+                        <span class="transform-label">combined</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- transform-origin -->
+            <div class="content-block">
+                <h3>transform-origin</h3>
+                <p>
+                    By default, transforms happen from the centre of the element.
+                    <code>transform-origin</code> changes the point around which the transform is applied.
+                </p>
+                <div class="code-block">
+                    <div class="code-head">CSS</div>
+                    <pre><span class="sel">.element</span> {
+    <span class="prop">transform-origin</span>: <span class="val">center</span>;      <span class="cmt">/* default */</span>
+    <span class="prop">transform-origin</span>: <span class="val">top left</span>;    <span class="cmt">/* rotates from top-left corner */</span>
+    <span class="prop">transform-origin</span>: <span class="val">bottom right</span>; <span class="cmt">/* rotates from bottom-right */</span>
+    <span class="prop">transform-origin</span>: <span class="val">50% 0%</span>;      <span class="cmt">/* top centre */</span>
+}</pre>
+                </div>
+
+                <div class="demo-label">▶ Live Demo — same rotation, different transform-origin (hover)</div>
+                <div class="demo-area">
+                    <div class="origin-demo-item">
+                        <div class="origin-box origin-center"></div>
+                        <span class="transform-label">center (default)</span>
+                    </div>
+                    <div class="origin-demo-item">
+                        <div class="origin-box origin-top-left"></div>
+                        <span class="transform-label">top left</span>
+                    </div>
+                    <div class="origin-demo-item">
+                        <div class="origin-box origin-bottom-right"></div>
+                        <span class="transform-label">bottom right</span>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <hr class="divider">
+
+
+        <!-- =============================================
+             SECTION 3 — KEYFRAMES
+        ============================================= -->
+        <section id="keyframes">
+
+            <div class="eyebrow">Section 03</div>
+            <h2 class="section-title">CSS Keyframes</h2>
+
+            <!-- Introduction -->
+            <div class="content-block">
+                <h3>Introduction</h3>
+                <p>
+                    While transitions animate between two states (A → B), <code>@keyframes</code> lets you
+                    define a full sequence of states — A → B → C → D. You write the animation steps
+                    as percentages of the total duration, then apply the animation to an element
+                    using the <code>animation</code> property.
+                </p>
+                <p>
+                    Unlike transitions, keyframe animations can run automatically without any
+                    user interaction, loop forever, and alternate direction.
+                </p>
+
+                <div class="code-block">
+                    <div class="code-head">CSS — Keyframe Syntax</div>
+                    <pre><span class="cmt">/* Step 1 — define the animation */</span>
+<span class="kw">@keyframes</span> <span class="val">slide-in</span> {
+    <span class="val">0%</span>   { <span class="prop">transform</span>: <span class="val">translateX(-100px)</span>; <span class="prop">opacity</span>: <span class="val">0</span>; }
+    <span class="val">100%</span> { <span class="prop">transform</span>: <span class="val">translateX(0)</span>;      <span class="prop">opacity</span>: <span class="val">1</span>; }
+}
+
+<span class="cmt">/* Step 2 — apply the animation to an element */</span>
+<span class="sel">.heading</span> {
+    <span class="prop">animation</span>: <span class="val">slide-in 0.6s ease-out forwards</span>;
+}
+
+<span class="cmt">/* You can also use 'from' and 'to' instead of 0% and 100% */</span>
+<span class="kw">@keyframes</span> <span class="val">fade-in</span> {
+    <span class="val">from</span> { <span class="prop">opacity</span>: <span class="val">0</span>; }
+    <span class="val">to</span>   { <span class="prop">opacity</span>: <span class="val">1</span>; }
+}</pre>
+                </div>
+            </div>
+
+            <!-- Animation property -->
+            <div class="content-block">
+                <h3>The animation Property</h3>
+                <p>The <code>animation</code> shorthand combines all animation settings in one line:</p>
+
+                <div class="code-block">
+                    <div class="code-head">CSS — animation shorthand</div>
+                    <pre><span class="sel">.element</span> {
+    <span class="cmt">/* animation: name  duration  timing   delay  iterations  direction  fill-mode */</span>
+    <span class="prop">animation</span>: <span class="val">slide-in  0.6s      ease-out  0s     1           normal     forwards</span>;
+}
+
+<span class="cmt">/* Common values for each part: */</span>
+
+<span class="cmt">/* iteration-count */</span>
+<span class="prop">animation-iteration-count</span>: <span class="val">1</span>;        <span class="cmt">/* play once */</span>
+<span class="prop">animation-iteration-count</span>: <span class="val">3</span>;        <span class="cmt">/* play 3 times */</span>
+<span class="prop">animation-iteration-count</span>: <span class="val">infinite</span>; <span class="cmt">/* loop forever */</span>
+
+<span class="cmt">/* direction */</span>
+<span class="prop">animation-direction</span>: <span class="val">normal</span>;           <span class="cmt">/* plays forward */</span>
+<span class="prop">animation-direction</span>: <span class="val">reverse</span>;          <span class="cmt">/* plays backward */</span>
+<span class="prop">animation-direction</span>: <span class="val">alternate</span>;        <span class="cmt">/* forward then backward, repeating */</span>
+
+<span class="cmt">/* fill-mode — what happens before/after the animation */</span>
+<span class="prop">animation-fill-mode</span>: <span class="val">none</span>;             <span class="cmt">/* default — returns to original state */</span>
+<span class="prop">animation-fill-mode</span>: <span class="val">forwards</span>;         <span class="cmt">/* stays at final keyframe state */</span>
+<span class="prop">animation-fill-mode</span>: <span class="val">backwards</span>;        <span class="cmt">/* starts at first keyframe state */</span></pre>
+                </div>
+            </div>
+
+            <!-- Use Cases -->
+            <div class="content-block">
+                <h3>Use Cases</h3>
+                <ul>
+                    <li>Page load entrance animations — elements sliding or fading in</li>
+                    <li>Loading spinners — infinite rotation</li>
+                    <li>Pulsing effects — buttons drawing attention</li>
+                    <li>Bouncing elements — notification badges</li>
+                    <li>Skeleton screens — shimmer loading placeholders</li>
+                </ul>
+            </div>
+
+            <!-- Code examples -->
+            <div class="content-block">
+                <h3>Code Examples</h3>
+
+                <div class="code-block">
+                    <div class="code-head">CSS — Common Keyframe Animations</div>
+                    <pre><span class="cmt">/* 1 — Fade in */</span>
+<span class="kw">@keyframes</span> <span class="val">fade-in</span> {
+    <span class="val">from</span> { <span class="prop">opacity</span>: <span class="val">0</span>; }
+    <span class="val">to</span>   { <span class="prop">opacity</span>: <span class="val">1</span>; }
+}
+
+<span class="cmt">/* 2 — Slide in from left */</span>
+<span class="kw">@keyframes</span> <span class="val">slide-in-left</span> {
+    <span class="val">from</span> { <span class="prop">transform</span>: <span class="val">translateX(-60px)</span>; <span class="prop">opacity</span>: <span class="val">0</span>; }
+    <span class="val">to</span>   { <span class="prop">transform</span>: <span class="val">translateX(0)</span>;      <span class="prop">opacity</span>: <span class="val">1</span>; }
+}
+
+<span class="cmt">/* 3 — Infinite spin (loading spinner) */</span>
+<span class="kw">@keyframes</span> <span class="val">spin</span> {
+    <span class="val">from</span> { <span class="prop">transform</span>: <span class="val">rotate(0deg)</span>; }
+    <span class="val">to</span>   { <span class="prop">transform</span>: <span class="val">rotate(360deg)</span>; }
+}
+
+<span class="cmt">/* 4 — Pulse */</span>
+<span class="kw">@keyframes</span> <span class="val">pulse</span> {
+    <span class="val">0%</span>   { <span class="prop">transform</span>: <span class="val">scale(1)</span>; }
+    <span class="val">50%</span>  { <span class="prop">transform</span>: <span class="val">scale(1.1)</span>; }
+    <span class="val">100%</span> { <span class="prop">transform</span>: <span class="val">scale(1)</span>; }
+}
+
+<span class="cmt">/* 5 — Bounce */</span>
+<span class="kw">@keyframes</span> <span class="val">bounce</span> {
+    <span class="val">0%</span>, <span class="val">100%</span> { <span class="prop">transform</span>: <span class="val">translateY(0)</span>; }
+    <span class="val">50%</span>       { <span class="prop">transform</span>: <span class="val">translateY(-20px)</span>; }
+}</pre>
+                </div>
+
+                <div class="demo-label">▶ Live Demo — keyframe animations</div>
+                <div class="demo-area keyframe-demo-area">
+
+                    <div class="keyframe-item">
+                        <div class="kf-box fade-in-demo"></div>
+                        <span class="transform-label">fade-in</span>
+                        <button class="replay-btn" data-target="fade-in-demo">Replay</button>
+                    </div>
+
+                    <div class="keyframe-item">
+                        <div class="kf-box slide-in-demo"></div>
+                        <span class="transform-label">slide-in</span>
+                        <button class="replay-btn" data-target="slide-in-demo">Replay</button>
+                    </div>
+
+                    <div class="keyframe-item">
+                        <div class="kf-box spin-demo"></div>
+                        <span class="transform-label">spin (infinite)</span>
+                    </div>
+
+                    <div class="keyframe-item">
+                        <div class="kf-box pulse-demo"></div>
+                        <span class="transform-label">pulse (infinite)</span>
+                    </div>
+
+                    <div class="keyframe-item">
+                        <div class="kf-box bounce-demo"></div>
+                        <span class="transform-label">bounce (infinite)</span>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- fill-mode explanation -->
+            <div class="content-block">
+                <h3>animation-fill-mode — The Most Commonly Misunderstood Property</h3>
+                <p>
+                    Without <code>fill-mode: forwards</code>, an element snaps back to its original state
+                    the moment the animation ends. This is the most common "why does it jump back?" problem students encounter.
+                </p>
+
+                <div class="demo-label">▶ Live Demo — with vs without fill-mode: forwards (click buttons)</div>
+                <div class="demo-area" style="flex-direction: column; gap: 1.5rem;">
+                    <div class="fillmode-row">
+                        <button class="demo-trigger-btn" id="no-fill-btn">Play without forwards</button>
+                        <div class="fillmode-box" id="no-fill-box">No fill-mode</div>
+                    </div>
+                    <div class="fillmode-row">
+                        <button class="demo-trigger-btn" id="with-fill-btn">Play with forwards</button>
+                        <div class="fillmode-box" id="with-fill-box">fill-mode: forwards</div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <hr class="divider">
+
+
+        <!-- =============================================
+             SECTION 4 — PRACTICE EXERCISE
+        ============================================= -->
+        <section id="practice">
+
+            <div class="eyebrow">Practice Exercise</div>
+            <h2 class="section-title">Your Turn</h2>
+            <p class="practice-intro">
+                Create a new file called <code>practice.css</code> and link it in the
+                <code>&lt;head&gt;</code> of this HTML file below the existing stylesheet link.
+                Write all your animation code in <code>practice.css</code>.
+                Do not modify <code>styles.css</code>.
+            </p>
+
+            <div class="practice-tasks">
+
+                <!-- Task 1 -->
+                <div class="task-block">
+                    <div class="task-num">Task 1 — Transition</div>
+                    <h3>Animate the button below</h3>
+                    <p>Using only CSS transitions, make the button below respond to hover with at least 3 property changes of your choice. Suggestions: background colour, text colour, transform (scale or translate), box-shadow, border-radius, letter-spacing.</p>
+                    <div class="practice-area">
+                        <button class="practice-btn" id="practice-btn">Hover Over Me</button>
+                    </div>
+                </div>
+
+                <!-- Task 2 -->
+                <div class="task-block">
+                    <div class="task-num">Task 2 — Keyframe Animation</div>
+                    <h3>Bring the card to life</h3>
+                    <p>Write a <code>@keyframes</code> animation and apply it to the card below. The card should animate automatically when the page loads — no hover required. Choose any animation style: fade in, slide in, bounce, pulse, or your own idea.</p>
+                    <div class="practice-area">
+                        <div class="practice-card left-bounce" id="practice-card">
+                            <h4>Animate Me 1</h4>
+                            <p>Write a @keyframes animation and apply it to <code>#practice-card</code> in your practice.css file.</p>
+                        </div>
+
+                        <div class="practice-card fade-in" id="practice-card2">
+                            <h4>Animate Me 2</h4>
+                            <p>Write a @keyframes animation and apply it to <code>#practice-card</code> in your practice.css file.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>References:
+            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transition" target="_blank" rel="noopener">MDN — transition</a> &nbsp;|&nbsp;
+            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform" target="_blank" rel="noopener">MDN — transform</a> &nbsp;|&nbsp;
+            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes" target="_blank" rel="noopener">MDN — @keyframes</a>
+        </p>
+    </footer>
+
+    <script>
+        /* ── Replay buttons for fade-in and slide-in demos ── */
+        const replayBtns = document.querySelectorAll('.replay-btn');
+
+        replayBtns.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                const targetClass = btn.dataset.target;
+                const box = document.querySelector('.' + targetClass);
+                box.classList.remove(targetClass);
+                void box.offsetWidth; /* force reflow to restart animation */
+                box.classList.add(targetClass);
+            });
+        });
+
+        /* ── fill-mode demo ── */
+        const noFillBtn  = document.querySelector('#no-fill-btn');
+        const withFillBtn = document.querySelector('#with-fill-btn');
+        const noFillBox  = document.querySelector('#no-fill-box');
+        const withFillBox = document.querySelector('#with-fill-box');
+
+        noFillBtn.addEventListener('click', function() {
+            noFillBox.classList.remove('no-fill-animate');
+            void noFillBox.offsetWidth;
+            noFillBox.classList.add('no-fill-animate');
+        });
+
+        withFillBtn.addEventListener('click', function() {
+            withFillBox.classList.remove('with-fill-animate');
+            void withFillBox.offsetWidth;
+            withFillBox.classList.add('with-fill-animate');
+        });
+    </script>
+
+</body>
+</html>
