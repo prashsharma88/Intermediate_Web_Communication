@@ -114,6 +114,7 @@ Target basicTerms class to set display to inline-block, height of 200px, padding
     border: 1px solid #FECDA6;
     border-radius: var(--border-radius);
     background-color: #FECDA6;
+    transition: height 0.5s ease-in-out;
 }
 
 /*
