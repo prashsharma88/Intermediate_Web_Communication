@@ -1,0 +1,226 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #16161e;
+    --txt-color: #ff9d00;
+    --txt-bg-color: #f5a52325;
+    --txt-border-color: #f5a623;
+    --nrml-txt-color: #7a7a9a;
+    
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: var(--nrml-txt-color);
+    background-color: black;
+}
+
+
+header, footer {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-color);
+}
+
+header > h1 {
+    background-color: var(--txt-bg-color);
+    color: var(--txt-color);
+    width: fit-content;
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: 1px solid var(--txt-border-color);
+}
+
+main {
+    flex-grow: 1;
+}
+
+code {
+    background-color: rgba(255, 0, 0, 0.116);
+    color: red;
+    padding: 3px 5px;
+    border-radius: 5px;
+    border: 1px solid red;
+}
+
+@keyframes pulse {
+    0%{
+        transform: scale(1.2);
+    }
+
+
+    50% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.2);
+    }
+}
+
+.jumping-infinite {
+    display: inline-block; /* <-- Animation works on block or inline-block elements only.*/
+    animation: pulse 1s ease-in-out infinite;
+    font-family: cursive;
+}
+
+section {
+    background-color: var(--bg-color);
+    width: 80%;
+    max-width: 1000px;
+    min-height: 300px;
+    margin: 20px auto;
+    align-items: flex-start;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.instructions-container > h3 {
+    text-decoration: underline;
+    padding: 5px 10px;
+    background-color: var(--txt-bg-color);
+    width: fit-content;
+    border-radius: 10px;
+    margin: 10px 0;
+    color: var(--txt-color);
+}
+
+.btn-container {
+    text-align: center;
+    padding: 40px;
+    margin: 10px 0;
+    border-radius: 20px;
+}
+
+.btn {
+    background-color: #f89900fa;
+    color: black;
+    outline: none;
+    border: 1px solid var(--txt-border-color);
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: space-evenly;
+    margin: 20px 0;
+}
+
+.card {
+    background-color: black;
+    width: 300px;
+    margin: 10px 0;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.267);
+    border: 1px solid var(--txt-color)
+}
+
+.card > h4 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--txt-color)
+}
+
+
+/* Write your code below this line. */
+
+.practice-btn {
+    transition: all 0.5s ease-in;
+}
+
+
+.practice-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 10px 10px 10px rgb(120, 120, 117);
+    letter-spacing: 2px;
+}
+
+@keyframes fade-in {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    25% {
+        transform: scale(1.3);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: scale(0.8);
+        opacity: 0.8;
+    }
+
+    60% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+
+    70% {
+        transform: scale(0.9);
+        opacity: 1;
+    }
+
+    80% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.practice-card-1 {
+    animation: fade-in 2s linear;
+}
+
+@keyframes roll-in {
+    0% {
+        transform: rotate(180deg);
+    }
+
+    50% {
+        transform: rotate(0);
+    }
+
+    60% {
+        transform: rotate(20deg);
+    }
+
+    80% {
+        transform: rotate(0deg);
+    }
+
+    90% {
+        transform: rotate(10deg);
+    }
+
+    100% {
+        transform: rotate(0);
+    }
+}
+
+.practice-card-2 {
+    animation: roll-in 2s ease-out;
+    transform-origin: top right;
+}
