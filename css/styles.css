@@ -62,4 +62,5 @@ li > a {
 
 li > a:hover {
     font-size: 1.3rem;
+    transition: 0.5s;
 }
