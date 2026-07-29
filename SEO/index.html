@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>SEO & Web Analytics</title>
+</head>
+<body>
+
+    <header>
+        <div class="header-inner">
+            <div class="badge">Intermediate Web Development</div>
+            <h1>Search Engine Optimization<br><span>&amp; Web Analytics</span></h1>
+            <p>Understanding how search engines work — and how to use data to make better decisions.</p>
+        </div>
+    </header>
+
+    <a class="home-btn" href="../index.html">← Home</a>
+
+    <main>
+
+        <!-- =============================================
+             TABLE OF CONTENTS
+        ============================================= -->
+        <nav class="toc">
+            <h2>Contents</h2>
+            <ol>
+                <li><a href="#what-is-seo">What is a Search Engine?</a></li>
+                <li><a href="#how-seo-works">How SEO Works</a></li>
+                <li><a href="#on-page-seo">On-Page SEO</a></li>
+                <li><a href="#off-page-seo">Off-Page SEO</a></li>
+                <li><a href="#seo-periodic-table">The SEO Periodic Table</a></li>
+                <li><a href="#seo-mistakes">5 Biggest SEO Mistakes</a></li>
+                <li><a href="#seo-checklist">SEO Checklist</a></li>
+                <li><a href="#meta-builder">Meta Tag Builder</a></li>
+                <li><a href="#web-analytics">Web Analytics</a></li>
+                <li><a href="#google-analytics">Google Analytics</a></li>
+                <li><a href="#key-terms">Key Terms</a></li>
+            </ol>
+        </nav>
+
+
+        <!-- =============================================
+             SECTION 1 — WHAT IS A SEARCH ENGINE
+        ============================================= -->
+        <section id="what-is-seo">
+            <div class="eyebrow">Section 01</div>
+            <h2 class="section-title">What is a Search Engine?</h2>
+
+            <div class="content-card">
+                <p>A search engine is a program that searches for and identifies items in a database that correspond to keywords or characters specified by the user — used especially for finding particular sites on the World Wide Web.</p>
+                <p><strong>Search Engine Optimization (SEO)</strong> is the practice of making your website as easy to understand, parse, and interpret as possible for these programs — so that your pages appear higher in search results without paying for ads.</p>
+
+                <div class="callout callout-blue">
+                    <span class="callout-icon">💡</span>
+                    <p><strong>Google's rule for SEO:</strong> "Build your pages to be great for humans, and the robots will love them too."</p>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">Examples of Search Engines</h3>
+            <div class="card-grid">
+                <div class="info-card">
+                    <div class="info-card-icon">🌐</div>
+                    <h4>Google</h4>
+                    <p>General web search — the most used search engine globally with over 90% market share.</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-icon">🍳</div>
+                    <h4>Allrecipes.com</h4>
+                    <p>A domain-specific search engine for recipes — shows that any well-indexed database is a search engine.</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-icon">🔢</div>
+                    <h4>Wolfram Alpha</h4>
+                    <p>A computational search engine for math and science — returns calculated answers, not links.</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-icon">🎞️</div>
+                    <h4>Giphy</h4>
+                    <p>A visual search engine for animated GIFs — searches by keyword and returns media.</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-icon">🗃️</div>
+                    <h4>Archive.org</h4>
+                    <p>The Wayback Machine — search engine for historical snapshots of websites.</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-icon">🖼️</div>
+                    <h4>TinEye</h4>
+                    <p>A reverse image search engine — find where an image appears on the web.</p>
+                </div>
+            </div>
+
+            <div class="content-card" style="margin-top:1.5rem;">
+                <h3 style="margin-bottom:0.75rem;">Google's Many Search Engines</h3>
+                <p>Google itself is not just one search engine — it has many specialised indexes:</p>
+                <div class="tag-grid">
+                    <span class="tag">Web</span>
+                    <span class="tag">News</span>
+                    <span class="tag">Images</span>
+                    <span class="tag">Videos</span>
+                    <span class="tag">Books</span>
+                    <span class="tag">Scholar</span>
+                    <span class="tag">Flights</span>
+                    <span class="tag">Recipes</span>
+                    <span class="tag">Shopping</span>
+                    <span class="tag">Maps / Local</span>
+                </div>
+                <p style="margin-top:0.75rem; color:var(--muted);">Each of these indexes different types of content. When you optimize for SEO, you're not just targeting one — good SEO can help your content appear across multiple Google surfaces.</p>
+            </div>
+        </section>
+
+        <hr class="divider">
+
+
+        <!-- =============================================
+             SECTION 2 — HOW SEO WORKS
+        ============================================= -->
+        <section id="how-seo-works">
+            <div class="eyebrow">Section 02</div>
+            <h2 class="section-title">How SEO Works</h2>
+
+            <div class="content-card">
+                <p>When you publish a webpage, Google sends out automated programs called <strong>crawlers</strong> (also called spiders or bots) to discover and read your page. The crawler follows links from page to page, reading the HTML content — not the visual design.</p>
+                <p>Once crawled, Google <strong>indexes</strong> the page — storing it in a massive database. When someone searches, Google's algorithm scores all indexed pages against the search query and returns the most relevant results.</p>
+
+                <div class="process-steps">
+                    <div class="step">
+                        <div class="step-num">1</div>
+                        <div class="step-content">
+                            <h4>Crawl</h4>
+                            <p>Google's bots discover your page by following links across the web.</p>
+                        </div>
+                    </div>
+                    <div class="step-arrow">→</div>
+                    <div class="step">
+                        <div class="step-num">2</div>
+                        <div class="step-content">
+                            <h4>Index</h4>
+                            <p>The page is read, understood, and stored in Google's database.</p>
+                        </div>
+                    </div>
+                    <div class="step-arrow">→</div>
+                    <div class="step">
+                        <div class="step-num">3</div>
+                        <div class="step-content">
+                            <h4>Rank</h4>
+                            <p>When someone searches, Google scores your page against hundreds of factors and decides where it appears.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="callout callout-amber">
+                    <span class="callout-icon">⚠️</span>
+                    <p><strong>Important:</strong> Search engines do not see CSS. They read your HTML. A beautifully designed page with poor HTML structure will rank worse than a plain page with excellent semantic HTML.</p>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">Why Does This Matter to You?</h3>
+            <div class="two-col">
+                <div class="content-card">
+                    <h4>As a web developer or designer</h4>
+                    <p>You want your company, product, service or idea to appear to as many potential customers as possible — and to pay the least amount possible to do so. Paid ads stop working the moment you stop paying. Good SEO keeps working for years.</p>
+                </div>
+                <div class="content-card">
+                    <h4>For your personal portfolio</h4>
+                    <p>After graduation you will be selling yourself as a professional. You want employers and clients searching for web design talent in Calgary to be able to find you — without you spending money on ads. SEO is how you make that happen.</p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="divider">
+
+
+        <!-- =============================================
+             SECTION 3 — ON PAGE SEO
+        ============================================= -->
+        <section id="on-page-seo">
+            <div class="eyebrow">Section 03</div>
+            <h2 class="section-title">On-Page SEO</h2>
+
+            <div class="content-card">
+                <p><strong>On-page SEO</strong> covers everything directly within your control — how you write your HTML, what content you publish, and how your page is structured. These are the factors a web developer has the most influence over.</p>
+            </div>
+
+            <h3 class="subsection-title">HTML Structure</h3>
+            <div class="content-card">
+                <p>Google reads your HTML to understand what a page is about. Using semantic, well-structured HTML makes this easier.</p>
+
+                <div class="compare-grid">
+                    <div class="compare-block bad">
+                        <div class="compare-label bad-label">❌ Bad — not semantic</div>
+                        <pre><code>&lt;div class="big-text"&gt;
+    Calgary Web Developer
+&lt;/div&gt;
+&lt;div class="smaller"&gt;
+    I build websites
+&lt;/div&gt;
+&lt;div&gt;
+    &lt;img src="me.jpg"&gt;
+&lt;/div&gt;</code></pre>
+                        <p class="compare-note">Google has no idea what "big-text" or "smaller" means. The image has no description.</p>
+                    </div>
+                    <div class="compare-block good">
+                        <div class="compare-label good-label">✅ Good — semantic HTML</div>
+                        <pre><code>&lt;h1&gt;Calgary Web Developer&lt;/h1&gt;
+&lt;p&gt;I build responsive websites
+using HTML, CSS and JavaScript.
+&lt;/p&gt;
+&lt;img src="me.jpg"
+     alt="Prashant Sharma,
+     web developer in Calgary"&gt;</code></pre>
+                        <p class="compare-note">Google understands the heading hierarchy, the body text, and what the image shows.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">Key On-Page Factors</h3>
+            <div class="factor-list">
+
+                <div class="factor-item">
+                    <div class="factor-icon">📝</div>
+                    <div class="factor-content">
+                        <h4>Page Title — <code>&lt;title&gt;</code></h4>
+                        <p>The most important on-page SEO element. Appears in the browser tab and as the blue link in Google results. Should include your primary keyword and be under 60 characters.</p>
+                        <div class="code-snippet"><code>&lt;title&gt;Calgary Web Developer | Prashant Sharma&lt;/title&gt;</code></div>
+                    </div>
+                </div>
+
+                <div class="factor-item">
+                    <div class="factor-icon">📋</div>
+                    <div class="factor-content">
+                        <h4>Meta Description — <code>&lt;meta name="description"&gt;</code></h4>
+                        <p>The short summary shown under the page title in Google results. Doesn't directly affect ranking but affects click-through rate. Keep under 160 characters.</p>
+                        <div class="code-snippet"><code>&lt;meta name="description" content="Calgary-based web developer specializing in responsive HTML, CSS, and JavaScript. Available for freelance projects."&gt;</code></div>
+                    </div>
+                </div>
+
+                <div class="factor-item">
+                    <div class="factor-icon">🔤</div>
+                    <div class="factor-content">
+                        <h4>Heading Hierarchy — <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code></h4>
+                        <p>Use one <code>&lt;h1&gt;</code> per page — it tells Google the main topic. Subheadings (<code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code>) structure the content like chapters in a book.</p>
+                        <div class="code-snippet"><code>&lt;h1&gt;Web Development Portfolio&lt;/h1&gt;
+&lt;h2&gt;Projects&lt;/h2&gt;
+&lt;h3&gt;Dexter's Laboratory Fan Page&lt;/h3&gt;</code></div>
+                    </div>
+                </div>
+
+                <div class="factor-item">
+                    <div class="factor-icon">🖼️</div>
+                    <div class="factor-content">
+                        <h4>Image Alt Text — <code>alt</code> attribute</h4>
+                        <p>Google cannot see images — it reads the <code>alt</code> attribute to understand what they show. Every image should have a descriptive alt text. This also makes your page accessible to screen readers.</p>
+                        <div class="code-snippet"><code>&lt;!-- Bad --&gt;
+&lt;img src="project.jpg" alt="image"&gt;
+
+&lt;!-- Good --&gt;
+&lt;img src="project.jpg" alt="Screenshot of responsive restaurant website on mobile and desktop"&gt;</code></div>
+                    </div>
+                </div>
+
+                <div class="factor-item">
+                    <div class="factor-icon">🔗</div>
+                    <div class="factor-content">
+                        <h4>Meaningful Link Text</h4>
+                        <p>The text inside a link tells Google what the linked page is about. Avoid "click here" — use descriptive text that makes sense out of context.</p>
+                        <div class="code-snippet"><code>&lt;!-- Bad --&gt;
+&lt;a href="/projects"&gt;Click here&lt;/a&gt;
+
+&lt;!-- Good --&gt;
+&lt;a href="/projects"&gt;View my web development projects&lt;/a&gt;</code></div>
+                    </div>
+                </div>
+
+                <div class="factor-item">
+                    <div class="factor-icon">📱</div>
+                    <div class="factor-content">
+                        <h4>Mobile Optimization</h4>
+                        <p>Google uses <strong>mobile-first indexing</strong> — it crawls and ranks the mobile version of your page, not the desktop version. If your site isn't responsive, it will rank lower. This is why responsive design is an SEO requirement, not just a nice-to-have.</p>
+                        <div class="code-snippet"><code>&lt;!-- Required in every HTML file --&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></div>
+                    </div>
+                </div>
+
+                <div class="factor-item">
+                    <div class="factor-icon">⚡</div>
+                    <div class="factor-content">
+                        <h4>Page Load Speed</h4>
+                        <p>Google favours fast-loading pages. Large uncompressed images are the most common culprit. Use modern formats like WebP, compress images before uploading, and avoid unnecessary JavaScript.</p>
+                    </div>
+                </div>
+
+                <div class="factor-item">
+                    <div class="factor-icon">🔒</div>
+                    <div class="factor-content">
+                        <h4>URL Structure</h4>
+                        <p>URLs should be short, readable, and include keywords where possible. Avoid random numbers or query strings in URLs.</p>
+                        <div class="code-snippet"><code>❌  yoursite.com/page?id=4821
+✅  yoursite.com/projects/restaurant-website</code></div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <hr class="divider">
+
+
+        <!-- =============================================
+             SECTION 4 — OFF PAGE SEO
+        ============================================= -->
+        <section id="off-page-seo">
+            <div class="eyebrow">Section 04</div>
+            <h2 class="section-title">Off-Page SEO</h2>
+
+            <div class="content-card">
+                <p><strong>Off-page SEO</strong> refers to factors outside your direct control — how the rest of the web references and links to your site. These are sometimes called <em>organic SEO factors</em>.</p>
+                <p>The most important off-page factor is <strong>backlinks</strong> — other websites linking to yours. Google treats a link from another site as a "vote of confidence." A link from a high-authority site (like a university, a major news outlet, or a well-known industry blog) carries much more weight than a link from an unknown site.</p>
+            </div>
+
+            <div class="factor-list">
+
+                <div class="factor-item">
+                    <div class="factor-icon">🔗</div>
+                    <div class="factor-content">
+                        <h4>Backlinks — Quality over Quantity</h4>
+                        <p>One link from a reputable source like a government site or university is worth more than 100 links from low-quality directories. Focus on creating content worth linking to, and building genuine relationships with other professionals in your field.</p>
+                    </div>
+                </div>
+
+                <div class="factor-item">
+                    <div class="factor-icon">📱</div>
+                    <div class="factor-content">
+                        <h4>Social Media Presence</h4>
+                        <p>Posting on LinkedIn, GitHub, or other platforms and linking back to your portfolio builds signals that your site is active and relevant. Social shares don't directly affect ranking, but they drive traffic — which does.</p>
+                    </div>
+                </div>
+
+                <div class="factor-item">
+                    <div class="factor-icon">🕰️</div>
+                    <div class="factor-content">
+                        <h4>Domain Age and History</h4>
+                        <p>Older domains with consistent history tend to rank better. Once you pick a domain name for your portfolio, don't change it — changing your domain resets your accumulated authority.</p>
+                    </div>
+                </div>
+
+                <div class="factor-item">
+                    <div class="factor-icon">🌍</div>
+                    <div class="factor-content">
+                        <h4>Domain Country Code</h4>
+                        <p>A <code>.ca</code> domain will rank higher in Canadian search results. A <code>.co.uk</code> domain ranks better in the UK. For a Canadian employer looking for a Calgary developer, a <code>.ca</code> domain signals local relevance.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <hr class="divider">
+
+
+        <!-- =============================================
+             SECTION 5 — SEO PERIODIC TABLE
+        ============================================= -->
+        <section id="seo-periodic-table">
+            <div class="eyebrow">Section 05</div>
+            <h2 class="section-title">The SEO Periodic Table</h2>
+
+            <div class="content-card">
+                <p>The <strong>SEO Periodic Table</strong>, organises all known SEO ranking factors into a visual format modelled after the chemistry periodic table. Each "element" represents a ranking factor, grouped by category and weighted by importance.</p>
+                <p>Just like the chemistry periodic table gives chemists a quick reference to all elements and their properties, the SEO Periodic Table gives web professionals a quick reference to all factors that influence search ranking — from content quality and HTML structure to backlinks and user engagement signals.</p>
+
+                <div class="periodic-groups">
+                    <div class="pg-item pg-content">
+                        <span class="pg-symbol">Cn</span>
+                        <span class="pg-name">Content</span>
+                    </div>
+                    <div class="pg-item pg-arch">
+                        <span class="pg-symbol">Ar</span>
+                        <span class="pg-name">Architecture</span>
+                    </div>
+                    <div class="pg-item pg-html">
+                        <span class="pg-symbol">Hm</span>
+                        <span class="pg-name">HTML</span>
+                    </div>
+                    <div class="pg-item pg-trust">
+                        <span class="pg-symbol">Tr</span>
+                        <span class="pg-name">Trust</span>
+                    </div>
+                    <div class="pg-item pg-links">
+                        <span class="pg-symbol">Lk</span>
+                        <span class="pg-name">Links</span>
+                    </div>
+                    <div class="pg-item pg-social">
+                        <span class="pg-symbol">Sc</span>
+                        <span class="pg-name">Social</span>
+                    </div>
+                    <div class="pg-item pg-personal">
+                        <span class="pg-symbol">Ps</span>
+                        <span class="pg-name">Personal</span>
+                    </div>
+                </div>
+                <button class="btn" id="show-pt">Show SEO Periodic Table</button>
+            </div>
+
+            <!-- PLACEHOLDER FOR SEO PERIODIC TABLE IMAGE -->
+            <div class="image-placeholder">
+                <dialog id="pt-dialog">
+                    <div class="img-container">
+                        <img class="p-img" src="SEO_PeriodicTable.png" alt="The SEO Periodic Table by Search Engine Land">
+                    </div>
+                    <button class="btn" id="closeDialog">Close</button>
+                </dialog>
+            </div>
+
+            <div class="callout callout-blue" style="margin-top:1rem;">
+                <span class="callout-icon">🔗</span>
+                <p>The full interactive version is available at <strong>Search Engine Land</strong>: <a href="https://searchengineland.com/seotable" target="_blank" rel="noopener">searchengineland.com/seotable</a></p>
+            </div>
+        </section>
+
+        <hr class="divider">
+
+
+        <!-- =============================================
+             SECTION 6 — 5 BIGGEST SEO MISTAKES
+        ============================================= -->
+        <section id="seo-mistakes">
+            <div class="eyebrow">Section 06</div>
+            <h2 class="section-title">5 Biggest SEO Mistakes</h2>
+
+            <div class="mistakes-list">
+                <div class="mistake-item">
+                    <div class="mistake-num">1</div>
+                    <div class="mistake-content">
+                        <h4>Focusing on SEO before defining your value proposition</h4>
+                        <p>If you don't know what your site is for or who it's for, no amount of keyword optimisation will help. Know your purpose first — then optimise for it.</p>
+                    </div>
+                </div>
+                <div class="mistake-item">
+                    <div class="mistake-num">2</div>
+                    <div class="mistake-content">
+                        <h4>Focusing on SEO before focusing on users</h4>
+                        <p>Google's algorithm is designed to reward pages that genuinely help users. A page optimised for humans will naturally score well with robots. Optimising for robots first usually produces pages that feel hollow and rank poorly anyway.</p>
+                    </div>
+                </div>
+                <div class="mistake-item">
+                    <div class="mistake-num">3</div>
+                    <div class="mistake-content">
+                        <h4>Spending time on hacks and workarounds</h4>
+                        <p>Keyword stuffing, buying links, and other shortcuts may produce a short-term boost but Google detects and penalises these patterns. A penalty can push a site off the first 10 pages of results — sometimes permanently.</p>
+                    </div>
+                </div>
+                <div class="mistake-item">
+                    <div class="mistake-num">4</div>
+                    <div class="mistake-content">
+                        <h4>Creating hidden content to trick crawlers</h4>
+                        <p>Hiding text using <code>display: none</code>, white text on white backgrounds, or showing different content to bots than to users is called <em>cloaking</em>. Google considers this a violation of its guidelines and will de-index the site.</p>
+                    </div>
+                </div>
+                <div class="mistake-item">
+                    <div class="mistake-num">5</div>
+                    <div class="mistake-content">
+                        <h4>Not keeping up with Google's algorithm changes</h4>
+                        <p>Google updates its algorithm thousands of times per year. Following Google Search Central keeps you informed of what is being rewarded and penalised — ignoring it means strategies that worked last year may actively hurt you today.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="divider">
+
+
+        <!-- =============================================
+             SECTION 7 — SEO CHECKLIST (Interactive)
+        ============================================= -->
+        <section id="seo-checklist">
+            <div class="eyebrow">Section 07 — Interactive</div>
+            <h2 class="section-title">SEO Checklist</h2>
+            <p class="section-lead">Tick off each item as you apply it to a webpage. How many does your current portfolio page pass?</p>
+
+            <div class="checklist-wrapper">
+                <div class="checklist-group">
+                    <h3>HTML & Structure</h3>
+                    <label class="checklist-item">
+                        <input type="checkbox" class="check-input">
+                        <span class="checkmark"></span>
+                        <span class="check-text">Page has a descriptive <code>&lt;title&gt;</code> tag under 60 characters</span>
+                    </label>
+                    <label class="checklist-item">
+                        <input type="checkbox" class="check-input">
+                        <span class="checkmark"></span>
+                        <span class="check-text">Page has a <code>&lt;meta name="description"&gt;</code> under 160 characters</span>
+                    </label>
+                    <label class="checklist-item">
+                        <input type="checkbox" class="check-input">
+                        <span class="checkmark"></span>
+                        <span class="check-text">Page has exactly one <code>&lt;h1&gt;</code> tag containing the primary keyword</span>
+                    </label>
+                    <label class="checklist-item">
+                        <input type="checkbox" class="check-input">
+                        <span class="checkmark"></span>
+                        <span class="check-text">Headings follow a logical hierarchy (h1 → h2 → h3)</span>
+                    </label>
+                    <label class="checklist-item">
+                        <input type="checkbox" class="check-input">
+                        <span class="checkmark"></span>
+                        <span class="check-text">All images have descriptive <code>alt</code> attributes</span>
+                    </label>
+                    <label class="checklist-item">
+                        <input type="checkbox" class="check-input">
+                        <span class="checkmark"></span>
+                        <span class="check-text">Links use descriptive anchor text (no "click here")</span>
+                    </label>
+                    <label class="checklist-item">
+                        <input type="checkbox" class="check-input">
+                        <span class="checkmark"></span>
+                        <span class="check-text">Semantic HTML elements are used (<code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code>)</span>
+                    </label>
+                </div>
+
+                <div class="checklist-group">
+                    <h3>Performance & Mobile</h3>
+                    <label class="checklist-item">
+                        <input type="checkbox" class="check-input">
+                        <span class="checkmark"></span>
+                        <span class="check-text">Viewport meta tag is present</span>
+                    </label>
+                    <label class="checklist-item">
+                        <input type="checkbox" class="check-input">
+                        <span class="checkmark"></span>
+                        <span class="check-text">Page is fully responsive on mobile</span>
+                    </label>
+                    <label class="checklist-item">
+                        <input type="checkbox" class="check-input">
+                        <span class="checkmark"></span>
+                        <span class="check-text">Images are compressed and use modern formats (WebP)</span>
+                    </label>
+                    <label class="checklist-item">
+                        <input type="checkbox" class="check-input">
+                        <span class="checkmark"></span>
+                        <span class="check-text">Page loads in under 3 seconds</span>
+                    </label>
+                </div>
+
+                <div class="checklist-group">
+                    <h3>Content</h3>
+                    <label class="checklist-item">
+                        <input type="checkbox" class="check-input">
+                        <span class="checkmark"></span>
+                        <span class="check-text">Content is original — not copied from another site</span>
+                    </label>
+                    <label class="checklist-item">
+                        <input type="checkbox" class="check-input">
+                        <span class="checkmark"></span>
+                        <span class="check-text">Keywords appear naturally in the text (not stuffed)</span>
+                    </label>
+                    <label class="checklist-item">
+                        <input type="checkbox" class="check-input">
+                        <span class="checkmark"></span>
+                        <span class="check-text">URL is descriptive and includes keywords</span>
+                    </label>
+                </div>
+
+                <div class="checklist-score">
+                    <div class="score-display">
+                        <span id="score-num">0</span>
+                        <span class="score-slash">/</span>
+                        <span id="score-total">14</span>
+                    </div>
+                    <p id="score-msg">Start checking items above.</p>
+                    <button class="reset-btn" id="reset-checklist">Reset</button>
+                </div>
+            </div>
+        </section>
+
+        <hr class="divider">
+
+
+        <!-- =============================================
+             SECTION 8 — META TAG BUILDER (Interactive)
+        ============================================= -->
+        <section id="meta-builder">
+            <div class="eyebrow">Section 08 — Interactive</div>
+            <h2 class="section-title">Meta Tag Builder</h2>
+            <p class="section-lead">Type a page title and description and watch how your page would appear in Google search results in real time.</p>
+
+            <div class="builder-wrapper">
+                <div class="builder-inputs">
+                    <div class="builder-field">
+                        <label for="meta-title">Page Title <span class="char-counter" id="title-count">0 / 60</span></label>
+                        <input type="text" id="meta-title" class="builder-input" placeholder="e.g. Calgary Web Developer | Prashant Sharma" maxlength="80">
+                        <p class="field-hint">Recommended: under 60 characters. Longer titles get cut off in results.</p>
+                    </div>
+                    <div class="builder-field">
+                        <label for="meta-desc">Meta Description <span class="char-counter" id="desc-count">0 / 160</span></label>
+                        <textarea id="meta-desc" class="builder-input builder-textarea" placeholder="e.g. Calgary-based web developer specializing in responsive design. Available for freelance projects and full-time roles." maxlength="200"></textarea>
+                        <p class="field-hint">Recommended: under 160 characters. Doesn't affect ranking directly but affects click-through rate.</p>
+                    </div>
+                    <div class="builder-field">
+                        <label for="meta-url">Page URL</label>
+                        <input type="text" id="meta-url" class="builder-input" placeholder="e.g. yourname.ca/projects" value="yourname.ca">
+                    </div>
+
+                    <div class="code-output">
+                        <div class="code-output-header">Generated HTML — add this inside your <code>&lt;head&gt;</code></div>
+                        <pre id="meta-code-output"><code>&lt;title&gt;Your Title Here&lt;/title&gt;
+&lt;meta name="description" content="Your description here."&gt;</code></pre>
+                    </div>
+                </div>
+
+                <div class="builder-preview">
+                    <p class="preview-label">▶ Google Search Preview</p>
+                    <div class="google-preview">
+                        <div class="gp-url" id="preview-url">yourname.ca</div>
+                        <div class="gp-title" id="preview-title">Your Page Title</div>
+                        <div class="gp-desc" id="preview-desc">Your meta description will appear here. Write something that makes people want to click your result.</div>
+                    </div>
+                    <p class="preview-note">⚠️ Google may rewrite your title or description if it thinks an alternative better matches the search query.</p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="divider">
+
+
+        <!-- =============================================
+             SECTION 9 — WEB ANALYTICS
+        ============================================= -->
+        <section id="web-analytics">
+            <div class="eyebrow">Section 09</div>
+            <h2 class="section-title">Web Analytics</h2>
+
+            <div class="content-card">
+                <p><strong>Analytics</strong> is the discovery, interpretation, and communication of meaningful patterns in data. Web analytics specifically tracks how users find and interact with your website — giving you the data to make informed decisions about design, content, and strategy.</p>
+
+                <div class="three-col">
+                    <div class="three-item">
+                        <div class="three-icon">📊</div>
+                        <h4>Measure</h4>
+                        <p>Collect data on how users interact with your site — page views, time on page, clicks, form submissions.</p>
+                    </div>
+                    <div class="three-item">
+                        <div class="three-icon">📋</div>
+                        <h4>Report</h4>
+                        <p>Organise the data into meaningful summaries — weekly traffic reports, conversion rate trends, top-performing pages.</p>
+                    </div>
+                    <div class="three-item">
+                        <div class="three-icon">🔍</div>
+                        <h4>Analyze</h4>
+                        <p>Ask why — why did traffic drop? Why do users leave the contact page? Use data to answer these questions and make changes.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">What Can You Learn From Analytics?</h3>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-icon">👥</span>
+                    <p>How many people visit my website — and how many are new vs returning?</p>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">🌍</span>
+                    <p>Where do my visitors live — country, city, language?</p>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">🔗</span>
+                    <p>Which websites send traffic to my site?</p>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">📱</span>
+                    <p>How many users are on mobile vs desktop?</p>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">📄</span>
+                    <p>Which pages are the most popular?</p>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">🛒</span>
+                    <p>How many visitors converted into customers or enquiries?</p>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">🗺️</span>
+                    <p>Where do visitors go after landing on the homepage?</p>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">❤️</span>
+                    <p>What content do users engage with the most?</p>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">Data-Driven Design</h3>
+            <div class="content-card">
+                <p>Analytics data directly informs design and content decisions. Instead of guessing what users want, you can look at real behaviour and redesign accordingly.</p>
+                <ul class="styled-list">
+                    <li>If 80% of your users are on mobile but your site is desktop-first — prioritise mobile in your next redesign.</li>
+                    <li>If users consistently leave your contact page without submitting — maybe the form is too long or the CTA is unclear.</li>
+                    <li>If a blog post drives 60% of your traffic — write more content like it.</li>
+                    <li>If you're spending hours making Facebook graphics but they drive zero traffic — redirect that time elsewhere.</li>
+                    <li>If users are arriving on your site from a specific Google search — make sure that page answers that query thoroughly.</li>
+                </ul>
+            </div>
+        </section>
+
+        <hr class="divider">
+
+
+        <!-- =============================================
+             SECTION 10 — GOOGLE ANALYTICS
+        ============================================= -->
+        <section id="google-analytics">
+            <div class="eyebrow">Section 10</div>
+            <h2 class="section-title">Google Analytics</h2>
+
+            <div class="content-card">
+                <p><strong>Google Analytics</strong> is a free analytics platform that has become the industry standard. It can be installed on any website by adding a small JavaScript snippet to the <code>&lt;head&gt;</code> of each page.</p>
+
+                <div class="ga-features">
+                    <div class="ga-feature">
+                        <span class="ga-check">✓</span>
+                        <p>Free to use for most websites</p>
+                    </div>
+                    <div class="ga-feature">
+                        <span class="ga-check">✓</span>
+                        <p>Works on any website, mobile app, or web property</p>
+                    </div>
+                    <div class="ga-feature">
+                        <span class="ga-check">✓</span>
+                        <p>Allows comparison of your data against industry benchmarks</p>
+                    </div>
+                    <div class="ga-feature">
+                        <span class="ga-check">⚠️</span>
+                        <p>Your data is aggregated and shared with Google — important to disclose in your privacy policy</p>
+                    </div>
+                </div>
+
+                <div class="code-snippet" style="margin-top:1rem;">
+                    <code>&lt;!-- Add to &lt;head&gt; on every page --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+&lt;/script&gt;</code>
+                </div>
+                <p style="color:var(--muted); font-size:0.85rem; margin-top:0.5rem;">Replace <code>G-XXXXXXXXXX</code> with your actual Measurement ID from your Google Analytics account.</p>
+            </div>
+
+            <div class="callout callout-blue">
+                <span class="callout-icon">🔗</span>
+                <p>Explore Google Analytics: <a href="http://analytics.google.com" target="_blank" rel="noopener">analytics.google.com</a> &nbsp;|&nbsp; Google Search Console: <a href="https://search.google.com/search-console" target="_blank" rel="noopener">search.google.com/search-console</a></p>
+            </div>
+        </section>
+
+        <hr class="divider">
+
+
+        <!-- <section id="key-terms">
+            <div class="eyebrow">Section 11</div>
+            <h2 class="section-title">Key Terms</h2>
+
+            <div class="terms-grid">
+                <div class="term-card">
+                    <h4>Pageviews</h4>
+                    <p>The total number of times a page has been loaded. If one user refreshes a page 5 times, that counts as 5 pageviews.</p>
+                </div>
+                <div class="term-card">
+                    <h4>Unique Pageviews</h4>
+                    <p>Counts all views of a page within a single session as one event. Closer to "how many sessions included this page" than raw pageviews.</p>
+                </div>
+                <div class="term-card">
+                    <h4>Unique Visitors</h4>
+                    <p>The first time a user visits your site, one unique visitor is recorded. If they return next week, only a new visit is added — not another unique visitor.</p>
+                </div>
+                <div class="term-card">
+                    <h4>Bounce Rate</h4>
+                    <p>The percentage of visits where a user left after viewing only one page, regardless of how long they stayed. A high bounce rate on a contact page is bad. A high bounce rate on a "find our address" page may be fine — they found what they needed.</p>
+                </div>
+                <div class="term-card">
+                    <h4>Crawl</h4>
+                    <p>The process of Google's bots discovering and reading your webpages by following links across the internet.</p>
+                </div>
+                <div class="term-card">
+                    <h4>Index</h4>
+                    <p>Google's database of crawled pages. A page must be indexed to appear in search results. You can check if a page is indexed by searching <code>site:yoursite.com</code> on Google.</p>
+                </div>
+                <div class="term-card">
+                    <h4>Backlink</h4>
+                    <p>A link from another website pointing to your site. One of the strongest ranking signals — especially when the linking site is authoritative and relevant to your topic.</p>
+                </div>
+                <div class="term-card">
+                    <h4>Organic Traffic</h4>
+                    <p>Visitors who arrive at your site by clicking a non-paid search result. The goal of SEO is to maximise organic traffic without paying for ads.</p>
+                </div>
+                <div class="term-card">
+                    <h4>Conversion</h4>
+                    <p>A completed action that matches your site's goal — a form submission, a purchase, an email signup. Analytics lets you track how many visitors convert.</p>
+                </div>
+            </div>
+        </section> -->
+
+    </main>
+
+    <footer>
+        <p>References: &nbsp;
+            <a href="https://search.google.com/search-console" target="_blank" rel="noopener">Google Search Console</a> &nbsp;|&nbsp;
+            <a href="https://searchengineland.com/seotable" target="_blank" rel="noopener">SEO Periodic Table — Search Engine Land</a> &nbsp;|&nbsp;
+            <a href="https://analytics.google.com" target="_blank" rel="noopener">Google Analytics</a>
+        </p>
+        <p style="margin-top:0.5rem;">© 2025 Intermediate Web Development — For Educational Use Only.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
