@@ -103,22 +103,28 @@ The `<prefix>` is a short abbreviation of the topic name. For example:
 
 ## 📚 Topics Covered
 
-The table below shows all the topics covered in class, the date they were taught, and the corresponding folder in this repository.
+The table below shows all the topics covered in class and the corresponding folder in this repository.
 
-| Sr No. | Topic | Date | Repo Folder |
-|--------|-------|------|-------------|
-| 1 | Course Introduction | 4th May | **NA** |
-| 2 | Git, GitHub, GitHub Desktop | 6th May | **NA** |
-| 3 | Combinator & Box Sizing | 11th May | `Combinator_BoxSizing` |
-| 4 | Flexbox | 11–13th May | `Flexbox` |
-| 5 | Flexbox - Navigation bar| 20th May | `Flexbox\TakeItFurther` |
-| 6 | Grid Layout | 25th May | `GridLayout |
-| 7 | Calculator Using Grid | 25th May | `GridLayout\TakeItFurther` |
-| 8 | Media Query | 27th May | `MediaQuery` |
-| 9 | Responsive Image | 1st June | `ResponsiveImage` |
-| 10 | Responsive Image Exercise | 1st June | `ResponsiveImage\ResponsiveImage_Grid_Practice` |
-| 11 | Position Property | 3rt June | `Position_NavigationMenu\PositionProperty` |
-| 12 | Forms | 15th June | `Forms` |
+| Sr No. | Topic | Repo Folder |
+|--------|-------|-------------|
+| 1 | Combinator & Box Sizing | `Combinator_BoxSizing` |
+| 2 | Flexbox | `Flexbox` |
+| 3 | Flexbox - Navigation Bar | `Flexbox\TakeItFurther` |
+| 4 | Grid Layout | `GridLayout` |
+| 5 | Calculator Using Grid | `GridLayout\TakeItFurther` |
+| 6 | Media Query | `MediaQuery` |
+| 7 | Responsive Image | `ResponsiveImage` |
+| 8 | Responsive Image Exercise | `ResponsiveImage\ResponsiveImage_Grid_Practice` |
+| 9 | Position Property | `Position_NavigationMenu\PositionProperty` |
+| 10 | Navigation Menu - Dropdown | `Position_NavigationMenu\NavMenu-dropdown` |
+| 11 | Forms | `Forms` |
+| 12 | Registration Form Exercise | `Forms\RegistrationForm` |
+| 13 | JavaScript - Important Concepts | `JS_Intro` |
+| 14 | JavaScript - Practice Exercises | `PractiseExercises` |
+| 15 | Audio & Video | `AudioVideo` |
+| 16 | CSS Animation | `CssAnimation` |
+| 17 | CSS Animation Practice | `CssAnimation\CSS_Animation_Practice` |
+| 18 | Search Engine Optimization (SEO) | `SEO` |
 
 > 📝 **Note:** This table is updated as new topics are covered in class. Check back after each class for updates!
 
