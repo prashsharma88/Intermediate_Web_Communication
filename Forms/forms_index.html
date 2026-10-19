@@ -3,14 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
     <title>Forms</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/theme.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <header>
+        <div>
+            <p><span class="badge">HTML</span></p>
+        </div>
         <h1>HTML Forms</h1>
-        <p>One tag. Infinite possibilities. Meet the <span class="highlight">form</span></p>
+        <p class="header-intro">One tag. Infinite possibilities. Meet the <span class="highlight">form</span></p>
     </header>
+
     <div>
         <p id="home-btn" class="badge"><a href="../index.html">Home</a></p>
     </div>
@@ -21,7 +29,7 @@
         </section>
 
         <section id="why">
-            <h2>Why Forms Matter</h3>
+            <h2>Why Forms Matter</h2>
             <p>
                 Html forms enable you to:
                 <ul>
@@ -34,13 +42,16 @@
         </section>
 
         <section id="form-elements">
-            <h2>HTML Elements for Form:</h3>
+            <h2>HTML Elements for Form:</h2>
 
             <!-- FORM ELEMENT -->
             <article>
-                <h3 class="title">1. The <code>&lt;form&gt;</code> element</h3>
-                <p class="define">The <code>&lt;form&gt;</code> element is the container for all form controls. It defines where and how data is sent when the form is submitted.</p>
-                <p class="code-example">
+                <div class="article-title">
+                    <h3 class="title">1. The <code>&lt;form&gt;</code> element</h3>
+                    <p class="define">The <code>&lt;form&gt;</code> element is the container for all form controls. It defines where and how data is sent when the form is submitted.</p>
+                </div>
+                <div class="article-body">
+                    <p class="code-example">
                     &lt;form action="/submit" method="POST"&gt; <br>
                         &emsp;<span class="comment">&lt; ! - - Form element go here - - &gt;</span> <br>
                     &lt;/form&gt; <br>
@@ -50,13 +61,17 @@
                     <p><code>action</code> : The URL where form data is sent on submission</p>
                     <p><code>method</code> : HTTP method used to send data, <code>GET</code> append data to URL, <code>POST</code> sends data in the request body</p>
                 </div>
+                </div>
             </article>
 
             <!-- INPUT ELEMENT -->
             <article>
-                <h3 class="title">2. The <code>&lt;input&gt;</code> element</h3>
-                <p class="define">The most versatile form element. Its behaviour is entirely controlled by the <code>type</code> attibute. It is a <strong>self-closing</strong> element.</p>
-                <p class="code-example">
+                <div class="article-title">
+                    <h3 class="title">2. The <code>&lt;input&gt;</code> element</h3>
+                    <p class="define">The most versatile form element. Its behaviour is entirely controlled by the <code>type</code> attribute. It is a <strong>self-closing</strong> element.</p>
+                </div>
+                <div class="article-body">
+                    <p class="code-example">
                     &lt;input <br>
                     &emsp; type="text" <br>
                     &emsp; name="username" <br>
@@ -74,13 +89,17 @@
                     <p><code>required</code> : Makes the field mandatory before submission</p>
                     <p><code>disabled</code> : Disables the field — user cannot interact with it</p>
                     <p><code>readonly</code> : User can see the value but cannot change it</p>
+                </div>
             </article>
 
             <!-- LABEL ELEMENT -->
             <article>
-                <h3 class="title">3. The <code>&lt;label&gt;"</code> element</h3>
-                <p class="define">Labels describe what an input is for. They are critical for <strong>accessibility</strong> — screen readers read the label aloud when a user focuses on the input.</p>
-                <p class="code-example">
+                <div class="article-title">
+                    <h3 class="title">3. The <code>&lt;label&gt;"</code> element</h3>
+                    <p class="define">Labels describe what an input is for. They are critical for <strong>accessibility</strong> — screen readers read the label aloud when a user focuses on the input.</p>
+                </div>
+                <div class="article-body">
+                    <p class="code-example">
                     &ltlabel for="username"&gt;Username:&lt;/label&gt; <br>
                     &ltinput type="text" id="username" name="username"&gt; <br>
                     <br>
@@ -96,13 +115,17 @@
                     <p><strong>Attributes:</strong></p>
                     <p><code></code> : </p>
                 </div> -->
+                </div>
             </article>
 
             <!-- TEXTAREA -->
             <article>
-                <h3 class="title">4. The <code>&lt;textarea&gt;</code> element</h3>
-                <p class="define">A multi-line text input. Unline <code>&lt;input&gt;</code>, it has an opening and closing tag. Default size is controlled by <code>rows</code> and <code>cols</code> attibutes.</p>
-                <p class="code-example">
+                <div class="article-title">
+                    <h3 class="title">4. The <code>&lt;textarea&gt;</code> element</h3>
+                    <p class="define">A multi-line text input. Unline <code>&lt;input&gt;</code>, it has an opening and closing tag. Default size is controlled by <code>rows</code> and <code>cols</code> attributes.</p>
+                </div>
+                <div class="article-body">
+                    <p class="code-example">
                     &ltlabel for="message"&gt;Message:&lt;/label&gt; <br>
                     &lt;textarea id="message" name="message" rows="5" cols="40" placeholder="Write your message"&gt; <br>
                     &lt;/textarea&gt;
@@ -115,13 +138,17 @@
                     <p><code>maxlength</code> : Maximum number of characters allowed</p>
                     <p><code>resize</code> : Controlled via CSS - <code>resize: none</code> prevents user resizing</p>
                 </div>
+                </div>
             </article>
 
             <!-- SELECT -->
             <article>
-                <h3 class="title">5. The <code>&lt;select&gt;</code> element</h3>
-                <p class="define">Creates a dropdown list. Options are defined with <code>&lt;option&gt;</code> elements inside it. Related options can be grouped using <code>&lt;optgroup&gt;</code>.</p>
-                <p class="code-example">
+                <div class="article-title">
+                    <h3 class="title">5. The <code>&lt;select&gt;</code> element</h3>
+                    <p class="define">Creates a dropdown list. Options are defined with <code>&lt;option&gt;</code> elements inside it. Related options can be grouped using <code>&lt;optgroup&gt;</code>.</p>
+                </div>
+                <div class="article-body">
+                    <p class="code-example">
                     &lt;label for="province"&gt;Provience:&lt;/label&gt; <br>
                     &lt;select id="province" name="province"&gt; <br>
                     &emsp;&lt;option value=""&gt;-- Select a province --&lt;/option&gt; <br>
@@ -140,13 +167,17 @@
                     <p><code>selected</code> : Pre-selects an <code>&lt;option&gt;</code> by default</p>
                     <p><code>disable</code> : Disable an individual <code>&lt;option&gt;</code> - useful for placeholder options</p>
                 </div>
+                </div>
             </article>
 
             <!-- BUTTON -->
             <article>
-                <h3 class="title">6. The <code>&lt;button&gt;</code> element</h3>
-                <p class="define">More flexible than <code>&lt;input type="button"&gt;</code> because it can contain HTML — icons, images, or styled text.</p>
-                <p class="code-example">
+                <div class="article-title">
+                    <h3 class="title">6. The <code>&lt;button&gt;</code> element</h3>
+                    <p class="define">More flexible than <code>&lt;input type="button"&gt;</code> because it can contain HTML — icons, images, or styled text.</p>
+                </div>
+                <div class="article-body">
+                    <p class="code-example">
                     <span class="comment">&lt; ! - - Submits the form - - &gt;</span> <br>
                     &lt;button type="submit"&gt;Submit&lt;/button&gt; <br>
                     <br>
@@ -158,13 +189,17 @@
                     <span class="comment">&lt; ! - - No default behaviour — used with JavaScript - - &gt;</span> <br>
                     &lt;button type="button"&gt;Preview&lt;/button&gt; <br>
                 </p>
+                </div>
             </article>
 
             <!-- FIELDSET -->
             <article>
-                <h3 class="title">7. The <code>&lt;fieldset&gt;</code> and <code>&lt;legend&gt;</code> elements</h3>
-                <p class="define"><code>&lt;fieldset&gt;</code> groups related form controls together. <code>&lt;legend&gt;</code> provides a caption for the group.</p>
-                <p class="code-example">
+                <div class="article-title">
+                    <h3 class="title">7. The <code>&lt;fieldset&gt;</code> and <code>&lt;legend&gt;</code> elements</h3>
+                    <p class="define"><code>&lt;fieldset&gt;</code> groups related form controls together. <code>&lt;legend&gt;</code> provides a caption for the group.</p>
+                </div>
+                <div class="article-body">
+                    <p class="code-example">
                     &lt;fieldset&gt; <br>
                     &emsp;&lt;legend&gt;Personal Information&lt;/legend&gt; <br>
                     &emsp;&lt;label for="fname"&gt;First Name:&lt;/label&gt; <br>
@@ -174,6 +209,7 @@
                     &emsp;&lt;input type="text" id="lname" name="lname"&gt; <br>
                     &lt;/fieldset&gt; <br>
                 </p>
+                </div>
             </article>
         </section>
 
@@ -194,27 +230,23 @@
             </div>
             
         </section>
+
+        <div class="take-it-further-container">
+            <p class="take-it-further-btn">
+                <a href="./RegistrationForm/registrationForm_index_starter.html">Exercise</a>
+            </p>
+        </div>
     </main>
 
-    <div class="take-it-further-container">
-        <p class="take-it-further-btn">
-            <a href="./RegistrationForm/registrationForm_index_starter.html">Exercise</a>
-        </p>
-    </div>
 
     <footer>
-        <p>The content and code examples are taken from the below websites:</p>
-        <ul>
-            <li>
-                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form" target="_blank" rel="noopener">MDN — HTML Form Element</a>
-            </li>
-            <li>
-                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input" target="_blank" rel="noopener">MDN — HTML Input Element</a>
-            </li>
-            <li>
-                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms" target="_blank" rel="noopener">MDN — Web Forms Guide</a>
-            </li>
-        </ul>
+        <p>&copy; 2026 Prashant Sharma. For educational use only.</p>
+        <nav class="footer-links">
+            <span>References:</span>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form" target="_blank" rel="noopener">MDN — HTML Form Element</a>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input" target="_blank" rel="noopener">MDN — HTML Input Element</a>
+            <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms" target="_blank" rel="noopener">MDN — Web Forms Guide</a>
+        </nav>
     </footer>
 </body>
-</html>
+</html>

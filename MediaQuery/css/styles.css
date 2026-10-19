@@ -1,84 +1,8 @@
-
-p#home-btn {
-    background-color: #202940;
-    color: #F5F5F5;
-    padding: 5px;
-    border-radius: 10px;
-    position: absolute;
-    width: fit-content;
-    top: 40px;
-    right: 50px;
-}
-
-p#home-btn a {
-    color: #F5F5F5;
-    text-decoration: none;
-}
-
-
-body {
-    background-color: #B7B7B7;
-    padding: 10px 20px;
-    font-family: Ubuntu;
-}
-
-header {
-    font-size: 1.5rem;
-    background-color: #F6F5F2;
-    padding: 20px;
-    border: 3px solid #243642;
-    border-radius: 10px;
-}
-
-section {
-    background-color: #FFFFFF;
-    padding: 10px;
-    margin: 20px 0; /* adding vertical margin of 20px and horizontal margin of 0 */
-    border: 2px solid white;
-    border-radius: 10px;
-    font-size: 1.3rem;
-}
-
-code {
-    color: red;
-}
-
-
-code.inline {
-    background-color: gainsboro;
-    padding: 1px 5px;
-}
-
-.comment {
-    color: grey;
-}
-
-.code-example {
-    background-color: #CAF4FF;
-    padding: 10px;
-    width: fit-content;
-    border-radius: 10px;
-}
-
-footer {
-    background-color: #FFFFFF;
-    padding: 5px;
-    margin: 20px 0;
-    border: 2px solid #FFFFFF;
-    border-radius: 10px;
-    font-size: 0.8rem;
-    text-align: center;
-}
-
-footer ul {
-    padding: 0;
-    list-style: none;
-}
-
-
+/* Media Query page: only the rules for this lesson's demos.
+   Page frame, header, sections, code blocks and footer come from ../../css/theme.css */
 
 /*
-Write media query for devices with width of 600px and less.
+Media query for devices with width of 600px and less.
 
 1.) In that media query, for all "p" elements with class of "code-example", set display to 'none'
 
@@ -104,7 +28,7 @@ Write media query for devices with width of 600px and less.
 
 
 /*
-Devices width of 800px and above, use grid layout in <main> element 
+Devices width of 800px and above, use grid layout in <main> element
  */
  @media screen and (width >= 800px) {
   main {

@@ -1,38 +1,20 @@
-*, *::before, *::after {
-    padding: 0;
-    margin:0;
-    box-sizing: border-box;
-}
+/* Exercise 3 - Image Selector: styles for the exercise widget.
+   Page frame (header, home button, footer) comes from ../../css/theme.css */
 
 img {
     display: block;
 }
 
-header {
-    padding: 20px;
-    text-align: center;
-    background-color: rgb(64, 64, 153);
-    color: white;
-    margin-bottom: 30px;
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
 .card {
     border-radius: 10px;
     overflow: hidden;
-    margin-bottom: 20px;
-    border: 1px solid black;
+    border: 1px solid var(--art-border);
 }
 
 #btn-container {
     display: flex;
-    border: 1px solid black;
+    flex-wrap: wrap;
+    border: 1px solid var(--art-border);
     border-radius: 10px;
     gap: 30px;
     justify-content: center;
@@ -46,4 +28,5 @@ main {
     border: 1px solid transparent;
     color: white;
     border-radius: 5px;
+    cursor: pointer;
 }

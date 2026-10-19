@@ -69,7 +69,8 @@ IntermediateWebCommunication/
 │
 ├── index.html              ← Home page with links to all topics
 ├── css/
-│   └── styles.css          ← Styles for the home page
+│   ├── theme.css           ← Shared look (colors, header, footer, code blocks) used by every page
+│   └── styles.css          ← Styles that are only for the home page
 │
 ├── Combinator_BoxSizing/   ← Topic folder example
 │   ├── cbs_index.html      ← Landing page for this topic
@@ -93,7 +94,7 @@ Each topic folder follows the same structure to keep things consistent:
 | File | Description |
 |---|---|
 | `<prefix>_index.html` | Landing page for the topic |
-| `css/<prefix>_styles.css` | Stylesheet for that topic |
+| `css/<prefix>_styles.css` | Stylesheet for that topic (only the rules for that topic's demos; the page look comes from `css/theme.css`) |
 
 The `<prefix>` is a short abbreviation of the topic name. For example:
 - **Combinator & Box Sizing** → prefix is `cbs`

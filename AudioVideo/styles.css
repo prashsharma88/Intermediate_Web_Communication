@@ -1,74 +1,17 @@
-*,*::before,*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-:root {
-    --txt-color: #464858;
-    --bg-color-header-footer: #AACCD6;
-    --bg-body: #464858;
-    --bg-section: #F5F5F5;
-}
-
-body {
-    color: var(--txt-color);
-    background-color: var(--bg-body);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
-}
-
-p#home-btn {
-    background-color: #202940;
-    color: #F5F5F5;
-    padding: 5px;
-    border-radius: 10px;
-    position: absolute;
-    width: fit-content;
-    top: 40px;
-    right: 50px;
-}
-
-p#home-btn a {
-    color: #F5F5F5;
-    text-decoration: none;
-}
-
-header {
-    padding: 30px;
-    text-align: center;
-    background-color: var(--bg-color-header-footer);
-}
-
-section {
-    background-color: var(--bg-section);
-    width: 80%;
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 20px;
-    border-radius: 20px;
-}
-
-code {
-   padding: 2px 5px;
-    color: rgb(138, 3, 3);
-    background-color: rgb(230, 229, 229);
-    border-radius: 3px; 
-}
+/* Audio / Video page: only the rules for this lesson's demos.
+   Page frame, header, sections, code and footer come from ../css/theme.css */
 
 code.title {
-    background-color: rgb(170, 169, 169);
-    font-weight: 600;
     font-size: 1rem;
 }
-
-
 
 ul {
     list-style: none;
 }
 
-li {
-    margin: 10px 0;
+section > ul,
+.sub-section ul {
+    padding-left: 0;
 }
 
 .lead {
@@ -79,10 +22,10 @@ li {
 .sub-section {
     margin: 10px 0;
     padding: 10px 0;
-    border-bottom: 1px solid rgb(175, 174, 174);
+    border-bottom: 1px solid var(--art-border);
 }
 
-
+/* Quiz */
 .ans {
     cursor: pointer;
     margin: 15px 0
@@ -99,7 +42,6 @@ li {
 #ans2::after {
     content: '\2705';
 }
-
 
 #my-video {
     width: 100%;

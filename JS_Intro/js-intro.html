@@ -3,21 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <title>Introduction to JavaScript</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/theme.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<header>
-    <div class="header-badge">Intermediate Web Development</div>
-    <h1>Introduction to <span>JavaScript</span></h1>
-    <p>Adding interactivity to your webpages — no programming degree required.</p>
-</header>
+    <header>
+        <div>
+            <p><span class="badge">JavaScript</span></p>
+        </div>
+        <h1>Introduction to <span>JavaScript</span></h1>
+        <p class="header-intro">Adding interactivity to your webpages — no programming degree required.</p>
+    </header>
 
-<div>
+    <div>
         <p id="home-btn" class="badge"><a href="../index.html">Home</a></p>
-</div>
+    </div>
 
 <main>
 
@@ -553,11 +558,13 @@ navLinks.<span class="mth">forEach</span>(<span class="kw">function</span>(link)
 </main>
 
 <footer>
-    <p>Content and examples based on: &nbsp;
-        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener">MDN Web Docs — JavaScript</a> &nbsp;|&nbsp;
-        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector" target="_blank" rel="noopener">MDN — querySelector</a>
-    </p>
-</footer>
+        <p>&copy; 2026 Prashant Sharma. For educational use only.</p>
+        <nav class="footer-links">
+            <span>References:</span>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener">MDN Web Docs — JavaScript</a>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector" target="_blank" rel="noopener">MDN — querySelector</a>
+        </nav>
+    </footer>
 
 
 <script src="script.js"></script>

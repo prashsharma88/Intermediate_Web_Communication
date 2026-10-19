@@ -1,15 +1,5 @@
-*::before, *::after, * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-}
-
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
+/* Exercise 1 - Like Button: styles for the exercise widget.
+   Page frame (header, home button, footer) comes from ../../css/theme.css */
 
 .card {
     display: flex;
@@ -17,12 +7,13 @@ body {
     justify-content: center;
     align-items: center;
     gap: 15px;
-    border: 2px solid black;
+    border: 1px solid var(--art-border);
     border-radius: 20px;
     padding: 20px;
 }
 
-img {
+.card img {
+    max-width: 100%;
     border-radius: 20px;
 }
 
@@ -34,12 +25,17 @@ img {
     gap: 10px;
 }
 
+.card-body p {
+    margin-bottom: 0;
+}
+
 button {
     padding: 5px 10px;
     width: 100px;
     background-color: rgb(80, 80, 255);
     border: 1px solid transparent;
     color: white;
+    cursor: pointer;
 }
 
 button:active {

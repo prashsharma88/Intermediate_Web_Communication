@@ -3,26 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
     <title>Exercise 3 - Image Selector</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/theme.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Image Selector</h1>
+        <div>
+            <p><span class="badge">JavaScript Practice</span></p>
+        </div>
+        <h1>Exercise 3 — Image Selector</h1>
     </header>
 
+    <div>
+        <p id="home-btn" class="badge"><a href="../../index.html">Home</a></p>
+    </div>
+
     <main>
-        <div id="image-container" class="card">
-            <img id="img-viewer" src="https://picsum.photos/id/71/200/300" alt="Image of wooden swing">
-        </div>
-        <div id="btn-container">
-            <button id="img1" class="btn">Image - 1</button>
-            <button id="img2" class="btn">Image - 2</button>
-            <button id="img3" class="btn">Image - 3</button>
-        </div>
+        <section class="exercise-stage">
+            <div id="image-container" class="card">
+                <img id="img-viewer" src="https://picsum.photos/id/71/200/300" alt="Image of wooden swing">
+            </div>
+            <div id="btn-container">
+                <button id="img1" class="btn">Image - 1</button>
+                <button id="img2" class="btn">Image - 2</button>
+                <button id="img3" class="btn">Image - 3</button>
+            </div>
+        </section>
     </main>
+
+    <footer>
+        <p>&copy; 2026 Prashant Sharma. For educational use only.</p>
+    </footer>
 
     <!-- Link your script file here -->
      <script src="../PractiseExercise_Solutions/Exercise3_script.js"></script>
 </body>
-</html>
+</html>

@@ -1,22 +1,15 @@
-*, *::before, *::after {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
+/* Exercise 2 - Active Navigation: styles for the exercise widget.
+   Page frame (header, home button, footer) comes from ../../css/theme.css */
 
-body {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    text-align: center;
-}
-
-header {
+.demo-nav {
+    width: 100%;
     padding: 20px;
-    background-color: rgb(47, 94, 126);
-    margin-bottom: 30px;
+    background-color: var(--dark-bg);
+    border-radius: 12px;
 }
 
 #active_link_name {
-    color: rgb(47, 94, 126);
+    color: var(--dark-bg);
 }
 
 .nav-link {
@@ -29,11 +22,17 @@ header {
 .nav-list {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     width: 100%;
     justify-content: center;
     align-items: center;
     gap: 20px;
     list-style: none;
+    padding-left: 0;
+}
+
+.nav-list li {
+    margin-bottom: 0;
 }
 
 .active {
